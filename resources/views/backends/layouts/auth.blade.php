@@ -15,9 +15,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gradient-primary">
+    <div id="particles-js"></div>
     @yield('content')
-
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('js/canvas-particle.js') }}"></script>
 </body>
 </html>

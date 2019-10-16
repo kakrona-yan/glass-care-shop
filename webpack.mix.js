@@ -14,6 +14,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 mix.js('resources/js/app.js', 'public/js')
     .copy('node_modules/jquery.easing/jquery.easing.min.js', 'public/js')
     .copy('resources/js/imageupload.js', 'public/js')
+    .copy('resources/js/canvas-particle.js', 'public/js')
     .copy('resources/images', 'public/images')
     .copyDirectory('node_modules/bootstrap-datepicker/dist', 'public/vendor/bootstrap-datepicker')
     .sass('resources/sass/app.scss', 'public/css')

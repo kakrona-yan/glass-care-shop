@@ -20,14 +20,14 @@ html {
 }
 
 body {
-    font-size: 14px;
+    font-size: 16px;
   height: 100%;
 }
 html,
 body,
 button{
   font-family: "KhmerOSBattambang-Regular";
-  font-size: 14px;
+  font-size: 16px;
 }
 a {
   &:focus {
@@ -99,4 +99,10 @@ a {
 }
 .w-30 {
   width: 30% !important;
+}
+/****Login layout****/
+#particles-js{
+  & .particles-js-canvas-el{
+    position:absolute;
+  }
 }

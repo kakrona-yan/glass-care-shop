@@ -18,26 +18,36 @@
                     <form action="{{ route('login.post') }}" method="POST" class="user">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="username" class="form-control form-control-user {{ $errors->has('username') ? ' is-invalid' : '' }}"
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
+                                </div>
+                                <input type="text" name="username" class="form-control form-control-user {{ $errors->has('username') ? ' is-invalid' : '' }}"
                                 value="{{ old('username') }}"/>
-                            @if ($errors->has('username'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('username') }}</strong>
-                                </span>
-                            @endif
+                                @if ($errors->has('username'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control form-control-user {{ $errors->has('username') ? ' is-invalid' : '' }}"/>
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                            @if(Session::has('login'))
-                                <p class="text-danger">{{ Session::get('login') }}</p>
-                            @endif
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                                </div>
+                                <input type="password" name="password" class="form-control form-control-user {{ $errors->has('username') ? ' is-invalid' : '' }}"/>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                                @if(Session::has('login'))
+                                    <p class="text-danger">{{ Session::get('login') }}</p>
+                                @endif
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                        <button type="submit" class="btn btn-pink btn-cicle btn-block">Login</button>
                     </form>
                 </div>
                 </div>
