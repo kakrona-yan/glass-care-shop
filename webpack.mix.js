@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,4 +12,22 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .copy('node_modules/jquery.easing/jquery.easing.min.js', 'public/js')
+    .copy('resources/js/imageupload.js', 'public/js')
+    .copy('resources/images', 'public/images')
+    .copyDirectory('node_modules/bootstrap-datepicker/dist', 'public/vendor/bootstrap-datepicker')
+    .sass('resources/sass/app.scss', 'public/css')
+    // .purgeCss()
+    .webpackConfig({
+        module: {
+            rules: [{
+                test: /\.scss/,
+                enforce: "pre",
+                loader: 'import-glob-loader',
+            }]
+        },
+        plugins: [
+            new UglifyJsPlugin()
+        ]
+    })
+    .version();

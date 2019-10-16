@@ -10,7 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group([
+        'prefix' => 'admin',
+        'namespace' => 'Backends'
+    ], function () {
+        Route::get('/login', 'Auth\LoginController@showLogin')->name('login');
+        Route::post('/login', 'Auth\LoginController@Login')->name('login.post');
+        Route::post('/logout', 'Auth\LoginController@Logout')->name('logout');
+        // middleware
+        Route::group(['middleware' => 'auth'], function () {
+            Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+            Route::get('/', function () {
+                return redirect()->route('dashboard');
+            });
+        });
+    }
+);

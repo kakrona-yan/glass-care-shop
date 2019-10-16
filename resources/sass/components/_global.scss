@@ -1,0 +1,102 @@
+// Global component styles
+
+@charset "utf-8";
+@font-face {
+    font-family: "KhmerOSBattambang-Bold";
+    src:  url('../fonts/KhmerOSBattambang-Bold.ttf');
+}
+@font-face {
+    font-family: "KhmerOSBattambang-Regular";
+    src:  url('../fonts/KhmerOSBattambang-Regular.ttf');
+}
+@font-face {
+    font-family: "KhmerOSBokor";
+    src:  url('../fonts/KhmerOSBokor.ttf');
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-size: 14px;
+  height: 100%;
+}
+html,
+body,
+button{
+  font-family: "KhmerOSBattambang-Regular";
+  font-size: 14px;
+}
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+// Fonts
+.font-bt-blod{
+    font-family: "KhmerOSBattambang-Bold";
+}
+.font-bt-regular{
+    font-family: "KhmerOSBattambang-Bold";
+}
+.font-bokor{
+    font-family: "KhmerOSBattambang-Regular";
+}
+.font-bt-blod{
+    font-family: "KhmerOSBokor", sans-serif;
+}
+
+// Main page wrapper
+#wrapper {
+  display: flex;
+  #content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    #content {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+// Set container padding to match gutter width instead of default 15px
+.container,
+.container-fluid {
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+
+// Scroll to top button
+.scroll-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  text-align: center;
+  color: $white;
+  background: fade-out($gray-800, .5);
+  line-height: 46px;
+  &:focus,
+  &:hover {
+    color: white;
+  }
+  &:hover {
+    background: $gray-800;
+  }
+  i {
+    font-weight: 800;
+  }
+}
+.w-10 {
+  width: 10% !important;
+}
+.w-20 {
+  width: 20% !important;
+}
+.w-30 {
+  width: 30% !important;
+}
