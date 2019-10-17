@@ -120,6 +120,7 @@
       }
       .sidebar-brand-text {
         display: none;
+        font-size: 22px;
       }
     }
     hr.sidebar-divider {
@@ -321,6 +322,7 @@
   .sidebar-dark {
     .sidebar-brand {
       color: $white;
+      border-bottom: 1px solid $white;
     }
     hr.sidebar-divider {
       border-top: 1px solid fade-out($white, 0.85);

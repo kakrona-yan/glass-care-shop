@@ -1,5 +1,5 @@
 <?php
 return [
-    'shop_name' => 'Glass Care Shop',
+    'shop_name' => 'GCS',
     'dashboard' => 'dashboard',
 ];
