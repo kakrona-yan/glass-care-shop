@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-gray-light">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-        <span>រក្សាសិទ្ធិ &copy; ប្រព័ន្ធគ្រប់គ្រង​ ទំនិញ 2019</span>
+        <span>Copy right &copy; GLASS CARE SHOP 2019</span>
         </div>
     </div>
 </footer>
