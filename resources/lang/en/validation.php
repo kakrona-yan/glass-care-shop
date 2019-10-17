@@ -146,5 +146,6 @@ return [
     */
 
     'attributes' => [],
+    'auth' => 'The email address or password is incorrect.'
 
 ];

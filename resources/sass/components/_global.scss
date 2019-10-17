@@ -13,6 +13,10 @@
     font-family: "KhmerOSBokor";
     src:  url('../fonts/KhmerOSBokor.ttf');
 }
+@font-face {
+    font-family: "Ambystoma";
+    src:  url('../fonts/Ambystoma Mexicanum.otf');
+}
 
 html {
   position: relative;
@@ -48,7 +52,9 @@ a {
 .font-bt-blod{
     font-family: "KhmerOSBokor", sans-serif;
 }
-
+.font-ambystoma{
+    font-family: "Ambystoma", sans-serif;
+}
 // Main page wrapper
 #wrapper {
   display: flex;
@@ -105,4 +111,13 @@ a {
   & .particles-js-canvas-el{
     position:absolute;
   }
+}
+.text-pink {
+  color: $pink;
+}
+.h-s-1{
+  font-size: 3rem;
+}
+.invalid-feedback{
+  font-size: 16px;
 }

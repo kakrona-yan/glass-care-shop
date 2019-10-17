@@ -47,10 +47,10 @@ class LoginController extends Controller
      * @param Request $request
      * @return type
      */
-    public function showLogin()
+    public function showLogin(Request $request)
     {
         if (!Auth::check()) {
-            return view('backends.auths.login');
+            return view('backends.auths.login', ['request' => $request]);
         }
         return redirect()->route('dashboard');
     }
@@ -79,7 +79,7 @@ class LoginController extends Controller
     public function Login(LoginRequest $request)
     {
         $authAdmin = Auth::attempt([
-            'name' => $request->username,
+            'email' => $request->email,
             'password' => $request->password,
             'is_active' => 0,
             'is_delete' => 0 // if want to check 0 for user active
@@ -89,8 +89,8 @@ class LoginController extends Controller
             Session::forget('login');
             return redirect()->route('dashboard');
         }
-        Session::flash('login', __('validation.auth'));
-        return Redirect::route('login');
+        return Redirect::route('login')
+            ->with('login', __('validation.auth'));
     }
 
     public function Logout()
