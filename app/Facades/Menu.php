@@ -27,6 +27,14 @@ class Menu
                 'role_type' => $this->RoleType('dashboard'),
                 'sub_menu' => null
             ],
+            [
+                // user management
+                'route' => 'users.index',
+                'icon' => 'fas fa-user',
+                'label' => __('menu.user'),
+                'role_type' => $this->RoleType('users.index'),
+                'sub_menu' => null
+            ],
         ];
     }
     /*

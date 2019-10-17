@@ -23,6 +23,23 @@ Route::group([
             Route::get('/', function () {
                 return redirect()->route('dashboard');
             });
+            // User Route
+            Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+                Route::get('/', 'UsersController@index')
+                    ->name('index');
+                Route::get('/create', 'UsersController@create')
+                    ->name('create');
+                Route::post('/store', 'UsersController@store')
+                    ->name('store');
+                Route::get('/show/{id}', 'UsersController@show')
+                    ->name('show');
+                Route::get('/edit/{id}', 'UsersController@edit')
+                    ->name('edit');
+                Route::post('/update/{id}', 'UsersController@update')
+                    ->name('update');
+                Route::post('/destroy', 'UsersController@destroy')
+                    ->name('destroy');
+            });
         });
     }
 );

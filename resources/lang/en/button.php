@@ -1,6 +1,6 @@
 <?php
 return [
-    'create' => 'Create',
+    'add_new' => 'Add New',
     'save' => 'Save',
     'show' => 'Show',
     'eidt' => 'Edit',
