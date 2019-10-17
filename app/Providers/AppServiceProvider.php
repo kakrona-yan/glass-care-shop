@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Menu tetestation facade
+        $this->app->bind('menu', '\App\Facades\Menu');
     }
 
     /**

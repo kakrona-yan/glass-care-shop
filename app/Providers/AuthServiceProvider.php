@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Http\Constants\UserRole;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        /*
+         * dashboard management
+         */
+        Gate::define('dashboard', function ($userRole) {
+            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+        });
     }
 }

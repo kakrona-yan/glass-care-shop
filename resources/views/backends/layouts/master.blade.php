@@ -8,7 +8,7 @@
     <div id="master">
         <div id="wrapper">
             <!--slide-bar-->
-            @yield('menu', StockMenu::render())
+            @yield('menu', Menu::render())
             <!--/slide-bar-->
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
