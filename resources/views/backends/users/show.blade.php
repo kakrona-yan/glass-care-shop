@@ -1,5 +1,5 @@
 @extends('backends.layouts.master')
-@section('title', __('user.form.title'))
+@section('title', __('user.title'))
 @section('content')
 <div id="user-list">
     <!-- Page Heading -->
@@ -32,30 +32,41 @@
     <div class="row mb-2">
         <div class="col-12 tab-card">
             <!-- Circle Buttons -->
-            <div class="card mb-4">
+            <div class="card mxy-4">
                 <div class="card-body">
                     <div class="table-responsive cus-table">
                         <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="text-center">{{__('user.list.thumbnail')}}</th>
-                                <th>{{ __('user.list.name') }}</th>
-                                <th>{{ __('user.list.email') }}</th>
-                                <th>{{ __('user.list.role') }}</th>
-                                <th class="text-center">{{ __('user.list.active') }}</th>
-                                <th class="w-action text-center">{{__('user.list.action')}}</th>
-                            </tr>
-                            </thead>
                             <tbody>
                                 <tr>
-                                    <td class="text-center">
-                                        <div class="thumbnail-cicel">
+                                    <th class="border-top-0">{{__('user.list.thumbnail')}}</th>
+                                    <td class="border-top-0">
+                                        <div class="thumbnail-cicel w-25 h-25">
                                             <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('user.list.name') }}</th>
                                     <td>{{$user->name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('user.list.email') }}</th>
                                     <td>{{$user->email}}</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('user.list.email') }}</th>
+                                    <td>{{$user->email}}</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('user.list.password') }}</th>
+                                    <td>********7535</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('user.list.role') }}</th>
                                     <td>{{$user->roleType()}}</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('user.list.active') }}</th>
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"
@@ -64,9 +75,12 @@
                                             <span class="slider"><span class="on">ON</span><span class="off">OFF</span>
                                             </span>
                                         </label>
-                                    </td>                           
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20">{{__('user.list.action')}}</th>                
                                     <td>
-                                        <div class="w-action">
+                                        <div class="w-100">
                                         <a class="btn) btn-sm btn-info btn-circle" 
                                             data-toggle="tooltip" 
                                             data-placement="top"
@@ -81,7 +95,7 @@
                                             href="{{route('user.edit', $user->id)}}"
                                         ><i class="far fa-edit"></i>
                                         </a>
-                                        <button type="button"
+                                        <button type="button" disabled
                                             id="btn-deleted"
                                             class="btn btn-sm btn-danger btn-circle"
                                             onclick="deletePopup(this)"
@@ -96,6 +110,10 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="form-group d-inline-flex mb-3">
+                        <a href="{{route('user.edit', $user->id)}}" class="btn btn-circle btn-primary w-btn-125 mr-2">{{__('button.edit')}}</a>
+                        <a href="{{route('user.index')}}" class="btn btn-circle btn-secondary w-btn-125">{{__('button.return')}}</a>
                     </div>
                 </div>
             </div>
