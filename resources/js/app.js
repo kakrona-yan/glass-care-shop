@@ -1,5 +1,5 @@
 require('./bootstrap');
-
+require('select2');
 (function($) {
     "use strict"; // Start of use strict
 

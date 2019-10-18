@@ -20,8 +20,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('role')->default(2)->comment('1:admin, 2:normal');
-            $table->boolean('is_active')->default(0)->comment('0：inactive、1：active');
-            $table->boolean('is_delete')->default(0)->comment('0：no-delete、1：delete');
+            $table->string('thumbnail')->nullable();
+            $table->boolean('is_active')->default(1)->comment('0：in-active、1：active');
+            $table->boolean('is_delete')->default(1)->comment('0：delete、1：no delete');
             $table->rememberToken();
             $table->timestamps();
         });

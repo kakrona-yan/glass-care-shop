@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Http\Constants\UserRole;
+use App\Http\Constants\DeleteStatus;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email', 
+        'password',
+        'role',
+        'thumbnail',
+        'is_active',
+        'is_delete'
     ];
 
     /**
@@ -45,10 +52,10 @@ class User extends Authenticatable
         if (is_null($role) && empty($role)) return;
         switch ($role) {
             case 1:
-                $roleText = UserRole::USER_ROLE_TEXT_KM[$role];
+                $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
                 break;
             case 2:
-                $roleText = UserRole::USER_ROLE_TEXT_KM[$role];
+                $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
                 break;
         }
         return $roleText;
@@ -62,5 +69,43 @@ class User extends Authenticatable
     public function isRoleNormal()
     {
         return $this->role == UserRole::ROLE_NORMAL ? true : false;
+    }
+
+    public function filter($request)
+    {
+        $users = $this->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'DESC');
+        // filter by username
+        if ($request->exists('name') && !empty($request->name)) {
+            $users->where('name', 'like', '%' . $request->name . '%');
+        }
+        if ($request->exists('email') && !empty($request->email)) {
+            $users->where('email', 'like', '%' . $request->email . '%');
+        }
+        // filter by username
+        if ($request->exists('role') && !is_null($request->role)) {
+            $users->where('role', $request->role);
+        }
+        $limit = config('pagination.limit');
+        if ($request->exists('limit') && !is_null($request->limit)) {
+            $limit = $request->limit;
+        }
+        // Check flash danger
+        flashDanger($users->count(), __('flash.empty_data'));
+        return $users->paginate($limit);
+    }
+
+    public function available($id)
+    {
+        return $this->where('id',  $id)
+            ->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->first();
+    }
+
+    public function remove()
+    {
+        return $this->update([
+            'is_delete' => DeleteStatus::DELETED
+        ]);
     }
 }

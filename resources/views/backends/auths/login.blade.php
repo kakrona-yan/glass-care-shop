@@ -52,7 +52,7 @@
                                 @endif
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-pink btn-cicle btn-block">Login</button>
+                        <button type="submit" class="btn btn-circle btn-pink btn-cicle btn-block">Login</button>
                     </form>
                 </div>
                 </div>

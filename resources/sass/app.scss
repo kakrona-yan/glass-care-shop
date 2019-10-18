@@ -13,6 +13,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Select2
+@import '~select2/src/scss/core';
+
 // Import Custom SB Admin 2 Mixins and Components
 @import "components/mixins.scss";
 @import "components/global.scss";

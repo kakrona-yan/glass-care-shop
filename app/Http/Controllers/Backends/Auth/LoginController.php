@@ -81,8 +81,8 @@ class LoginController extends Controller
         $authAdmin = Auth::attempt([
             'email' => $request->email,
             'password' => $request->password,
-            'is_active' => 0,
-            'is_delete' => 0 // if want to check 0 for user active
+            'is_active' => 1,
+            'is_delete' => 1 // if want to check 0 for user active
         ]);
         //if login success
         if ($authAdmin) {

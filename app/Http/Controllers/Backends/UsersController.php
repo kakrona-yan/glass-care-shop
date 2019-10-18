@@ -4,9 +4,17 @@ namespace App\Http\Controllers\Backends;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Constants\UserRole;
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserUpdateRequest;
 
 class UsersController extends Controller
 {
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +23,12 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         try {
-           
+            $users = $this->user->filter($request);
+            $userRoles = UserRole::USER_ROLE_TEXT_EN;
             return view('backends.users.index', [
                 'request' => $request,
+                'users' => $users,
+                'userRoles' => $userRoles
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.users.index');
@@ -29,9 +40,17 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        try {
+            $userRoles = UserRole::USER_ROLE_TEXT_EN;
+            return view('backends.users.create', [
+                'request' => $request,
+                'userRoles' => $userRoles
+            ]);
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'backends.users.create');
+        }
     }
 
     /**
@@ -40,9 +59,19 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
-        //
+        try {
+            $user = $request->all();
+            $user['email_verified_at'] = now();
+            $user['password'] =  bcrypt($user['password']);
+            $user['thumbnail'] = isset($user['thumbnail']) ? uploadFile($user['thumbnail'], config('upload.user')) : '';
+            $this->user->create($user);
+            return \Redirect::route('user.index')
+                ->with('success', __('flash.store'));
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'backends.users.index');
+        }
     }
 
     /**
@@ -51,9 +80,19 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id)
     {
-        //
+        try {
+            $user = $this->user->available($id);
+            if (!$user) {
+                return response()->view('errors.404', [], 404);
+            }
+            return view('backends.users.show', [
+                'user' => $user,
+            ]);
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'backends.users.show');
+        }
     }
 
     /**
@@ -62,9 +101,19 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(int $id)
     {
-        //
+        try {
+            $user = $this->user->available($id);
+            if (!$user) {
+                return response()->view('errors.404', [], 404);
+            }
+            return view('backends.users.edit', [
+                'user' => $user
+            ]);
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'backends.users.edit');
+        }
     }
 
     /**
@@ -74,9 +123,31 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
-        //
+        try {
+            $requestUser = $request->all();
+            $user = $this->user->available($id);
+            if (!$user) {
+                return response()->view('errors.404', [], 404);
+            }
+            if ($request->password && !empty($request->password)) {
+                $requestUser['password'] =  bcrypt($request->password);
+            } else {
+                unset($requestUser['password']);
+            }
+            if (!empty($request->thumbnail)) {
+                $requestUser['thumbnail'] = uploadFile($request->thumbnail, config('upload.user'));
+            } else {
+                unset($requestUser['thumbnail']);
+            }
+            $user->update($requestUser);
+
+            return \Redirect::route('user.index')
+                ->with('warning', __('flash.update'));
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'backends.users.index');
+        }
     }
 
     /**
@@ -85,8 +156,19 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, int $id)
     {
-        //
+        try {
+            $id = $request->user_id;
+            $user = $this->user->available($id);
+            if (!$user) {
+                return response()->view('errors.404', [], 404);
+            }
+            $user->remove();
+            return redirect()->route('user.index')
+                ->with('danger', __('flash.destroy'));
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'backends.users.index');
+        }
     }
 }

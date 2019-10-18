@@ -24,7 +24,7 @@ Route::group([
                 return redirect()->route('dashboard');
             });
             // User Route
-            Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+            Route::group(['prefix' => 'users', 'as' => 'user.'], function () {
                 Route::get('/', 'UsersController@index')
                     ->name('index');
                 Route::get('/create', 'UsersController@create')

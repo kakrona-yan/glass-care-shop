@@ -29,10 +29,10 @@ class Menu
             ],
             [
                 // user management
-                'route' => 'users.index',
+                'route' => 'user.index',
                 'icon' => 'fas fa-user',
                 'label' => __('menu.user'),
-                'role_type' => $this->RoleType('users.index'),
+                'role_type' => $this->RoleType('user.index'),
                 'sub_menu' => null
             ],
         ];
