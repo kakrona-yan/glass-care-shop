@@ -1,6 +1,6 @@
 <?php
 return [
     'shop_name' => 'GCS',
-    'dashboard' => 'dashboard',
-    'user' => 'Users',
+    'dashboard' => 'Dashboard',
+    'user' => 'User management',
 ];

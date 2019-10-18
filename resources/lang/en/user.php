@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'title' => 'Glass care shop | User list',
-    'sub_title' => 'User list',
+    'title' => 'Glass care shop | User management',
+    'sub_title' => 'User management',
     'confirm_delete' => 'confirm delete',
     'list' => [
         'title' => 'User list',

@@ -1,8 +1,8 @@
 
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top">
     <!-- Sidebar Toggle (Topbar) -->
-    <button id="sidebarToggleTop" class="btn btn-circle btn-circle">
+    <button id="sidebarToggleTop" class="btn btn-circle">
         <i class="fas fa-bars fa-fw fa-lg"></i>
     </button>
     <!-- Topbar Navbar -->

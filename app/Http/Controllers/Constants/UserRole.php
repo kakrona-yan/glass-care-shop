@@ -9,7 +9,7 @@ class UserRole
     const ROLE_NORMAL = 2;
 
     const USER_ROLE_TEXT_EN = [
-        '1' => 'admin',
-        '2' => 'normal'
+        '1' => 'Admin',
+        '2' => 'Normal'
     ];
 }

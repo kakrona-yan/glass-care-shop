@@ -3,7 +3,7 @@
 @section('content')
 <div id="user-list">
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between border-bottom mb-5 pb-3">
+    <div class="d-sm-flex align-items-center justify-content-between border-bottom mb-3 pb-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent p-0 mb-0">
                 <li class="breadcrumb-item">
@@ -40,7 +40,7 @@
                                 <tr>
                                     <th>{{__('user.list.thumbnail')}}</th>
                                     <td>
-                                        <div class="thumbnail-cicel w-25 h-25">
+                                        <div class="thumbnail-cicel" style="width:100px; height:100px;">
                                             <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
                                         </div>
                                     </td>
@@ -82,14 +82,14 @@
                                     <th class="w-20">{{__('user.list.action')}}</th>                
                                     <td>
                                         <div class="w-100">
-                                        <a class="btn) btn-sm btn-info btn-circle" 
+                                        <a class="btn btn-sm btn-info btn-circle" 
                                             data-toggle="tooltip" 
                                             data-placement="top"
                                             data-original-title="{{__('button.show')}}"
                                             href="{{route('user.show', $user->id)}}"
                                         ><i class="far fa-eye"></i>
                                         </a>
-                                        <a class="btn) btn-sm btn-warning btn-circle" 
+                                        <a class="btn btn-sm btn-warning btn-circle" 
                                             data-toggle="tooltip" 
                                             data-placement="top"
                                             data-original-title="{{__('button.edit')}}"

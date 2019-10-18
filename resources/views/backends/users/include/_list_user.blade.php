@@ -7,14 +7,14 @@
                         <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('flash_danger') }}</p>
                     @else
                         <form id="user-search" action="{{ route('user.index') }}" method="GET" class="form form-horizontal form-search form-inline mb-2">
-                            <div class="form-group mb-2">
+                            <div class="form-group mb-2 mr-2">
                                 <label for="name" class="mr-sm-2">{{ __('user.list.filter') }}:</label>
                                 <input type="name" class="form-control mr-1" id="name" 
                                     name="name" value="{{ old('name', $request->name)}}"
                                     placeholder="name"
                                 >
                             </div>
-                            <div class="form-group mb-2">
+                            <div class="form-group mb-2 mr-2">
                                 <input type="email" class="form-control mr-1" id="email" 
                                     name="email" value="{{ old('email', $request->email)}}"
                                      placeholder="email"
@@ -31,7 +31,7 @@
                                     <select class="form-control" name="limit" id="limit">
                                         @for( $i=10; $i<=50; $i +=10 )
                                             <option value="{{$i}}" 
-                                            {{config('pagination.limit') || $request->limit == $i ? 'selected' : ''}}
+                                            {{ $request->limit == $i || config('pagination.limit') == $i ? 'selected' : ''}}
                                             >{{ $i }}</option>
                                         @endfor
                                     </select>
@@ -54,14 +54,16 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td class="text-center">
-                                            <div class="thumbnail-cicel">
-                                                <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
+                                            <div class="d-flex justify-content-center">
+                                                <div class="thumbnail-cicel">
+                                                    <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
+                                                </div>
                                             </div>
                                         </td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <td>{{$user->roleType()}}</td>
-                                        <td>
+                                        <td><i class="fas fa-user text-pink "></i> {{$user->roleType()}}</td>
+                                        <td class="text-center">
                                             <label class="switch">
                                                 <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"
                                                     {{ $user->is_active == 1 ? 'checked' : '' }}
@@ -72,14 +74,14 @@
                                         </td>                           
                                         <td>
                                             <div class="w-action">
-                                            <a class="btn) btn-sm btn-info btn-circle" 
+                                            <a class="btn btn-sm btn-info btn-circle" 
                                                 data-toggle="tooltip" 
                                                 data-placement="top"
                                                 data-original-title="{{__('button.show')}}"
                                                 href="{{route('user.show', $user->id)}}"
                                             ><i class="far fa-eye"></i>
                                             </a>
-                                            <a class="btn) btn-sm btn-warning btn-circle" 
+                                            <a class="btn btn-sm btn-warning btn-circle" 
                                                 data-toggle="tooltip" 
                                                 data-placement="top"
                                                 data-original-title="{{__('button.edit')}}"
@@ -153,7 +155,7 @@
         
         (function( $ ){
             $("[name='limit']").select2({
-                allowClear: true
+                allowClear: false
             }).on('select2:select', function (e) {
                 $('#user-search').submit();
             });

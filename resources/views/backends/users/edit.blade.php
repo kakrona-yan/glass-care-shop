@@ -3,7 +3,7 @@
 @section('content')
 <div id="user-list">
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between border-bottom mb-5 pb-3">
+    <div class="d-sm-flex align-items-center justify-content-between border-bottom mb-3 pb-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent p-0 mb-0">
                 <li class="breadcrumb-item">
@@ -103,7 +103,7 @@
                                                         </span>
                                                     </div>
                                                     <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}"/>
-                                                    <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i>{{__('button.delete')}}</span>
+                                                    <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i> {{__('button.delete')}}</span>
                                                 </div>
                                             </div>
                                             @if ($errors->has('thumbnail'))
