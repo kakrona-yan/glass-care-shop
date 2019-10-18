@@ -252,3 +252,10 @@ input{
   right: 15px;
   z-index: 1000;
 }
+.table{
+  &-show{
+    & tr > th{
+      background-color: $gray-400;
+    }
+  }
+}

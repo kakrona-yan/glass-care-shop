@@ -35,7 +35,7 @@
             <div class="card mxy-4">
                 <div class="card-body">
                     <div class="table-responsive cus-table">
-                        <table class="table">
+                        <table class="table table-show">
                             <tbody>
                                 <tr>
                                     <th class="border-top-0">{{__('user.list.thumbnail')}}</th>
@@ -71,6 +71,7 @@
                                         <label class="switch">
                                             <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"
                                             {{ $user->is_active == 1 ? 'checked' : '' }}
+                                            disabled
                                             > 
                                             <span class="slider"><span class="on">ON</span><span class="off">OFF</span>
                                             </span>
