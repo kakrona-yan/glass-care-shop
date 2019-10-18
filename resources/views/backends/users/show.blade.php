@@ -58,7 +58,9 @@
                                     <td>{{$user->roleType()}}</td>
                                     <td>
                                         <label class="switch">
-                                            <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"> 
+                                            <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"
+                                            {{ $user->is_active == 1 ? 'checked' : '' }}
+                                            > 
                                             <span class="slider"><span class="on">ON</span><span class="off">OFF</span>
                                             </span>
                                         </label>
