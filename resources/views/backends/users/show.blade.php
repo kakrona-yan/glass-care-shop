@@ -35,11 +35,11 @@
             <div class="card mxy-4">
                 <div class="card-body">
                     <div class="table-responsive cus-table">
-                        <table class="table table-show">
-                            <tbody>
+                        <table class="table table-show table-hover">
+                            <tbody class="border">
                                 <tr>
-                                    <th class="border-top-0">{{__('user.list.thumbnail')}}</th>
-                                    <td class="border-top-0">
+                                    <th>{{__('user.list.thumbnail')}}</th>
+                                    <td>
                                         <div class="thumbnail-cicel w-25 h-25">
                                             <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
                                         </div>
