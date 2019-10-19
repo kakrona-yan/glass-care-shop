@@ -13,11 +13,11 @@
     font-family: "KhmerOSBokor";
     src:  url('../fonts/KhmerOSBokor.ttf');
 }
-@font-face {
-    font-family: "Ambystoma";
-    src:  url('../fonts/Ambystoma Mexicanum.otf');
-}
 
+@font-face {
+  font-family: "NationalCartoon";
+  src:  url('../fonts/NationalCartoon.ttf');
+}
 html {
   position: relative;
   min-height: 100%;
@@ -51,8 +51,9 @@ a {
 .font-bt-blod{
     font-family: "KhmerOSBokor", sans-serif;
 }
-.font-ambystoma{
-    font-family: "Ambystoma", sans-serif;
+.font-national-cartoon{
+  font-family: "NationalCartoon", sans-serif;
+  text-transform: uppercase;
 }
 // Main page wrapper
 #wrapper {

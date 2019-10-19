@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**
+ * Routes for BackEnds
+ */
 Route::group([
         'prefix' => 'admin',
         'namespace' => 'Backends'
@@ -43,3 +46,12 @@ Route::group([
         });
     }
 );
+
+/**
+ * Routes for FrontEnds
+ */
+Route::group([
+    'namespace' => 'FrontEnds'
+], function () {
+    Route::get('/', 'HomesController@home')->name('home');
+});

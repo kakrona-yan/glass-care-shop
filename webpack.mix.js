@@ -18,6 +18,8 @@ mix.js('resources/js/app.js', 'public/js')
     .copy('resources/images', 'public/images')
     .copyDirectory('node_modules/bootstrap-datepicker/dist', 'public/vendor/bootstrap-datepicker')
     .sass('resources/sass/app.scss', 'public/css')
+    .copyDirectory('resources/theme', 'public/theme')
+    .sass('resources/sass/theme/main.scss', 'public/theme/css')
     // .purgeCss()
     .webpackConfig({
         module: {
