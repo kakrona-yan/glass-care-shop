@@ -1474,7 +1474,7 @@ header .menu-main li.blog-menu:hover .dropdown-menu {
 visibility: visible;
 opacity: 1;
 transform: translateY(15px); }
-header .menu-main li.contact-menu #contact-1 {
+header .menu-main li .hv-menu {
 position: absolute;
 width: 30px;
 height: 2px;
@@ -1484,7 +1484,7 @@ left: auto;
 visibility: hidden;
 opacity: 0; 
 }
-header .menu-main li.contact-menu:hover #contact-1 {
+header .menu-main li:hover .hv-menu {
 visibility: unset;
 opacity: 1;
 transform: translateX(5px);
@@ -1498,7 +1498,9 @@ header .menu-main li a {
   font-weight: bold;
 }
 header .menu-main li a:hover {
-background-color: unset; }
+background-color: unset; 
+color: #F44336;
+}
 header .menu-main li a#home-menu {
 font-weight: bold; }
 header .menu-main li a:focus {
@@ -2601,6 +2603,7 @@ align-items: center;
   display: block;
   color: #000000;
   text-decoration: none;
+  text-transform: uppercase;
 }
 .foter-menu ul li a:hover {
   color: #F44336;

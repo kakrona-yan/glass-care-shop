@@ -9,7 +9,9 @@
     @include('frontends.partials.header')
     <!--Content-->
     <main>
-        @yield('content')
+        <div class="body_content">
+            @yield('content')
+        </div>
     </main>
     <!-- Footer-->
     @include('frontends.partials.footer')

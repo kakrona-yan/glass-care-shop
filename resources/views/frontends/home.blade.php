@@ -1,9 +1,6 @@
 @extends('frontends.layouts.master')
 @section('title', 'Glass care shop | Home')
 @push('head-styles')
-<link rel="stylesheet" type="text/css" href="{{ URL('theme/css/style-home.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL('theme/css/style-res-home.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL('theme/css/style-fix-nav.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/slick/slick.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/slick/slick-theme.css') }}">   
 @endpush

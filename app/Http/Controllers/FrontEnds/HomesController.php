@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomesController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show the application home.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

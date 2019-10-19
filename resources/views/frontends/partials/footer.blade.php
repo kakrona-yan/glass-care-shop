@@ -3,28 +3,28 @@
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <div class="foter-menu">
-                    <h3>SITE MAP</h3>
+                    <h3>{{ __('page.footer.site_map') }}</h3>
                     <ul> 
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">COLLECTION</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">LOOK</a></li>
-                        <li><a href="#">NEWS</a></li>
-                        <li><a href="#">SHOP</a></li>
+                        <li><a href="{{ route('home') }}">{{ __('page.home') }}</a></li>
+                        <li><a href="{{ route('about') }}">{{ __('page.about') }}</a></li>
+                        <li><a href="{{ route('collection') }}">{{ __('page.collection') }}</a></li>
+                        <li><a href="{{ route('look') }}">{{ __('page.look') }}</a></li>
+                        <li><a href="{{ route('shop') }}">{{ __('page.shop') }}</a></li>
+                        <li><a href="{{ route('news') }}">{{ __('page.news') }}</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xs-6 col-md-5 mb-2">
                 <div class="foter-menu">
-                    <h3>FOR CUSTOMER</h3>
+                    <h3>{{ __('page.footer.for_customer') }}</h3>
                     <ul> 
-                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="{{ route('contact') }}">{{ __('page.contact') }}</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xs-12 col-md-3">
                 <div class="info-footer foter-menu">
-                    <h3>FOLLOW US</h3>
+                    <h3>{{ __('page.footer.follow_us') }}</h3>
                     <div class="social">
                         <a href="#" id="link-insta"></a>
                         <a href="#" id="link-fb"></a>
@@ -44,10 +44,10 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
-            <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2019 By GCS</span>
+            <span>{{__('page.footer.copy_right')}}</span><i class="far fa-copyright"></i><span class="engo">{{__('page.footer.power_by')}}</span>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
-            <span id="gmail-footer"><a href="#">E: galss-care-shop@gmail.com</a></span>
+            <span id="gmail-footer"><a href="mailto:{{__('page.footer.mail')}}">{{__('page.footer.mail')}}</a></span>
         </div>
     </div>
     </div>

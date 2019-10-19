@@ -53,5 +53,13 @@ Route::group([
 Route::group([
     'namespace' => 'FrontEnds'
 ], function () {
+    // Home page
     Route::get('/', 'HomesController@home')->name('home');
+    // Pages
+    Route::get('/about', 'PagesController@about')->name('about');
+    Route::get('/collection', 'PagesController@collection')->name('collection');
+    Route::get('/look', 'PagesController@look')->name('look');
+    Route::get('/contact', 'PagesController@contact')->name('contact');
+    Route::get('/shop', 'PagesController@shop')->name('shop');
+    Route::get('/news', 'PagesController@news')->name('news');
 });
