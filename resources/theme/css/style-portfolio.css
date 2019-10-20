@@ -1,0 +1,202 @@
+.glass-image{max-width: 650px;height:auto;padding: 5px;background: #7f7c7c;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}.glass-quarter img{vertical-align:middle;margin-bottom: 8px !important;}
+.glass-table,.glass-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.glass-table-all{border:1px solid #ccc}
+.glass-bordered tr,.glass-table-all tr{border-bottom:1px solid #ddd}.glass-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.glass-table-all tr:nth-child(odd){background-color:#fff}.glass-table-all tr:nth-child(even){background-color:#f1f1f1}
+.glass-hoverable tbody tr:hover,.glass-ul.glass-hoverable li:hover{background-color:#ccc}.glass-centered tr th,.glass-centered tr td{text-align:center}
+.glass-table td,.glass-table th,.glass-table-all td,.glass-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+.glass-table th:first-child,.glass-table td:first-child,.glass-table-all th:first-child,.glass-table-all td:first-child{padding-left:16px}
+.glass-btn,.glass-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.glass-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.glass-btn,.glass-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.glass-disabled,.glass-btn:disabled,.glass-button:disabled{cursor:not-allowed;opacity:0.3}.glass-disabled *,:disabled *{pointer-events:none}
+.glass-btn.glass-disabled:hover,.glass-btn:disabled:hover{box-shadow:none}
+.glass-badge,.glass-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.glass-badge{border-radius:50%}
+.glass-ul{list-style-type:none;padding:0;margin:0}.glass-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.glass-ul li:last-child{border-bottom:none}
+.glass-tooltip,.glass-display-container{position:relative}.glass-tooltip .glass-text{display:none}.glass-tooltip:hover .glass-text{display:inline-block}
+.glass-ripple:active{opacity:0.5}.glass-ripple{transition:opacity 0s}
+.glass-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+.glass-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
+.glass-dropdown-click,.glass-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+.glass-dropdown-hover:hover .glass-dropdown-content{display:block}
+.glass-dropdown-hover:first-child,.glass-dropdown-click:hover{background-color:#ccc;color:#000}
+.glass-dropdown-hover:hover > .glass-button:first-child,.glass-dropdown-click:hover > .glass-button:first-child{background-color:#ccc;color:#000}
+.glass-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.glass-check,.glass-radio{width:24px;height:24px;position:relative;top:6px}
+.glass-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+.glass-bar-block .glass-dropdown-hover,.glass-bar-block .glass-dropdown-click{width:100%}
+.glass-bar-block .glass-dropdown-hover .glass-dropdown-content,.glass-bar-block .glass-dropdown-click .glass-dropdown-content{min-width:100%}
+.glass-bar-block .glass-dropdown-hover .glass-button,.glass-bar-block .glass-dropdown-click .glass-button{width:100%;text-align:left;padding:8px 16px}
+.glass-main,#main{transition:margin-left .4s}
+.glass-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.glass-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
+.glass-bar{width:100%;overflow:hidden}.glass-center .glass-bar{display:inline-block;width:auto}
+.glass-bar .glass-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.glass-bar .glass-dropdown-hover,.glass-bar .glass-dropdown-click{position:static;float:left}
+.glass-bar .glass-button{white-space:normal}
+.glass-bar-block .glass-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.glass-bar-block.glass-center .glass-bar-item{text-align:center}.glass-block{display:block;width:100%}
+.glass-responsive{display:block;overflow-x:auto}
+.glass-container:after,.glass-container:before,.glass-panel:after,.glass-panel:before,.glass-row:after,.glass-row:before,.glass-row-padding:after,.glass-row-padding:before,
+.glass-cell-row:before,.glass-cell-row:after,.glass-clear:after,.glass-clear:before,.glass-bar:before,.glass-bar:after{content:"";display:table;clear:both}
+.glass-col,.glass-half,.glass-third,.glass-twothird,.glass-threequarter,.glass-quarter{float:left;width:100%;padding: 0 4px;}
+.glass-col.s1{width:8.33333%}.glass-col.s2{width:16.66666%}.glass-col.s3{width:24.99999%}.glass-col.s4{width:33.33333%}
+.glass-col.s5{width:41.66666%}.glass-col.s6{width:49.99999%}.glass-col.s7{width:58.33333%}.glass-col.s8{width:66.66666%}
+.glass-col.s9{width:74.99999%}.glass-col.s10{width:83.33333%}.glass-col.s11{width:91.66666%}.glass-col.s12{width:99.99999%}
+@media (min-width:601px){.glass-col.m1{width:8.33333%}.glass-col.m2{width:16.66666%}.glass-col.m3,.glass-quarter{width:24.99999%}.glass-col.m4,.glass-third{width:33.33333%}
+.glass-col.m5{width:41.66666%}.glass-col.m6,.glass-half{width:49.99999%}.glass-col.m7{width:58.33333%}.glass-col.m8,.glass-twothird{width:66.66666%}
+.glass-col.m9,.glass-threequarter{width:74.99999%}.glass-col.m10{width:83.33333%}.glass-col.m11{width:91.66666%}.glass-col.m12{width:99.99999%}}
+@media (min-width:993px){.glass-col.l1{width:8.33333%}.glass-col.l2{width:16.66666%}.glass-col.l3{width:24.99999%}.glass-col.l4{width:33.33333%}
+.glass-col.l5{width:41.66666%}.glass-col.l6{width:49.99999%}.glass-col.l7{width:58.33333%}.glass-col.l8{width:66.66666%}
+.glass-col.l9{width:74.99999%}.glass-col.l10{width:83.33333%}.glass-col.l11{width:91.66666%}.glass-col.l12{width:99.99999%}}
+.glass-rest{overflow:hidden}.glass-stretch{margin-left:-16px;margin-right:-16px}
+.glass-content,.glass-auto{margin-left:auto;margin-right:auto}.glass-content{max-width:100%;margin-bottom: 50px;}.glass-auto{max-width:1140px}
+.glass-cell-row{display:table;width:100%}.glass-cell{display:table-cell}
+.glass-cell-top{vertical-align:top}.glass-cell-middle{vertical-align:middle}.glass-cell-bottom{vertical-align:bottom}
+.glass-hide{display:none!important}.glass-show-block,.glass-show{display:block!important}.glass-show-inline-block{display:inline-block!important}
+@media (max-width:1205px){.glass-auto{max-width:95%}}
+@media (max-width:600px){.glass-modal-content{margin:0 10px;width:auto!important}.glass-modal{padding-top:30px}
+.glass-dropdown-hover.glass-mobile .glass-dropdown-content,.glass-dropdown-click.glass-mobile .glass-dropdown-content{position:relative}	
+.glass-hide-small{display:none!important}.glass-mobile{display:block;width:100%!important}.glass-bar-item.glass-mobile,.glass-dropdown-hover.glass-mobile,.glass-dropdown-click.glass-mobile{text-align:center}
+.glass-dropdown-hover.glass-mobile,.glass-dropdown-hover.glass-mobile .glass-btn,.glass-dropdown-hover.glass-mobile .glass-button,.glass-dropdown-click.glass-mobile,.glass-dropdown-click.glass-mobile .glass-btn,.glass-dropdown-click.glass-mobile .glass-button{width:100%}}
+@media (max-width:768px){.glass-modal-content{width:500px}.glass-modal{padding-top:50px}}
+@media (min-width:993px){.glass-modal-content{width:900px}.glass-hide-large{display:none!important}.glass-sidebar.glass-collapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.glass-hide-medium{display:none!important}}
+@media (max-width:992px){.glass-sidebar.glass-collapse{display:none}.glass-main{margin-left:0!important;margin-right:0!important}.glass-auto{max-width:100%}}
+.glass-top,.glass-bottom{position:fixed;width:100%;z-index:1}.glass-top{top:0}.glass-bottom{bottom:0}
+.glass-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
+.glass-display-topleft{position:absolute;left:0;top:0}.glass-display-topright{position:absolute;right:0;top: 0px;}
+.glass-display-bottomleft{position:absolute;left:0;bottom:0}.glass-display-bottomright{position:absolute;right:0;bottom:0}
+.glass-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.glass-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.glass-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
+.glass-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.glass-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.glass-display-container:hover .glass-display-hover{display:block}.glass-display-container:hover span.glass-display-hover{display:inline-block}.glass-display-hover{display:none}
+.glass-display-position{position:absolute}
+.glass-circle{border-radius:50%}
+.glass-round-small{border-radius:2px}.glass-round,.glass-round-medium{border-radius:4px}.glass-round-large{border-radius:8px}.glass-round-xlarge{border-radius:16px}.glass-round-xxlarge{border-radius:32px}
+.glass-row-padding,.glass-row-padding>.glass-half,.glass-row-padding>.glass-third,.glass-row-padding>.glass-twothird,.glass-row-padding>.glass-threequarter,.glass-row-padding>.glass-quarter,.glass-row-padding>.glass-col{padding:0 8px}
+.glass-container,.glass-panel{padding:0.01em 16px}.glass-panel{margin-top:16px;margin-bottom:16px}
+.glass-code,.glass-codespan{font-family:Consolas,"courier new";font-size:16px}
+.glass-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
+.glass-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
+.glass-card,.glass-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.glass-card-4,.glass-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.glass-spin{animation:glass-spin 2s infinite linear}@keyframes glass-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.glass-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.glass-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.glass-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.glass-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.glass-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.glass-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.glass-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.glass-animate-input{transition:width 0.4s ease-in-out}.glass-animate-input:focus{width:100%!important}
+.glass-opacity,.glass-hover-opacity:hover{opacity:0.60}.glass-opacity-off,.glass-hover-opacity-off:hover{opacity:1}
+.glass-opacity-max{opacity:0.25}.glass-opacity-min{opacity:0.75}
+.glass-greyscale-max,.glass-grayscale-max,.glass-hover-greyscale:hover,.glass-hover-grayscale:hover{filter:grayscale(100%)}
+.glass-greyscale,.glass-grayscale{filter:grayscale(75%)}.glass-greyscale-min,.glass-grayscale-min{filter:grayscale(50%);padding: 0 8px;}
+.glass-sepia{filter:sepia(75%)}.glass-sepia-max,.glass-hover-sepia:hover{filter:sepia(100%)}.glass-sepia-min{filter:sepia(50%)}
+.glass-tiny{font-size:10px!important}.glass-small{font-size:12px!important}.glass-medium{font-size:15px!important}.glass-large{font-size:18px!important}
+.glass-xlarge{font-size:24px!important}.glass-xxlarge{font-size:36px!important}.glass-xxxlarge{font-size:48px!important}.glass-jumbo{font-size:64px!important}
+.glass-left-align{text-align:left!important}.glass-right-align{text-align:right!important}.glass-justify{text-align:justify!important}.glass-center{text-align:center!important}
+.glass-border-0{border:0!important}.glass-border{border:1px solid #ccc!important}
+.glass-border-top{border-top:1px solid #ccc!important}.glass-border-bottom{border-bottom:1px solid #ccc!important}
+.glass-border-left{border-left:1px solid #ccc!important}.glass-border-right{border-right:1px solid #ccc!important}
+.glass-topbar{border-top:6px solid #ccc!important}.glass-bottombar{border-bottom:6px solid #ccc!important}
+.glass-leftbar{border-left:6px solid #ccc!important}.glass-rightbar{border-right:6px solid #ccc!important}
+.glass-section,.glass-code{margin-top:16px!important;margin-bottom:16px!important}
+.glass-margin{margin:16px!important}.glass-margin-top{margin-top:16px!important}.glass-margin-bottom{margin-bottom:16px!important}
+.glass-margin-left{margin-left:16px!important}.glass-margin-right{margin-right:16px!important}
+.glass-padding-small{padding:4px 8px!important}.glass-padding{padding:8px 16px!important}.glass-padding-large{padding:12px 24px!important}
+.glass-padding-16{padding-top:16px!important;padding-bottom:16px!important}.glass-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.glass-padding-32{padding-top:32px!important;padding-bottom:32px!important}.glass-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.glass-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.glass-left{float:left!important}.glass-right{float:right!important}
+.glass-button:hover{color:#000!important;background-color:#ccc!important}
+.glass-transparent,.glass-hover-none:hover{background-color:transparent!important}
+.glass-hover-none:hover{box-shadow:none!important}
+/* Colors */
+.glass-amber,.glass-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
+.glass-aqua,.glass-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
+.glass-blue,.glass-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+.glass-light-blue,.glass-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
+.glass-brown,.glass-hover-brown:hover{color:#fff!important;background-color:#795548!important}
+.glass-cyan,.glass-hover-cyan:hover{color:#000!important;background-color:#00bcd4!important}
+.glass-blue-grey,.glass-hover-blue-grey:hover,.glass-blue-gray,.glass-hover-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}
+.glass-green,.glass-hover-green:hover{color:#fff!important;background-color:#4CAF50!important}
+.glass-light-green,.glass-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
+.glass-indigo,.glass-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
+.glass-khaki,.glass-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
+.glass-lime,.glass-hover-lime:hover{color:#000!important;background-color:#cddc39!important}
+.glass-orange,.glass-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.glass-deep-orange,.glass-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
+.glass-pink,.glass-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
+.glass-purple,.glass-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
+.glass-deep-purple,.glass-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
+.glass-red,.glass-hover-red:hover{color:#fff!important;background-color:#f44336!important}
+.glass-sand,.glass-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
+.glass-teal,.glass-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.glass-yellow,.glass-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.glass-white,.glass-hover-white:hover{color:#000!important;background-color:#fff!important}
+.glass-black,.glass-hover-black:hover{color:#fff!important;background-color: rgba(0, 0, 0, 0.75)!important;}
+.glass-grey,.glass-hover-grey:hover,.glass-gray,.glass-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
+.glass-light-grey,.glass-hover-light-grey:hover,.glass-light-gray,.glass-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.glass-dark-grey,.glass-hover-dark-grey:hover,.glass-dark-gray,.glass-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
+.glass-pale-red,.glass-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}
+.glass-pale-green,.glass-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}
+.glass-pale-yellow,.glass-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
+.glass-pale-blue,.glass-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
+.glass-text-amber,.glass-hover-text-amber:hover{color:#ffc107!important}
+.glass-text-aqua,.glass-hover-text-aqua:hover{color:#00ffff!important}
+.glass-text-blue,.glass-hover-text-blue:hover{color:#2196F3!important}
+.glass-text-light-blue,.glass-hover-text-light-blue:hover{color:#87CEEB!important}
+.glass-text-brown,.glass-hover-text-brown:hover{color:#795548!important}
+.glass-text-cyan,.glass-hover-text-cyan:hover{color:#00bcd4!important}
+.glass-text-blue-grey,.glass-hover-text-blue-grey:hover,.glass-text-blue-gray,.glass-hover-text-blue-gray:hover{color:#607d8b!important}
+.glass-text-green,.glass-hover-text-green:hover{color:#4CAF50!important}
+.glass-text-light-green,.glass-hover-text-light-green:hover{color:#8bc34a!important}
+.glass-text-indigo,.glass-hover-text-indigo:hover{color:#3f51b5!important}
+.glass-text-khaki,.glass-hover-text-khaki:hover{color:#b4aa50!important}
+.glass-text-lime,.glass-hover-text-lime:hover{color:#cddc39!important}
+.glass-text-orange,.glass-hover-text-orange:hover{color:#ff9800!important}
+.glass-text-deep-orange,.glass-hover-text-deep-orange:hover{color:#ff5722!important}
+.glass-text-pink,.glass-hover-text-pink:hover{color:#e91e63!important}
+.glass-text-purple,.glass-hover-text-purple:hover{color:#9c27b0!important}
+.glass-text-deep-purple,.glass-hover-text-deep-purple:hover{color:#673ab7!important}
+.glass-text-red,.glass-hover-text-red:hover{color:#f44336!important}
+.glass-text-sand,.glass-hover-text-sand:hover{color:#fdf5e6!important}
+.glass-text-teal,.glass-hover-text-teal:hover{color:#009688!important}
+.glass-text-yellow,.glass-hover-text-yellow:hover{color:#d2be0e!important}
+.glass-text-white,.glass-hover-text-white:hover{color:#fff!important}
+.glass-text-black,.glass-hover-text-black:hover{color:#000!important}
+.glass-text-grey,.glass-hover-text-grey:hover,.glass-text-gray,.glass-hover-text-gray:hover{color:#757575!important}
+.glass-text-light-grey,.glass-hover-text-light-grey:hover,.glass-text-light-gray,.glass-hover-text-light-gray:hover{color:#f1f1f1!important}
+.glass-text-dark-grey,.glass-hover-text-dark-grey:hover,.glass-text-dark-gray,.glass-hover-text-dark-gray:hover{color:#3a3a3a!important}
+.glass-border-amber,.glass-hover-border-amber:hover{border-color:#ffc107!important}
+.glass-border-aqua,.glass-hover-border-aqua:hover{border-color:#00ffff!important}
+.glass-border-blue,.glass-hover-border-blue:hover{border-color:#2196F3!important}
+.glass-border-light-blue,.glass-hover-border-light-blue:hover{border-color:#87CEEB!important}
+.glass-border-brown,.glass-hover-border-brown:hover{border-color:#795548!important}
+.glass-border-cyan,.glass-hover-border-cyan:hover{border-color:#00bcd4!important}
+.glass-border-blue-grey,.glass-hover-border-blue-grey:hover,.glass-border-blue-gray,.glass-hover-border-blue-gray:hover{border-color:#607d8b!important}
+.glass-border-green,.glass-hover-border-green:hover{border-color:#4CAF50!important}
+.glass-border-light-green,.glass-hover-border-light-green:hover{border-color:#8bc34a!important}
+.glass-border-indigo,.glass-hover-border-indigo:hover{border-color:#3f51b5!important}
+.glass-border-khaki,.glass-hover-border-khaki:hover{border-color:#f0e68c!important}
+.glass-border-lime,.glass-hover-border-lime:hover{border-color:#cddc39!important}
+.glass-border-orange,.glass-hover-border-orange:hover{border-color:#ff9800!important}
+.glass-border-deep-orange,.glass-hover-border-deep-orange:hover{border-color:#ff5722!important}
+.glass-border-pink,.glass-hover-border-pink:hover{border-color:#e91e63!important}
+.glass-border-purple,.glass-hover-border-purple:hover{border-color:#9c27b0!important}
+.glass-border-deep-purple,.glass-hover-border-deep-purple:hover{border-color:#673ab7!important}
+.glass-border-red,.glass-hover-border-red:hover{border-color:#f44336!important}
+.glass-border-sand,.glass-hover-border-sand:hover{border-color:#fdf5e6!important}
+.glass-border-teal,.glass-hover-border-teal:hover{border-color:#009688!important}
+.glass-border-yellow,.glass-hover-border-yellow:hover{border-color:#ffeb3b!important}
+.glass-border-white,.glass-hover-border-white:hover{border-color:#fff!important}
+.glass-border-black,.glass-hover-border-black:hover{border-color:#000!important}
+.glass-border-grey,.glass-hover-border-grey:hover,.glass-border-gray,.glass-hover-border-gray:hover{border-color:#9e9e9e!important}
+.glass-border-light-grey,.glass-hover-border-light-grey:hover,.glass-border-light-gray,.glass-hover-border-light-gray:hover{border-color:#f1f1f1!important}
+.glass-border-dark-grey,.glass-hover-border-dark-grey:hover,.glass-border-dark-gray,.glass-hover-border-dark-gray:hover{border-color:#616161!important}
+.glass-border-pale-red,.glass-hover-border-pale-red:hover{border-color:#ffe7e7!important}.glass-border-pale-green,.glass-hover-border-pale-green:hover{border-color:#e7ffe7!important}
+.glass-border-pale-yellow,.glass-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.glass-border-pale-blue,.glass-hover-border-pale-blue:hover{border-color:#e7ffff!important}.btn-red {background-color: #e81000 !important;}
