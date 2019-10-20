@@ -2256,11 +2256,11 @@ transform: scale(0.98); }
 transition: all .5s ease-in-out;
 padding-top: 15px; }
 .blog .product-blog h2 a {
-font-family: Abril Fatface;
 font-weight: 400;
 font-size: 24px;
 color: black;
-text-align: left; }
+text-align: left; 
+}
 .blog .product-blog h2 a:hover {
 text-decoration: none;
 color: #F44336; }
@@ -2591,21 +2591,22 @@ align-items: center;
   align-items: center;
   cursor: pointer;
 }
-.foter-menu h3{
-  font-weight: bold;
+.footer-menu h3{
+  font-family: Abril Fatface;
+  font-size: 18px;
 }
-.foter-menu ul {
+.footer-menu ul {
   padding: 0px;
   list-style: none;
 }
-.foter-menu ul li a {
+.footer-menu ul li a {
   padding: 4px 0px;
   display: block;
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
 }
-.foter-menu ul li a:hover {
+.footer-menu ul li a:hover {
   color: #F44336;
 }
 /*# sourceMappingURL=style-homev.css.map */

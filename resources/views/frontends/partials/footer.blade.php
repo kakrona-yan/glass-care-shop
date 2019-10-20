@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-md-4">
-                <div class="foter-menu">
+                <div class="footer-menu">
                     <h3>{{ __('page.footer.site_map') }}</h3>
                     <ul> 
                         <li><a href="{{ route('home') }}">{{ __('page.home') }}</a></li>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-xs-6 col-md-5 mb-2">
-                <div class="foter-menu">
+                <div class="footer-menu">
                     <h3>{{ __('page.footer.for_customer') }}</h3>
                     <ul> 
                         <li><a href="{{ route('contact') }}">{{ __('page.contact') }}</a></li>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-3">
-                <div class="info-footer foter-menu">
+                <div class="info-footer footer-menu">
                     <h3>{{ __('page.footer.follow_us') }}</h3>
                     <div class="social">
                         <a href="#" id="link-insta"></a>
