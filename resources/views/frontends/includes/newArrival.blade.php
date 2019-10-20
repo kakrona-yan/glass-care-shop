@@ -1,7 +1,9 @@
 <section id="new-arrival">
     <div class="deal-day count">
-        <h1>New Arrivals</h1>
-        <p>More recently with desktop publishing software</p>
+        <div class="title-center">
+            <h1>New Arrivals</h1>
+            <p>More recently with desktop publishing software</p>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="product-slick slider">
