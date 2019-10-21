@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	'use trick'
-	$(".mobile-menu").on("click",function(){
+	$("#btn-navi").on("click",function(){
 		$("#myNavbar").css("left","0").css("overflow-y","auto");
 		if($(".BG-menu" ).hasClass( "active-bg-menu" )) {
 			$("#myNavbar").css("left","-260px");

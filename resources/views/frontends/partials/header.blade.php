@@ -37,24 +37,25 @@
 						</li>
 					</ul>
 				</div>
-			</div>
-			<div class="navbar-header mobile-menu">
-                <a href="{{ route('home') }}" class="btn-menu-mobile">
-					<i class="fas fa-home"></i>
-                </a>
-                <a href="{{ route('collection') }}" class="btn-menu-mobile">
-					<i class="fas fa-laptop-medical"></i>
-                </a>
-                <a href="{{ route('shop') }}" class="btn-menu-mobile">
-					<i class="fas fa-store-alt"></i>
-                </a>
-                <a href="{{ route('news') }}" class="btn-menu-mobile">
-					<i class="far fa-newspaper"></i>
-                </a>
-				<a href="javascript:void(0)" class="btn-menu-mobile" data-toggle="collapse"
-					data-target="#myNavbar">
-					<i class="fas fa-list-ul"></i>
-                </a>
-			</div>
+            </div>
+            <div class="mobile-navi">
+                <div class="navbar-header mobile-menu">
+                    <a href="{{ route('home') }}" class="btn-menu-mobile">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <a href="{{ route('collection') }}" class="btn-menu-mobile">
+                        <i class="fas fa-laptop-medical"></i>
+                    </a>
+                    <a href="{{ route('shop') }}" class="btn-menu-mobile">
+                        <i class="fas fa-store-alt"></i>
+                    </a>
+                    <a href="{{ route('news') }}" class="btn-menu-mobile">
+                        <i class="far fa-newspaper"></i>
+                    </a>
+                    <a href="javascript:void(0)" id ="btn-navi" class="btn-menu-mobile">
+                        <i class="fas fa-list-ul"></i>
+                    </a>
+                </div>
+		    </div>
 		</div>
 	</header>
