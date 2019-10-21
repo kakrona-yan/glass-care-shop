@@ -9,6 +9,9 @@
   7. Footer / #footer
   
 --------------------------------------*/
+.menu-mobile{
+  display: none;
+}
 .mobile-menu {
     width: 100%;
     background: #333;
@@ -35,6 +38,9 @@
   text-align: center;
 }
 @media (max-width: 991px) {
+  .menu-mobile{
+    display: block;
+  }
   .nav > li {
     position: unset; }
 
