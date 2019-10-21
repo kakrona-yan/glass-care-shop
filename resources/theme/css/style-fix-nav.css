@@ -16,24 +16,25 @@
     width: 100%;
     background: #333;
     bottom: 0px;
+    left: 0;
+    right: 0;
     position: fixed;
     height: 40px;
     border-top: 1px solid #b3b1b1;
     -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
     box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
     padding: 6px 5px;
-    justify-content: flex-end;
-    align-items: center;
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .mobile-menu a {
   color: #bfbfbf;
   padding: 5px 0px;
   text-decoration: none;
-  flex: 0 0 200%;
+  flex: 0 0 20%;
   max-width: 20%;
   text-align: center;
 }
