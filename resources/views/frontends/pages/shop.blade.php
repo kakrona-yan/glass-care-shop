@@ -38,7 +38,7 @@
         <div class="row mlr-0">
             <div class="col-md-6 plr-0">
                 <figure class="img-cavas flex-img">
-                    <img src="{{ URL('theme/img/map-cambodia.png') }}" alt="img-holiwood">
+                    <img src="{{ URL('theme/img/map-cambodia.jpg') }}" alt="img-holiwood">
                 </figure>
             </div>
             <div class="col-md-6 plr-0 shop-bg-right">

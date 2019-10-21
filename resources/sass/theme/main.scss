@@ -212,15 +212,19 @@ a{
     }
     &-map{
         .flex-img{
-            height: 350px;
+            height: 485px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .shop-bg-right{
-            height: 350px;
+            height: 485px;
             background: #e83e8c;
-            padding: 25px 20px;
+            padding: 45px 20px;
+            .list-group-item{
+                border-radius: 0px !important;
+                padding: 20px 15px;
+            }
         }
         & img {
             width: 100%;
