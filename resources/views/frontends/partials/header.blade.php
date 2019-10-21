@@ -40,19 +40,19 @@
             </div>
             <div class="mobile-navi">
                 <div class="navbar-header mobile-menu">
-                    <a href="{{ route('home') }}" class="btn-menu-mobile">
+                    <a href="{{ route('home') }}">
                         <i class="fas fa-home"></i>
                     </a>
-                    <a href="{{ route('collection') }}" class="btn-menu-mobile">
+                    <a href="{{ route('collection') }}">
                         <i class="fas fa-laptop-medical"></i>
                     </a>
-                    <a href="{{ route('shop') }}" class="btn-menu-mobile">
+                    <a href="{{ route('shop') }}">
                         <i class="fas fa-store-alt"></i>
                     </a>
-                    <a href="{{ route('news') }}" class="btn-menu-mobile">
+                    <a href="{{ route('news') }}">
                         <i class="far fa-newspaper"></i>
                     </a>
-                    <a href="javascript:void(0)" id ="btn-navi" class="btn-menu-mobile">
+                    <a href="javascript:void(0)" id ="btn-navi">
                         <i class="fas fa-list-ul"></i>
                     </a>
                 </div>

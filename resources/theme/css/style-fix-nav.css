@@ -34,8 +34,8 @@
   color: #bfbfbf;
   padding: 5px 0px;
   text-decoration: none;
-  flex: 0 0 20%;
-  max-width: 20%;
+  flex: 0 0 19%;
+  max-width: 19%;
   text-align: center;
 }
 @media (max-width: 991px) {
