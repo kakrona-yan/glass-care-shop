@@ -16,10 +16,6 @@
   background: rgba(0, 0, 0, 0.9);
   transition: all .3s ease;
   top: 0; }
-
-* {
-  outline: 0 !important; }
-
 img {
   margin: 0 auto !important; }
 
