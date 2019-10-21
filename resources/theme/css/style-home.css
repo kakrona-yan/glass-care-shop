@@ -1239,11 +1239,7 @@ background: #fff; }
 display: none; }
 
 /*----end----*/
-body {
-background-image: url("img/BG-home1.jpg");
-background-position: -515px 0;
-height: auto;
-background-repeat: no-repeat; }
+body {background-image: url("img/BG-home1.jpg");background-position: -515px 0;height: auto;background-repeat: no-repeat;font-family: "Source Sans Pro", Helvetica, sans-serif;}
 
 @media (min-width: 1400px) {
 .container {
@@ -1485,14 +1481,7 @@ visibility: unset;
 opacity: 1;
 transform: translateX(5px);
 transition: all .35s ease; }
-header .menu-main li a {
-font-family: Poppins;
-font-size: 22px;
-color: #555555;
-text-transform: uppercase;
-padding: 15px 0px;
-font-weight: bold;
-}
+header .menu-main li a {font-size: 18px;color: #555555;text-transform: uppercase;padding: 15px 0px;font-family: "Source Sans Pro", Helvetica, sans-serif;font-weight: 100;}
 header .menu-main li a:hover {
 background-color: unset; 
 color: #F44336;

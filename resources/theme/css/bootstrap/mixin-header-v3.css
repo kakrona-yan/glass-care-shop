@@ -38,12 +38,12 @@
       right: 24px; }
 
   .mobile-menu {
-    position: absolute;
     z-index: 1;
     right: 0;
-    top: 24px; }
+    top: auto; 
+  }
     .mobile-menu .fa-bars {
-      font-size: 22px; }
+      font-size: 18px; }
 
   header {
     padding: 10px 0;

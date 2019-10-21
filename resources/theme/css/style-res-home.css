@@ -537,7 +537,7 @@ figure.bg-input::after {
     position: absolute;
     z-index: 1;
     right: 0;
-    top: 24px; }
+  }
     .mobile-menu .fa-bars {
       font-size: 22px; 
     }
@@ -574,7 +574,7 @@ figure.bg-input::after {
       header .menu-main li {
         padding-right: 0; }
         header .menu-main li:first-child a {
-          padding-left: 15px; }
+          padding-left: 0px; }
         header .menu-main li a {
           padding-right: 0;
           font-size: 14px; }
@@ -654,6 +654,12 @@ figure.bg-input::after {
   .product-slick .slick-next {
     right: 25px; } }
 @media (max-width: 736px) {
+  .navbar-nav{
+    margin: 7.5px 0px;
+  }
+  header .menu-main li{
+    padding: 0px;
+  }
   header .icon-menu {
     padding: 10px 74px 0 0;
     float: right; }
@@ -664,7 +670,7 @@ figure.bg-input::after {
     header .icon-menu .cart-menu .dropdown-menu {
       left: unset; }
   header .menu-main {
-    padding-left: 15px; }
+    padding-left: 0px; }
 
   .blog p {
     padding-bottom: 20px; }
@@ -835,10 +841,6 @@ figure.bg-input::after {
     header .icon-menu::before {
       top: 11px;
       right: 80px; }
-
-  .mobile-menu {
-    top: 16px; }
-
   .slide1 .carousel-caption h1 {
     font-size: 20px;
     padding-bottom: 5px; }
