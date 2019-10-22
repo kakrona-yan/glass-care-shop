@@ -40,16 +40,16 @@
             </div>
             <div class="mobile-navi">
                 <div class="navbar-header mobile-menu">
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('home') }}" class="menu-rs {{ Route::currentRouteName() =='home' ? 'active' : '' }}">
                         <i class="fas fa-home"></i>
                     </a>
-                    <a href="{{ route('collection') }}">
+                    <a href="{{ route('collection') }}" class="menu {{Route::currentRouteName() =='collection' ? 'active' : '' }}">
                         <i class="fas fa-laptop-medical"></i>
                     </a>
-                    <a href="{{ route('shop') }}">
+                    <a href="{{ route('shop') }}" class="menu {{ Route::currentRouteName() =='shop' ? 'active' : '' }}">
                         <i class="fas fa-store-alt"></i>
                     </a>
-                    <a href="{{ route('news') }}">
+                    <a href="{{ route('news') }}" class="menu {{Route::currentRouteName() =='news' ? 'active' : '' }}">
                         <i class="far fa-newspaper"></i>
                     </a>
                     <a href="javascript:void(0)" id ="btn-navi">

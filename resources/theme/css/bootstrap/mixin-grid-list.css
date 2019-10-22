@@ -85,7 +85,7 @@ ul.breadcrumb li + li:before {
   font-family: Poppins;
   font-weight: 500;
   font-size: 16px;
-  color: black;
+  color:#f783ac;
   color: #888888;
   content: ">"; }
 
@@ -94,17 +94,17 @@ ul.breadcrumb li a {
   font-family: Poppins;
   font-weight: 500;
   font-size: 14px;
-  color: black;
+  color:#f783ac;
   color: #888888;
   text-decoration: none; }
 
 ul.breadcrumb li:last-child a {
-  color: black;
+  color:#f783ac;
   font-weight: bold; }
 
 /* Add a color on mouse-over */
 ul.breadcrumb li a:hover {
-  color: black;
+  color:#f783ac;
   text-decoration: none; }
 
 @media all and (min-width: 320px) {
@@ -150,13 +150,13 @@ ul.breadcrumb li a:hover {
   height: 14px;
   cursor: pointer;
   background: none;
-  background-color: black;
+  background-color:#f783ac;
   border: none;
   outline: none; }
 
 .ui-slider-range {
   background: none;
-  background-color: black;
+  background-color:#f783ac;
   border: none; }
 
 #slider-3 {
@@ -170,13 +170,13 @@ ul.breadcrumb li a:hover {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color: black;
+  color:#f783ac;
   outline: 0; }
 
 /*end*/
 /*---------*/
 .active-btn {
-  background: black !important;
+  background:#f783ac !important;
   color: #fff; }
 
 /*custom select*/
@@ -192,7 +192,7 @@ ul.breadcrumb li a:hover {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color: black;
+  color:#f783ac;
   width: 154px;
   height: 36px;
   margin-left: 20px; }
@@ -339,7 +339,7 @@ figure.bg-input::after {
       font-family: Poppins;
       font-weight: 400;
       font-size: 14px;
-      color: black;
+      color:#f783ac;
       color: #b8b8b8; }
     .pro-list .product-title-flower .star {
       padding: 20px 0 30px 0; }
@@ -348,7 +348,7 @@ figure.bg-input::after {
         font-family: Poppins;
         font-weight: 400;
         font-size: 14px;
-        color: black;
+        color:#f783ac;
         color: #b8b8b8;
         padding-left: 10px; }
         @media (max-width: 375px) {
@@ -363,7 +363,7 @@ figure.bg-input::after {
         font-family: Abril Fatface;
         font-weight: 400;
         font-size: 18px;
-        color: black;
+        color:#f783ac;
         padding: 16px 30px;
         background: #eeeeee;
         color: #888888;
@@ -373,7 +373,7 @@ figure.bg-input::after {
             padding: 16px 15px; } }
         .pro-list .product-title-flower .add-cart .btn-add-cart:hover {
           text-decoration: none;
-          background: black;
+          background:#f783ac;
           color: #fff; }
       .pro-list .product-title-flower .add-cart .list-icon {
         display: inline-block;
@@ -385,7 +385,7 @@ figure.bg-input::after {
         margin-left: 15px;
         transition: all .3s ease; }
         .pro-list .product-title-flower .add-cart .list-icon:hover {
-          color: black; }
+          color:#f783ac; }
   .pro-list .product-icon-flower {
     display: none; }
 
