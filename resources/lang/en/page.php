@@ -15,6 +15,7 @@ return [
         'follow_us' => 'FOLLOW US',
         'copy_right' => 'Copyright',
         'power_by' => '2019 By GCS',
-        'mail' => 'galssCare168@gmail.com'
+        'mail' => 'glasscarescreen@gmail.com',
+        'tel' => '(+855) 093 399 330',
     ]
 ];

@@ -721,13 +721,13 @@ text-align: left; }
 font-family: Poppins;
 font-weight: 600;
 font-size: 24px;
-color:#f783ac;
+color:#333333;
 margin-top: 0; }
 .modal-content .detail p {
 font-family: Poppins;
 font-weight: 400;
 font-size: 14px;
-color:#f783ac;
+color: #333333;;
 color: #888888;
 padding-bottom: 20px; }
 .modal-content .detail .star {
@@ -746,7 +746,7 @@ padding-left: 10px; }
 font-family: Poppins;
 font-weight: 600;
 font-size: 24px;
-color:#f783ac;
+color: #333333;
 margin-right: 230px;
 padding-bottom: 30px;
 border-bottom: 1px solid #ddd; 
@@ -1619,7 +1619,7 @@ padding-bottom: 0px; }
 text-align: right;
 margin-bottom: 10px; }
 .slider-banner .carousel-indicators li {
-border: 4px solid #000000; 
+border: 4px solid #f783ac; 
 width: 20px;
 height: 20px;
 }
@@ -2074,7 +2074,7 @@ right: 0;
 letter-spacing: 1px; }
 
 .count {position: relative;background: #dbe7e9;margin-top: 0px;padding-bottom: 20px;}
-.count .title-center h1 {font-family: Abril Fatface;font-weight: 400;font-size: 55px;color:#f783ac;text-align: center;margin: 0px auto;padding-top: 30px;}
+.count .title-center h1 {font-family: Abril Fatface;font-weight: 400;font-size: 55px;color: #333333;text-align: center;margin: 0px auto;padding-top: 30px;}
 .count .title-center p {
 font-family: Poppins;
 font-weight: 400;
@@ -2150,7 +2150,7 @@ margin-top: 20px; }
 font-family: Poppins;
 font-weight: 400;
 font-size: 16px;
-color:#f783ac; }
+color:#333333; }
 .product-slick .product-slic .product-title-slic h5 a:hover {
 text-decoration: none;
 color: #f783ac; }
@@ -2162,7 +2162,7 @@ padding-right: 2px; }
 font-family: Poppins;
 font-weight: 600;
 font-size: 18px;
-color:#f783ac;
+color:#333333;
 padding-top: 5px; }
 .product-slick .product-slic .product-title-slic .prince .strike {
 font-size: 14px;
@@ -2193,7 +2193,9 @@ background-color: white;
 border-radius: 50%;
 font-size: 20px;
 padding-top: 18px;
-margin-right: 8px; }
+margin-right: 8px; 
+box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
 .product-slick .product-slic .product-image-slic .product-icon-slic a {
 transition: all .3s ease;
 color: lightgrey; }
@@ -2233,14 +2235,19 @@ padding-bottom: 15px; }
 font-family: Abril Fatface;
 font-weight: 400;
 font-size: 60px;
-color:#f783ac;
+color: #333333;
 text-align: center;
-padding-top: 30px; }
+padding-top: 30px; 
+}
+.product-blog a img{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  display: block;
+}
 .blog p {
 font-family: Poppins;
 font-weight: 400;
 font-size: 16px;
-color:#f783ac;
+color: #333333;
 text-align: center;
 padding-bottom: 20px;
 color: #888888; }
@@ -2249,7 +2256,7 @@ opacity: .7;
 transform: scale(0.98); }
 .blog .product-blog img {
 transition: all .5s ease-in-out;
-padding-top: 15px; }
+margin-top: 15px; }
 .blog .product-blog h2 a {
 font-weight: 400;
 font-size: 24px;
@@ -2263,10 +2270,10 @@ color: #f783ac; }
 font-family: Poppins;
 font-weight: 400;
 font-size: 14px;
-columns: #333333;;
+color: #333333;
 text-align: left;
 width: 90%;
-columns: #333333;; }
+}
 .blog .product-blog .time-blog {
 padding-bottom: 15px; }
 .blog .product-blog .time-blog .time {
@@ -2495,14 +2502,14 @@ display: inline-block;
 font-family: Poppins;
 font-weight: 300;
 font-size: 14px;
-color:#f783ac;
+color:#333333;
 padding-top: 40px; }
 footer span#gmail-footer {
 padding-top: 45px; }
 footer span#gmail-footer a {
 font-weight: 400;
 font-size: 13px;
-color:#f783ac; }
+color:#333333; }
 footer span#gmail-footer a:hover {
 text-decoration: none;
 color: #f783ac; }
@@ -2547,13 +2554,13 @@ color: #f2f2f2;
 margin-left: -3px;
 margin-right: -3px;
 }
-.item {
+.item-1 {
 padding-left: 3px;
 padding-right: 3px;
 padding-bottom: 6px;
 }
 .item-show{
-max-height: 415px;
+max-height: 400px;
 height: 100%;
 }
 .category .modal-body{
@@ -2622,7 +2629,8 @@ width: 100%; } }
 width: 50%; } }
 @media (min-width: 768px) {
 .pro-list .product-image-flower {
-width: 40%; } }
+  width: 33.33333333%; } 
+}
 .pro-list .product-title-flower {
 float: left;
 text-align: left !important;
@@ -2637,7 +2645,7 @@ width: 50%;
 padding: 0 0 0 25px; } }
 @media (min-width: 768px) {
 .pro-list .product-title-flower {
-width: 60%; } }
+  width: 58.33333333%; } }
 .pro-list .product-title-flower h5 {
 margin-top: 0; }
 .pro-list .product-title-flower h5 a {
@@ -2765,7 +2773,7 @@ overflow: hidden;
 font-family: Abril Fatface;
 font-weight: 400;
 font-size: 30px;
-color:#f783ac;
+color:#333333;
 margin-top: 0;
 margin: 0 0 5px 15px; 
 }
@@ -2773,7 +2781,7 @@ margin: 0 0 5px 15px;
 font-family: Poppins;
 font-weight: 600;
 font-size: 18px;
-color:#f783ac;
+color: #333333;
 padding: 25px 0 10px 0; 
 }
 .message .message-contact form label span {
