@@ -41,7 +41,7 @@
                     <div class="item-slide">
                         <img src="{{ URL('theme/img/slider-3.jpg') }}" alt="About glass care shop">
                         <div class="carousel-caption">
-                            <h1>news of Glass<br>care shop.</h1>
+                            <h1>News of Glass<br>care shop.</h1>
                             <a href="{{ route('news') }}">News</a>
                         </div>
                     </div>
