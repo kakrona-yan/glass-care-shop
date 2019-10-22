@@ -363,3 +363,15 @@ a{
         color: $pink-2;
     }
 }
+/* 
+* 
+*/
+@media (max-width: 991px) {
+    .show-img{
+        .container{
+            &::before {
+                width: calc(100% + 0px);
+            }
+        }
+    }
+}
