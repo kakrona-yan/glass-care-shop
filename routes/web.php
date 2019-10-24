@@ -63,14 +63,14 @@ Route::group([
     Route::get('/look', 'PagesController@look')->name('look');
     Route::get('/contact', 'PagesController@contact')->name('contact');
     Route::get('/shop', 'PagesController@shop')->name('shop');
-   // collection
-    Route::group(['prefix' => 'collections', 'collections' => 'user.'], function () {
+    // collection
+    Route::group(['prefix' => 'collections', 'as' => 'collections.'], function () {
         Route::get('/', 'CollectionsController@getCollection')->name('collection');
         Route::get('/{slug}', 'CollectionsController@getCollectionBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('collection.detail');
     });
     // news
-    Route::group(['prefix' => 'news', 'news' => 'news.'], function () {
+    Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
         Route::get('/', 'BlogsController@getNews')->name('news');
         Route::get('/{slug}', 'BlogsController@getNewsBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('news.detail');
