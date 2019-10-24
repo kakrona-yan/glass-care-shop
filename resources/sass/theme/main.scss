@@ -376,7 +376,51 @@ a{
     }
 }
 /* 
-* 
+* product detail
+*/
+.content-product{
+    .product-title{
+        h5{
+            margin-bottom: 10px;
+            a{
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+        p{
+            display: inline-block !important;
+            font-weight: 400;
+            color: black;
+            color: #b8b8b8
+        }
+        .prince {
+            font-weight: 600;
+            font-size: 18px;
+            color: black;
+            padding-top: 5px;
+            margin-bottom: 20px;
+            .strike {
+                font-size: 14px;
+                font-weight: 400;
+                color: lightgrey;
+                padding-left: 10px;
+            }
+        }
+    }
+    .product-decription{
+        border-top: 1px solid #e9e9e9;
+        h5{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        ul{
+            margin: 0;
+            padding: 0px 0px 0px 15px;
+        }
+    }
+}
+/* 
+* Resposive
 */
 @media (max-width: 991px) {
     .show-img{

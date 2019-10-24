@@ -47,7 +47,7 @@
                                         readable<br class="hidden-md hidden-sm hidden-xs"> content of a page when looking at
                                         its layout.</p>
                                     <div class="prince">Price:<span>$250.9</span></div>
-                                    <div class="decription-product">
+                                    <div class="product-decription">
                                         <ul class="list-detail">
                                             <li>DESIGNED FOR iPHONE - The Purity Screen Protector for iPhone 8 / 7 is an ultra-thin tempered glass screen protector designed to provide ultimate protection for your iPhone's screen.</li>     
                                         </ul>

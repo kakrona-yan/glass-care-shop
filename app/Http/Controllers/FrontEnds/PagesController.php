@@ -18,16 +18,6 @@ class PagesController extends Controller
     }
 
     /**
-     * Show the application collection.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function collection()
-    {
-        return view('frontends.pages.collection.index');
-    }
-
-    /**
      * Show the application look.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -55,15 +45,5 @@ class PagesController extends Controller
     public function shop()
     {
         return view('frontends.pages.shop');
-    }
-
-    /**
-     * Show the application news.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function news()
-    {
-        return view('frontends.pages.news.index');
     }
 }

@@ -10,13 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 /**
  * Routes for BackEnds
  */
-Route::group([
+Route::group(
+    [
         'prefix' => 'admin',
         'namespace' => 'Backends'
-    ], function () {
+    ],
+    function () {
         Route::get('/login', 'Auth\LoginController@showLogin')->name('login');
         Route::post('/login', 'Auth\LoginController@Login')->name('login.post');
         Route::post('/logout', 'Auth\LoginController@Logout')->name('logout');
@@ -57,9 +60,19 @@ Route::group([
     Route::get('/', 'HomesController@home')->name('home');
     // Pages
     Route::get('/about', 'PagesController@about')->name('about');
-    Route::get('/collection', 'PagesController@collection')->name('collection');
     Route::get('/look', 'PagesController@look')->name('look');
     Route::get('/contact', 'PagesController@contact')->name('contact');
     Route::get('/shop', 'PagesController@shop')->name('shop');
-    Route::get('/news', 'PagesController@news')->name('news');
+   // collection
+    Route::group(['prefix' => 'collections', 'collections' => 'user.'], function () {
+        Route::get('/', 'CollectionsController@getCollection')->name('collection');
+        Route::get('/{slug}', 'CollectionsController@getCollectionBySlug')
+            ->where('slug', '[A-Za-z0-9_\-]+')->name('collection.detail');
+    });
+    // news
+    Route::group(['prefix' => 'news', 'news' => 'news.'], function () {
+        Route::get('/', 'BlogsController@getNews')->name('news');
+        Route::get('/{slug}', 'BlogsController@getNewsBySlug')
+            ->where('slug', '[A-Za-z0-9_\-]+')->name('news.detail');
+    });
 });
