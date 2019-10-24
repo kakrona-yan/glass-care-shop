@@ -1142,7 +1142,7 @@
             if (isNatSizeSMScr || (gcBase.config.isOverlayFullImage == true)) {
 
                 gcBase.gcOverlayCompress.hide();
-                gcBase.gcOverlayEnlarge.hide();
+                gcBase.gcOverlayEnlarge.show();
                 gcBase.overlayNatSizes();
             }
             else {

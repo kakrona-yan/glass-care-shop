@@ -305,27 +305,27 @@ bottom: 0;
 }
 
 .gc-overlay-fit {
-padding: 4em 5.5em 1em 5.5em;
-overflow: hidden;
+    padding: 4em 5.5em 1em 5.5em;
+    overflow: hidden;
 }
 
 .gc-overlay-display {
-position: relative;
-top: 0;
-left: 0;
-display: block;
-cursor: crosshair;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    cursor: crosshair;
 }
 
 .gc-overlay-display-center {
-max-width: 100%;
-max-height: 100%;
-top: 50%;
--webkit-transform: translate(-50%, -50%);
--moz-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
--o-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .gc-overlay-display-vcenter {
@@ -515,10 +515,10 @@ right: -2px;
 }
 
 .gc-icon-enlarge {
-position: relative;
-float: right;
-margin-right: 0.25em;
-font-size: 2em;
+    position: relative;
+    float: right;
+    margin-right: 0.25em;
+    font-size: 2em;
 }
 
 .gc-icon-enlarge::before {
