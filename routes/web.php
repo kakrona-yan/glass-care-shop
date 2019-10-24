@@ -54,7 +54,7 @@ Route::group(
  * Routes for FrontEnds
  */
 Route::group([
-    'namespace' => 'FrontEnds'
+    'namespace' => 'Frontends'
 ], function () {
     // Home page
     Route::get('/', 'HomesController@home')->name('home');
