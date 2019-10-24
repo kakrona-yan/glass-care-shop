@@ -32,11 +32,11 @@ class CollectionsController extends Controller
     public function getCollectionBySlug($slug)
     {
         try {
-            return view('frontends.pages.collection.collection-detail', [
+            return view('frontends.pages.collections.collection-detail', [
                 'slug' => $slug,
             ]);
         } catch (\ValidationException $e) {
-            return exceptionError($e, 'frontends.pages.collection.collection-detail');
+            return exceptionError($e, 'frontends.pages.collections.collection-detail');
         }
     }
 }
