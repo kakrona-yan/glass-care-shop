@@ -1,5 +1,8 @@
 @extends('frontends.layouts.master')
 @section('title', 'Glass care shop | collection')
+@push('head-styles')
+    <link rel="stylesheet" type="text/css" href="{{ URL('theme/css/product-zoom.css') }}">
+@endpush
 @section('content')
 <section class="banner-top">
     <div class="container">
@@ -23,7 +26,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-xs-12 mb-10">
-
+                <div class="">
+                    <ul id="glasscase" class="gc-start">
+                        <li><img src="{{ URL('/theme/img/890x490.png') }}" alt="Text" data-gc-caption="Your caption text" /></li>
+                        <li><img src="{{ URL('/theme/img/product2.jpg') }}" alt="Text" /></li>
+                        <li><img src="{{ URL('/theme/img/product3.jpg') }}" alt="Text" /></li>
+                        <li><img src="{{ URL('/theme/img/product4.jpg') }}" alt="Text" /></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-5 col-xs-12 mb-10">
                 <div class="product-title">
@@ -42,3 +52,11 @@
     </div>
 </section>
 @endsection
+@push('footer-script')
+<script src="{{ URL('theme/js/product-zoom.js') }}"></script>
+<script>
+    $(function(){
+         $('#glasscase').glassCase({ 'thumbsPosition': 'bottom', 'widthDisplay' : 575});
+    });
+</script>
+@endpush
