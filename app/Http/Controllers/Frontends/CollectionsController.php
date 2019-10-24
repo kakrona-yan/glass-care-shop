@@ -14,8 +14,8 @@ class CollectionsController extends Controller
      */
     public function getCollection()
     {
-        $slug = 'iphone-x';
         try {
+            $slug = 'iphone-x';
             return view('frontends.pages.collections.index', [
                 'slug' => $slug,
             ]);
