@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-5 col-xs-12 mb-10">
                 <div class="product-title">
-                    <h5><a href="{{ route('collection.detail', $slug) }}">iPhone X</a></h5>
+                    <h5><a href="{{ route('collections.detail', $slug) }}">iPhone X</a></h5>
                     <p>HL34-LS-0428</p>
                     <div class="prince">$207.2<s class="strike">$250.9</s></div>
                     <div class="product-decription">

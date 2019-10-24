@@ -34,9 +34,9 @@
         </div>
         <div class="row">
             <!-- sidebar -->
-            @include('frontends.pages.collection.includes.sidebar-left')
+            @include('frontends.pages.collections.includes.sidebar-left')
             <!-- content collection-->
-             @include('frontends.pages.collection.includes.content')
+             @include('frontends.pages.collections.includes.content')
         </div>
     </div>
 </section>

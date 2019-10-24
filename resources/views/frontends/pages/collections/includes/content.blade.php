@@ -3,13 +3,13 @@
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 product-flower">
             <div class="product-image-flower">
                 <figure class="img-cavas">
-                    <a href="{{ route('collection.detail', $slug) }}">
+                    <a href="{{ route('collections.detail', $slug) }}">
                         <img src="{{ URL('theme/img/430x490.png') }}" class="img-responsive" alt="img-holiwood">
                     </a>
                 </figure>
             </div>
             <div class="product-title-flower">
-                <h5><a href="{{ route('collection.detail', $slug) }}">iPhone X</a></h5>
+                <h5><a href="{{ route('collections.detail', $slug) }}">iPhone X</a></h5>
                 <p class="p-title">HL34-LS-0428</p>
                 <div class="prince">$207.2<s class="strike">$250.9</s></div>
                 <div class="product-decription p-title">
