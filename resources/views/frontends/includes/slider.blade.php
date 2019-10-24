@@ -24,7 +24,7 @@
                         <img src="{{ URL('theme/img/slider-2.jpg') }}" alt="About glass care shop">
                         <div class="carousel-caption">
                             <h1>Collection of Glass<br>care shop.</h1>
-                            <a href="{{ route('collection') }}">Collection</a>
+                            <a href="{{ route('collections.index') }}">Collection</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <img src="{{ URL('theme/img/slider-3.jpg') }}" alt="About glass care shop">
                         <div class="carousel-caption">
                             <h1>News of Glass<br>care shop.</h1>
-                            <a href="{{ route('news') }}">News</a>
+                            <a href="{{ route('news.index') }}">News</a>
                         </div>
                     </div>
                 </div>

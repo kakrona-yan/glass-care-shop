@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item-1">
                         <figure id="figure-show-2" class="item-show">
-                            <a href="{{ route('collection') }}">
+                            <a href="{{ route('collections.index') }}">
                                 <img src="{{ URL('theme/img/430x490.png') }}" class="img-responsive" alt="{{ __('page.collection') }}">
                                 <div class="show-title">
                                     <h4>{{ __('page.collection') }}</h4>

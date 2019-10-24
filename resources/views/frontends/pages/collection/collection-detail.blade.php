@@ -15,7 +15,7 @@
                     <a href="{{ route('home') }}"><i class="fas fa-home"></i> {{ __('page.home') }}</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <a href="{{ route('collection') }}"> {{ __('page.collection') }}</a>
+                    <a href="{{ route('collections.index') }}"> {{ __('page.collection') }}</a>
                 </li>
                 <li class="breadcrumb-item" aria-current="page">Glass iPhone X</li>
             </ol>

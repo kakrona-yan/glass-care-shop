@@ -65,13 +65,13 @@ Route::group([
     Route::get('/shop', 'PagesController@shop')->name('shop');
     // collection
     Route::group(['prefix' => 'collections', 'as' => 'collections.'], function () {
-        Route::get('/', 'CollectionsController@getCollection')->name('collection');
+        Route::get('/', 'CollectionsController@getCollection')->name('index');
         Route::get('/{slug}', 'CollectionsController@getCollectionBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('collection.detail');
     });
     // news
     Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
-        Route::get('/', 'BlogsController@getNews')->name('news');
+        Route::get('/', 'BlogsController@getNews')->name('index');
         Route::get('/{slug}', 'BlogsController@getNewsBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('news.detail');
     });

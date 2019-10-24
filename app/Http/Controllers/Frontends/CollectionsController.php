@@ -16,11 +16,11 @@ class CollectionsController extends Controller
     {
         $slug = 'iphone-x';
         try {
-            return view('frontends.pages.collection.index', [
+            return view('frontends.pages.collections.index', [
                 'slug' => $slug,
             ]);
         } catch (\ValidationException $e) {
-            return exceptionError($e, 'frontends.pages.collection.index');
+            return exceptionError($e, 'frontends.pages.collections.index');
         }
     }
 

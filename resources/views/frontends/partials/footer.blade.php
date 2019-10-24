@@ -7,10 +7,10 @@
                     <ul> 
                         <li><a href="{{ route('home') }}">{{ __('page.home') }}</a></li>
                         <li><a href="{{ route('about') }}">{{ __('page.about') }}</a></li>
-                        <li><a href="{{ route('collection') }}">{{ __('page.collection') }}</a></li>
+                        <li><a href="{{ route('collections.index') }}">{{ __('page.collection') }}</a></li>
                         <li><a href="{{ route('look') }}">{{ __('page.look') }}</a></li>
                         <li><a href="{{ route('shop') }}">{{ __('page.shop') }}</a></li>
-                        <li><a href="{{ route('news') }}">{{ __('page.news') }}</a></li>
+                        <li><a href="{{ route('news.index') }}">{{ __('page.news') }}</a></li>
                     </ul>
                 </div>
             </div>

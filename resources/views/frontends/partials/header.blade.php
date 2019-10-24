@@ -8,7 +8,7 @@
                             <figure class="hidden-sm hidden-md hidden-xs hv-menu"></figure>
                         </li>
                         <li>
-                            <a href="{{ route('collection') }}">{{ __('page.collection') }}</a>
+                            <a href="{{ route('collections.index') }}">{{ __('page.collection') }}</a>
                             <figure class="hidden-sm hidden-md hidden-xs hv-menu"></figure>
                         </li>
                         <li>
@@ -29,7 +29,7 @@
                             <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                         </li>
                         <li>
-                            <a href="{{ route('news') }}">{{ __('page.news') }}</a>
+                            <a href="{{ route('news.index') }}">{{ __('page.news') }}</a>
                             <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                         </li>
 						<li>
@@ -43,13 +43,13 @@
                     <a href="{{ route('home') }}" class="menu-rs {{ Route::currentRouteName() =='home' ? 'active' : '' }}">
                         <i class="fas fa-home"></i>
                     </a>
-                    <a href="{{ route('collection') }}" class="menu {{Route::currentRouteName() =='collection' ? 'active' : '' }}">
+                    <a href="{{ route('collections.index') }}" class="menu {{Route::currentRouteName() =='collection' ? 'active' : '' }}">
                         <i class="fas fa-laptop-medical"></i>
                     </a>
                     <a href="{{ route('shop') }}" class="menu {{ Route::currentRouteName() =='shop' ? 'active' : '' }}">
                         <i class="fas fa-store-alt"></i>
                     </a>
-                    <a href="{{ route('news') }}" class="menu {{Route::currentRouteName() =='news' ? 'active' : '' }}">
+                    <a href="{{ route('news.index') }}" class="menu {{Route::currentRouteName() =='news' ? 'active' : '' }}">
                         <i class="far fa-newspaper"></i>
                     </a>
                     <a href="javascript:void(0)" id ="btn-navi">
