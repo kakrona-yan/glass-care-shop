@@ -12,7 +12,7 @@
         </a>
         @foreach ($menus as $key => $menu)
             @if($menu['role_type'])
-                <li class="nav-item {{$menu['route'] =='dashboard' ? 'active' : '' }}">
+                <li class="nav-item {{$menu['route'] == Route::currentRouteName() ? 'active' : '' }}">
                     <a class="nav-link" href="{{ $menu['route'] ? route($menu['route']) : '#' }}"
                         @if(isset($menu['sub_menu']) && $menu['sub_menu'] !=null)
                         data-toggle="collapse"

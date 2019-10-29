@@ -2,5 +2,10 @@
 return [
     'shop_name' => 'GCS',
     'dashboard' => 'Dashboard',
-    'user' => 'User management',
+    'user' => 'Users',
+    'category' => 'Categories',
+    'product' => 'Products',
+    'news' => 'News',
+    'setting' => 'Setting',
+    'view_site' => 'View Site'
 ];

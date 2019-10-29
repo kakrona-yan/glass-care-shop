@@ -12,7 +12,7 @@ class BlogsController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getNews(Requst $request)
+    public function getNews(Request $request)
     {
         return view('frontends.pages.news.index');
     }

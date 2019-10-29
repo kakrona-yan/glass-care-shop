@@ -32,7 +32,24 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('dashboard', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
         });
+        
         Gate::define('user.index', function ($userRole) {
+            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+        });
+        
+        Gate::define('product.index', function ($userRole) {
+            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+        });
+
+        Gate::define('category.index', function ($userRole) {
+            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+        });
+
+        Gate::define('setting.index', function ($userRole) {
+            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+        });
+
+        Gate::define('news.index', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
         });
     }

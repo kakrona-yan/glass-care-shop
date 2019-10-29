@@ -10,5 +10,7 @@ return [
     'return' => 'Back',
     'thumbnail' => 'Thumbnail',
     'add_thumbnail' => 'Add thumbnail',
-    'delete' => 'Detete'
+    'delete' => 'Detete',
+    'ok' => 'OK',
+    'close' => 'Close'
 ];

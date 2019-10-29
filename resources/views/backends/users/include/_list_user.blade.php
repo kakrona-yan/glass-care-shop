@@ -3,7 +3,7 @@
             <!-- Circle Buttons -->
             <div class="card mb-4">
                 <div class="card-body">
-                    @if( Session::has('message_danger') )
+                    @if( Session::has('flash_danger') )
                         <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('flash_danger') }}</p>
                     @else
                         <form id="user-search" action="{{ route('user.index') }}" method="GET" class="form form-horizontal form-search form-inline mb-2">

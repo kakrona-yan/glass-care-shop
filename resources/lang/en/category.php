@@ -1,21 +1,19 @@
 <?php
 
 return [
-    'title' => 'Glass care shop | Users',
-    'sub_title' => 'Users',
+    'title' => 'Glass care shop | Categories',
+    'sub_title' => 'Categories',
     'confirm_delete' => 'confirm delete',
     'list' => [
-        'title' => 'User list',
+        'title' => 'Category list',
         'filter' => 'Filter',
         'thumbnail' => 'Photo',
         'name' => 'Name',
-        'role' => 'Role',
-        'email' => 'Email',
+        'categories' => 'Categories',
+        'category_type' => 'Category type',
         'active' => 'Active',
         'action' => 'Action',
-        'password' => 'Password'
     ],
-    'admin' => 'Admin',
-    'normal' => 'Normal',
+    'select' => 'please select',
     'confirm_msg' => 'Do you want to delete this data??'
 ];

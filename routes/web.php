@@ -46,6 +46,66 @@ Route::group(
                 Route::post('/destroy', 'UsersController@destroy')
                     ->name('destroy');
             });
+            // Category Route
+            Route::group(['prefix' => 'categories', 'as' => 'category.'], function () {
+                Route::get('/', 'CategoriesController@index')
+                    ->name('index');
+                Route::get('/create', 'CategoriesController@create')
+                    ->name('create');
+                Route::post('/store', 'CategoriesController@store')
+                    ->name('store');
+                Route::get('/show/{id}', 'CategoriesController@show')
+                    ->name('show');
+                Route::get('/edit/{id}', 'CategoriesController@edit')
+                    ->name('edit');
+                Route::post('/update/{id}', 'CategoriesController@update')
+                    ->name('update');
+                Route::post('/destroy', 'CategoriesController@destroy')
+                    ->name('destroy');
+            });
+            // Category Route
+            Route::group(['prefix' => 'products', 'as' => 'product.'], function () {
+                Route::get('/', 'ProductsController@index')
+                    ->name('index');
+                Route::get('/create', 'ProductsController@create')
+                    ->name('create');
+                Route::post('/store', 'ProductsController@store')
+                    ->name('store');
+                Route::get('/show/{id}', 'ProductsController@show')
+                    ->name('show');
+                Route::get('/edit/{id}', 'ProductsController@edit')
+                    ->name('edit');
+                Route::post('/update/{id}', 'ProductsController@update')
+                    ->name('update');
+                Route::post('/destroy', 'ProductsController@destroy')
+                    ->name('destroy');
+            });
+            // Category Route
+            Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
+                Route::get('/', 'NewsController@index')
+                    ->name('index');
+                Route::get('/create', 'NewsController@create')
+                    ->name('create');
+                Route::post('/store', 'NewsController@store')
+                    ->name('store');
+                Route::get('/show/{id}', 'NewsController@show')
+                    ->name('show');
+                Route::get('/edit/{id}', 'NewsController@edit')
+                    ->name('edit');
+                Route::post('/update/{id}', 'NewsController@update')
+                    ->name('update');
+                Route::post('/destroy', 'NewsController@destroy')
+                    ->name('destroy');
+            });
+            // Setting Route
+            Route::group(['prefix' => 'settings', 'as' => 'setting.'], function () {
+                Route::get('/', 'SettingsController@index')
+                    ->name('index');
+                Route::get('/create', 'SettingsController@create')
+                    ->name('create');
+                Route::post('/storeOrUpdate', 'SettingsController@storeOrUpdate')
+                    ->name('storeOrUpdate');
+            });
         });
     }
 );

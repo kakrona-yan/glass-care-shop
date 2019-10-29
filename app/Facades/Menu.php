@@ -35,6 +35,38 @@ class Menu
                 'role_type' => $this->RoleType('user.index'),
                 'sub_menu' => null
             ],
+            [
+                // category management
+                'route' => 'category.index',
+                'icon' => 'fas fa-tags',
+                'label' => __('menu.category'),
+                'role_type' => $this->RoleType('category.index'),
+                'sub_menu' => null
+            ],
+            [
+                // Product Management
+                'route' => 'product.index',
+                'icon' => 'fas fa-laptop-medical',
+                'label' => __('menu.product'),
+                'role_type' => $this->RoleType('product.index'),
+                'sub_menu' => null
+            ],
+            [
+                // Setting management
+                'route' => 'news.index',
+                'icon' => 'far fa-newspaper',
+                'label' => __('menu.news'),
+                'role_type' => $this->RoleType('news.index'),
+                'sub_menu' => null
+            ],
+            [
+                // Setting management
+                'route' => 'setting.index',
+                'icon' => 'fas fa-cogs',
+                'label' => __('menu.setting'),
+                'role_type' => $this->RoleType('setting.index'),
+                'sub_menu' => null
+            ],
         ];
     }
     /*
