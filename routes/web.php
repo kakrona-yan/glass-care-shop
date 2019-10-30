@@ -63,7 +63,7 @@ Route::group(
                 Route::post('/destroy', 'CategoriesController@destroy')
                     ->name('destroy');
             });
-            // Category Route
+            //  Product Route
             Route::group(['prefix' => 'products', 'as' => 'product.'], function () {
                 Route::get('/', 'ProductsController@index')
                     ->name('index');
@@ -80,7 +80,7 @@ Route::group(
                 Route::post('/destroy', 'ProductsController@destroy')
                     ->name('destroy');
             });
-            // Category Route
+            // News Route
             Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
                 Route::get('/', 'NewsController@index')
                     ->name('index');

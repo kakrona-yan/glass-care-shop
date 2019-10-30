@@ -32,10 +32,10 @@
             </div>
         </div>
         <div class="row">
-            <!-- sidebar -->
-            @include('frontends.pages.collections.includes.sidebar-left')
             <!-- content collection-->
-             @include('frontends.pages.collections.includes.content')
+            @include('frontends.pages.collections.includes.content')
+             <!-- sidebar -->
+            @include('frontends.pages.collections.includes.sidebar-left')
         </div>
     </div>
 </section>

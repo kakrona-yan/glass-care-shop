@@ -419,6 +419,26 @@ a{
         }
     }
 }
+.float-right {
+    float: right;
+}
+// product list
+.product{
+    &-box{
+        border-radius: 4px;
+        box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+        overflow: hidden;
+        background-color: hsl(0, 0%, 100%);
+        &--category {
+            color: #444;
+            font-size: 12px;
+            padding-bottom: 5px;
+        }
+        &--content {
+            padding: 10px;
+        }
+    }
+}
 /* 
 * Resposive
 */
