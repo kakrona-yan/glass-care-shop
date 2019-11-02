@@ -7,17 +7,19 @@
         <div class="container">
             <div class="row">
                 <div class="product-slick slider">
-                    <div class="product-slic">
+                    <div class="product-slic product-box">
                         <div class="product-image-slic">
-                            <a href="#"><img src="{{ URL('theme/img/340x420.png') }}" class="img-responsive" alt="holiwood"></a>
+                            <figure class="img-cavas mx-h-200">
+                                <a href="{{ route('collections.index') }}">
+                                    <img src="{{ URL('theme/img/340x420.png') }}" class="img-responsive" alt="holiwood">
+                                </a>
+                            </figure>
                             <div class="product-icon-slic">
                                 <a href="#myModal" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                             </div>
                         </div>
                         <div class="product-title-slic">
                             <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
                             <div class="prince">$160.8</div>
                         </div>
                     </div>

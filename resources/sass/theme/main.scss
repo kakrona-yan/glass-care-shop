@@ -123,7 +123,7 @@ a{
 .img-cavas {
     overflow: hidden;
     position: relative;
-    &::before {
+    & a::before {
         opacity: 0;
         overflow: hidden;
         position: absolute;
@@ -139,13 +139,13 @@ a{
         transform: skewX(50deg);
         transition: all .3s ease-in-out;
     }
-    &:hover::before {
+    & a:hover::before {
         opacity: 1;
         -webkit-animation: shine-left .3s linear forwards;
         animation: shine-left .3s linear forwards;
         overflow: hidden; 
     }
-    &::after {
+    & a::after {
         opacity: 0;
         overflow: hidden;
         position: absolute;
@@ -161,7 +161,7 @@ a{
         transform: skewX(50deg);
         transition: all .3s ease-in-out; 
     }
-    &:hover::after {
+    & a:hover::after {
         opacity: 1;
         -webkit-animation: shine-right .3s linear forwards;
         animation: shine-right .3s linear forwards;
@@ -312,19 +312,19 @@ a{
         margin-top: 95px;
     }
     .color-1{
-        background: linear-gradient(60deg,#26c6da,#f783ac);
+        background: #26c6da;
         @extend %box-shadow-color;
     }
     .color-2{
-        background: linear-gradient(60deg, #FFC107,#f783ac);
+        background: #FFC107;
         @extend %box-shadow-color;
     }
     .color-3{
-        background: linear-gradient(60deg,#66bb6a,#f783ac);
+        background: #66bb6a;
         @extend %box-shadow-color;
     }
     .color-4{
-        background: linear-gradient(60deg, #03A9F4, #f783ac);
+        background: #03A9F4;
         @extend %box-shadow-color;
     }
 }
@@ -426,22 +426,63 @@ a{
 .product{
     &-box{
         border-radius: 4px;
-        box-shadow: hsl(0, 0%, 80%) 0 0 16px;
         overflow: hidden;
-        background-color: hsl(0, 0%, 100%);
-        &--category {
-            color: #444;
+        background-color: white;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+        border: 1px solid #ddd;
+        &--user{
             font-size: 12px;
-            padding-bottom: 5px;
+            color: #555555;
+            font-style: italic;
+        }
+        &--category {
+            color: #555555;
+            font-size: 12px;
+            padding: 5px;
         }
         &--content {
-            padding: 10px;
+            padding: 0px 10px;
         }
+        p{
+            margin: 0px;
+        }
+    }
+}
+.d-rs-none{
+    display: none;
+}
+.mx-h-180 {
+    max-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-title-flower{
+    &  h5{
+        margin-bottom: 2px;
+    }
+    & p{
+        padding: 0px;
+    }
+}
+.pro-list{
+    .d-rs-none{
+        display: block;
+    }
+    .product-box{
+        padding: 10px;
+    }
+}
+.title-center{
+    h1{
+        margin-bottom: 15px;
     }
 }
 /* 
 * Resposive
 */
+
 @media (max-width: 991px) {
     .show-img{
         .container{
