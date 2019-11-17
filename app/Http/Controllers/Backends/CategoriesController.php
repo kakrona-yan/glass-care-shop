@@ -135,6 +135,7 @@ class CategoriesController extends Controller
     {
         try {
             $categoryRequest = $request->all();
+            $categoryRequest['slug'] = Str::slug($categoryRequest['name'], '-');
             $category = $this->category->available($id);
             if (!$category) {
                 return response()->view('errors.404', [], 404);
