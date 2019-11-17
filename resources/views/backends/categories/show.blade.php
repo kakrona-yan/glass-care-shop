@@ -43,11 +43,17 @@
                                 </tr>
                                 <tr>
                                     <th>{{ __('category.list.categories') }}</th>
-                                    <td></td>
+                                    <td>
+                                        @foreach($category->childs as $cat)
+                                        <span class="label font-xs-14 text-info">
+                                            <i class="fa fa-btn fa-tags"></i> {{$cat->name}}
+                                        </span>
+                                        @endforeach
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('category.list.category_type') }}</th>
-                                    <td></td>
+                                    <td><span class="text-warning font-xs-14"><i class="fas fa-dot-circle"></i> {{ $category->CategoryType() }}</span></td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('category.list.active') }}</th>
