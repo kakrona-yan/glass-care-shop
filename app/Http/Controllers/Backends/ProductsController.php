@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backends;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Products;
+use App\Models\Product;
 use App\Models\ProductImage;
 
 
@@ -13,7 +13,7 @@ class ProductsController extends Controller
 {
     public function __construct(
         Category $category,
-        Products $product,
+        Product $product,
         ProductImage $productImage
     ){
         $this->category = $category;
