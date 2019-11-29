@@ -8,12 +8,7 @@ return [
         'title' => 'Product list',
         'filter' => 'Filter',
         'thumbnail' => 'Photo',
-        'name' => 'Name',
-        'role' => 'Role',
-        'email' => 'Email',
-        'active' => 'Active',
         'action' => 'Action',
-        'password' => 'Password'
     ],
     'admin' => 'Admin',
     'normal' => 'Normal',
