@@ -25,6 +25,7 @@
         ><i class="fas fa-plus-circle"></i> {{__('button.add_new')}}</a>
     </div>
     <!--list product-->
+    @include('backends.products.include._list_product')
 </div>
 
 @endsection

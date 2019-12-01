@@ -14,6 +14,8 @@ class Product extends Model
      */
     protected $fillable = [
         'category_id',
+        'title',
+        'slug',
         'product_code', 
         'product_import',
         'price',
@@ -21,6 +23,8 @@ class Product extends Model
         'thumbnail',
         'promotion_banner',
         'description',
+        'in_store',
+        'out_store',
         'is_active',
         'is_delete'
     ];

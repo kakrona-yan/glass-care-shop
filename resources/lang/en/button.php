@@ -12,5 +12,6 @@ return [
     'add_thumbnail' => 'Add thumbnail',
     'delete' => 'Detete',
     'ok' => 'OK',
-    'close' => 'Close'
+    'close' => 'Close',
+    'save_draft' => 'Save draft'
 ];

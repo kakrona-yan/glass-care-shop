@@ -29,9 +29,11 @@ class ProductsController extends Controller
     {
         try {
             $products = $this->product->filter($request);
+            $categories = $this->category->getCategoryNameByProducts();
             return view('backends.products.index', [
                 'request' => $request,
                 'products' => $products,
+                'categories' => $categories
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.products.index');
@@ -46,8 +48,10 @@ class ProductsController extends Controller
     public function create(Request $request)
     {
         try {
+            $categories = $this->category->getCategoryNameByProducts();
             return view('backends.products.create', [
                 'request' => $request,
+                'categories' => $categories
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.products.create');
@@ -60,12 +64,13 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserCreateRequest $request)
+    public function store(Request $request)
     {
         try {
             $product = $request->all();
+            $product['slug'] = strSlug($product['title']);
             $product['thumbnail'] = isset($product['thumbnail']) ? uploadFile($user['thumbnail'], config('upload.product')) : '';
-            $product['promotion_banner'] = isset($product['promotion_banner']) ? uploadFile($user['promotion_banner'], config('upload.promotion_banner')) : '';
+            // $product['promotion_banner'] = isset($product['promotion_banner']) ? uploadFile($user['promotion_banner'], config('upload.promotion_banner')) : '';
             $this->product->create($product);
             return \Redirect::route('product.index')
                 ->with('success', __('flash.store'));

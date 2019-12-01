@@ -16,6 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('category_id')->length(11);
+            $table->string('title', 100)->nullable();
+            $table->string('slug', 100)->nullable();
             $table->string('product_code', 100)->nullable();
             $table->string('product_import', 100)->nullable();
             $table->decimal('price', 8, 2);
@@ -23,6 +25,8 @@ class CreateProductsTable extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('promotion_banner')->nullable();
             $table->text('description');
+            $table->integer('in_store')->length(11)->default(0)->nullable();
+            $table->integer('out_store')->length(11)->default(0)->nullable();
             $table->boolean('is_active')->default(1)->comment('0：in-active、1：active');
             $table->boolean('is_delete')->default(1)->comment('0：delete、1：no delete');
             $table->timestamps();

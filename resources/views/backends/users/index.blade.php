@@ -24,7 +24,7 @@
             data-original-title="{{__('button.add_new')}}"
         ><i class="fas fa-plus-circle"></i> {{__('button.add_new')}}</a>
     </div>
-    <!--list product-->
+    <!--list user-->
     @include('backends.users.include._list_user')
 </div>
 

@@ -121,7 +121,7 @@
     function removeImgFile($removeBtn) {
         var $fileTab = $removeBtn.closest(".img-file-tab");
         $fileTab.find(".alert").remove();
-        $fileTab.find(".img-select-btn span").text("បញ្ចូលរូបភាព");
+        $fileTab.find(".img-select-btn span").text("add image");
         $fileTab.find("input").val("");
         $fileTab.find("img").remove();
         $removeBtn.hide();
@@ -139,7 +139,7 @@
 
             $fileTab.find(".alert").remove();
             $fileTab.find("input").val("");
-            $fileTab.find(".img-select-btn span").text("បញ្ចូលរូបភាព");
+            $fileTab.find(".img-select-btn span").text("add image");
             $fileTab.find(".img-remove-btn").hide();
             $fileTab.find("img").remove();
         }

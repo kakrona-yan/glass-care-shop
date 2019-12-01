@@ -3,12 +3,12 @@
         <!-- Circle Buttons -->
         <div class="card mb-4">
             <div class="card-body">
-                <form id="category-search" action="{{ route('category.index') }}" method="GET" class="form form-horizontal form-search form-inline mb-2">
+                <form id="product-search" action="{{ route('product.index') }}" method="GET" class="form form-horizontal form-search form-inline mb-2">
                     <div class="form-group mb-2 mr-2">
-                        <label for="name" class="mr-sm-2">{{ __('category.list.filter') }}:</label>
-                        <input type="text" class="form-control mr-1" id="name" 
-                            name="name" value="{{ old('name', $request->name)}}"
-                            placeholder="name"
+                        <label for="title" class="mr-sm-2">{{ __('product.list.filter') }}:</label>
+                        <input type="text" class="form-control mr-1" id="title" 
+                            name="title" value="{{ old('title', $request->title)}}"
+                            placeholder="title"
                         >
                     </div>
                     <div class="form-group mb-2">
@@ -32,32 +32,38 @@
                 <div class="table-responsive cus-table">
                     <table class="table table-striped table-bordered">
                         <thead class="bg-primary text-light">
-                        <tr>
-                            <th>{{ __('category.list.name') }}</th>
-                            <th>{{ __('category.list.categories') }}</th>
-                            <th>{{ __('category.list.category_type') }}</th>
-                            <th class="text-center">{{ __('category.list.active') }}</th>
-                            <th class="w-action text-center">{{__('category.list.action')}}</th>
-                        </tr>
+                            <tr>
+                                <th>{{ __('product.list.thumbnail') }}</th>
+                                <th>{{ __('product.list.product_title') }}</th>
+                                <th>{{ __('product.list.category') }}</th>
+                                <th>{{ __('product.list.product_code') }}</th>
+                                <th>{{ __('product.list.product_import') }}</th>
+                                <th>{{ __('product.list.price') }}</th>
+                                <th>{{ __('product.list.price_discount') }}</th>
+                                <th class="text-center">{{ __('product.list.active') }}</th>
+                                <th class="w-action text-center">{{__('product.list.action')}}</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($products as $product)
                             <tr>
-                                <td>{{$category->name}}</td>
-                                <td>
-                                    @foreach($category->childs as $cat)
-                                    <span class="label font-xs-14 text-info">
-                                        <i class="fa fa-btn fa-tags"></i> {{$cat->name}}
-                                    </span>
-                                    @endforeach
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="thumbnail-cicel">
+                                            <img class="thumbnail" src="{{$product->thumbnail? getUploadUrl($product->thumbnail, config('upload.product')) : asset('images/no-thumbnail.jpg') }}" alt="{{$product->thumbnail}}" width="45"/>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>
-                                    <span class="text-warning font-xs-14"><i class="fas fa-dot-circle"></i> {{ $category->CategoryType() }}</span>
-                                </td>
+                                <td>{{$product->title}}</td>
+                                <td></td>
+                                <td>{{$product->product_code}}</td>
+                                <td>{{$product->product_import}}</td>
+                                <td class="text-right">{{$product->price}}</td>
+                                <td class="text-right">{{$product->price_discount}}</td>
                                 <td class="text-center">
                                     <label class="switch">
                                         <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"
-                                            {{ $category->is_active == 1 ? 'checked' : '' }}
+                                            {{ $product->is_active == 1 ? 'checked' : '' }}
                                         > 
                                         <span class="slider"><span class="on">ON</span><span class="off">OFF</span>
                                         </span>
@@ -69,23 +75,23 @@
                                         data-toggle="tooltip" 
                                         data-placement="top"
                                         data-original-title="{{__('button.show')}}"
-                                        href="{{route('category.show', $category->id)}}"
+                                        href="{{route('product.show', $product->id)}}"
                                     ><i class="far fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-warning btn-circle" 
                                         data-toggle="tooltip" 
                                         data-placement="top"
                                         data-original-title="{{__('button.edit')}}"
-                                        href="{{route('category.edit', $category->id)}}"
+                                        href="{{route('product.edit', $product->id)}}"
                                     ><i class="far fa-edit"></i>
                                     </a>
                                     <button type="button"
                                         id="btn-deleted"
                                         class="btn btn-sm btn-danger btn-circle"
                                         onclick="deletePopup(this)"
-                                        data-id="{{ $category->id }}"
-                                        data-name="{{ $category->name}}"
-                                        data-toggle="modal" data-target="#deletecategory"
+                                        data-id="{{ $product->id }}"
+                                        data-name="{{ $product->tile}}"
+                                        data-toggle="modal" data-target="#deleteproduct"
                                         title="{{__('button.delete')}}"
                                         ><i class="fa fa-trash"></i>
                                     </button>
@@ -97,7 +103,7 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-center">
-                    {{ $categories->appends(request()->query())->links() }}
+                    {{ $products->appends(request()->query())->links() }}
                 </div>
                 @if( Session::has('flash_danger') )
                     <p class="alert text-center {{ Session::get('alert-class', 'alert-danger') }}">
@@ -108,25 +114,25 @@
         </div>
     </div>
 </div><!--/row-->
-<!--Modal delete category-->
-<div class="modal fade" id="deletecategory">
+<!--Modal delete product-->
+<div class="modal fade" id="deleteproduct">
     <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">       
         <!-- Modal Header -->
         <div class="modal-header">
-            <h5 class="modal-title"><i class="fa fa-trash"></i> {{__('category.confirm_delete')}}</h5>
+            <h5 class="modal-title"><i class="fa fa-trash"></i> {{__('product.confirm_delete')}}</h5>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div> 
         <!-- Modal body -->
         <div class="modal-body text-center">
-            <div class="message">{{__('category.confirm_msg') }}</div>
+            <div class="message">{{__('product.confirm_msg') }}</div>
             <div id="modal-name"></div>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer d-flex justify-content-center">
-            <form id="delete_category_form" action="{{route('category.destroy')}}" method="POST">
+            <form id="delete_product_form" action="{{route('product.destroy')}}" method="POST">
                 @csrf
-                <input type="hidden" type="form-control" name="category_id">
+                <input type="hidden" type="form-control" name="product_id">
                 <button type="submit" class="btn btn-circle btn-primary">{{__('button.ok')}}</button>
                 <button type="button" class="btn btn-circle btn-danger" data-dismiss="modal"
                     onclick="clearData()"
@@ -139,12 +145,12 @@
 @push('footer-script')
 <script>
     function deletePopup(obj) {
-        $('input[name="category_id"]').val($(obj).attr("data-id"));
+        $('input[name="product_id"]').val($(obj).attr("data-id"));
         $("#modal-name" ).html($(obj).attr("data-name"));
     }
 
     function clearData() {
-        $('input[name="category_id"]').val('');
+        $('input[name="product_id"]').val('');
         $("#modal-name" ).html('');
     }
     
@@ -152,7 +158,7 @@
         $("[name='limit']").select2({
             allowClear: false
         }).on('select2:select', function (e) {
-            $('#category-search').submit();
+            $('#product-search').submit();
         });
     })( jQuery );
     

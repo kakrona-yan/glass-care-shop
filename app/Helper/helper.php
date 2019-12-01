@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 if (!function_exists('flashDanger')) {
     function flashDanger($count, $message)
@@ -118,5 +119,12 @@ if (!function_exists('currencyFormat')) {
     function currencyFormat($price)
     {
         return $price > 0 ? number_format((double)$price, 0, ',', ',') : '';
+    }
+}
+
+if (!function_exists('strSlug')) {
+    function strSlug($str)
+    {
+        return Str::slug($str, '-');
     }
 }

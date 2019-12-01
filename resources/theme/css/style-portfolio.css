@@ -94,7 +94,7 @@
 .glass-opacity,.glass-hover-opacity:hover{opacity:0.60}.glass-opacity-off,.glass-hover-opacity-off:hover{opacity:1}
 .glass-opacity-max{opacity:0.25}.glass-opacity-min{opacity:0.75}
 .glass-greyscale-max,.glass-grayscale-max,.glass-hover-greyscale:hover,.glass-hover-grayscale:hover{filter:grayscale(100%)}
-.glass-greyscale,.glass-grayscale{filter:grayscale(75%)}.glass-greyscale-min,.glass-grayscale-min{filter:grayscale(50%);padding: 0 8px;}
+.glass-greyscale,.glass-grayscale{filter:grayscale(75%)}.glass-greyscale-min,.glass-grayscale-min{filter:grayscale(50%);padding: 10px 0px;}
 .glass-sepia{filter:sepia(75%)}.glass-sepia-max,.glass-hover-sepia:hover{filter:sepia(100%)}.glass-sepia-min{filter:sepia(50%)}
 .glass-tiny{font-size:10px!important}.glass-small{font-size:12px!important}.glass-medium{font-size:15px!important}.glass-large{font-size:18px!important}
 .glass-xlarge{font-size:24px!important}.glass-xxlarge{font-size:36px!important}.glass-xxxlarge{font-size:48px!important}.glass-jumbo{font-size:64px!important}

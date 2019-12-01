@@ -38,7 +38,7 @@
                                     <div class="col-12 col-md-6 mb-2">
                                         <div class="form-group">
                                             <label for="name">{{__('category.list.name')}}:</label>
-                                            <input type="name" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" 
                                                 placeholder="name"
                                                 name="name"
                                                 value="{{ old('name', $category->name) }}"
