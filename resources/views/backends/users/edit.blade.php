@@ -103,7 +103,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="d-flex justify-content-center align-items-center">
-                                                        <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}"/>
+                                                        <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.png') }}"/>
                                                         <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i> {{__('button.delete')}}</span>
                                                     </div>
                                                 </div>

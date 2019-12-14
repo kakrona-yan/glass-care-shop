@@ -41,7 +41,7 @@
                                     <th>{{__('user.list.thumbnail')}}</th>
                                     <td>
                                         <div class="thumbnail-cicel" style="width:100px; height:100px;">
-                                            <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
+                                            <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.png') }}" alt="{{$user->name}}" width="45"/>
                                         </div>
                                     </td>
                                 </tr>

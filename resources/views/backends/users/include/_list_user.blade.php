@@ -53,7 +53,7 @@
                                     <td class="text-center">
                                         <div class="d-flex justify-content-center">
                                             <div class="thumbnail-cicel">
-                                                <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.jpg') }}" alt="{{$user->name}}" width="45"/>
+                                                <img class="thumbnail" src="{{$user->thumbnail? getUploadUrl($user->thumbnail, config('upload.user')) : asset('images/no-avatar.png') }}" alt="{{$user->name}}" width="45"/>
                                             </div>
                                         </div>
                                     </td>
