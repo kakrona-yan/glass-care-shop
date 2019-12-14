@@ -69,8 +69,8 @@ class ProductsController extends Controller
         try {
             $product = $request->all();
             $product['slug'] = strSlug($product['title']);
-            $product['thumbnail'] = isset($product['thumbnail']) ? uploadFile($user['thumbnail'], config('upload.product')) : '';
-            // $product['promotion_banner'] = isset($product['promotion_banner']) ? uploadFile($user['promotion_banner'], config('upload.promotion_banner')) : '';
+            $product['thumbnail'] = isset($product['thumbnail']) ? uploadFile($product['thumbnail'], config('upload.product')) : '';
+            // $product['promotion_banner'] = isset($product['promotion_banner']) ? uploadFile($product['promotion_banner'], config('upload.promotion_banner')) : '';
             $this->product->create($product);
             return \Redirect::route('product.index')
                 ->with('success', __('flash.store'));
@@ -106,15 +106,18 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)
+    public function edit(Request $request, int $id)
     {
         try {
             $product = $this->product->available($id);
+            $categories = $this->category->getCategoryNameByProducts();
             if (!$product) {
                 return response()->view('errors.404', [], 404);
             }
             return view('backends.products.edit', [
-                'product' => $product
+                'product' => $product,
+                'request' =>  $request,
+                'categories'  => $categories
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.products.edit');
@@ -128,7 +131,7 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
         try {
             $requestProduct = $request->all();
@@ -138,7 +141,7 @@ class ProductsController extends Controller
             }
             // check empty thumbnail
             if (!empty($request->thumbnail)) {
-                $requestProduct['thumbnail'] = uploadFile($request->thumbnail, config('upload.product'));
+                $requestProduct['thumbnail'] = uploadFile($requestProduct['thumbnail'], config('upload.product'));
             } else {
                 unset($requestProduct['thumbnail']);
             }
@@ -148,7 +151,6 @@ class ProductsController extends Controller
             } else {
                 unset($requestProduct['promotion_banner']);
             }
-
             $product->update($requestProduct);
 
             return \Redirect::route('product.index')

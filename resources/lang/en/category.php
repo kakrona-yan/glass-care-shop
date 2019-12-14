@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Glass care shop | Categories',
+    'title' => 'Swipe | Categories',
     'sub_title' => 'Categories',
     'confirm_delete' => 'confirm delete',
     'list' => [

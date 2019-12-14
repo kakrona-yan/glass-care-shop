@@ -1,7 +1,7 @@
 <?php
 return [
-    'title' => 'Glass care shop',
-    'website' => 'About Glass care shop',
+    'title' => 'Swipe',
+    'website' => 'About Swipe',
     'home' => 'Home',
     'about' => 'About',
     'collection' => 'Collection',
@@ -14,7 +14,7 @@ return [
         'for_customer' => 'FOR CUSTOMER',
         'follow_us' => 'FOLLOW US',
         'copy_right' => 'Copyright',
-        'power_by' => '2019 By GCS',
+        'power_by' => '2019 By Swipe',
         'mail' => 'glasscarescreen@gmail.com',
         'tel' => '(+855) 093 399 330',
     ]

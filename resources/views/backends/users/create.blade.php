@@ -102,7 +102,9 @@
                                                             <input type="file" name="thumbnail">
                                                         </span>
                                                     </div>
-                                                    <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i> {{__('button.delete')}}</span>
+                                                    <div class="d-flex justify-content-center align-items-center">
+                                                        <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i> {{__('button.delete')}}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             @if ($errors->has('thumbnail'))

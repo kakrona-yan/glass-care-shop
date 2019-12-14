@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-gray-light">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-        <span>Copy right &copy; GLASS CARE SHOP 2019</span>
+        <span>Copy right &copy; Swipe 2019</span>
         </div>
     </div>
 </footer>

@@ -1,5 +1,5 @@
 @extends('frontends.layouts.master')
-@section('title', 'Glass care shop | news')
+@section('title', 'Swipe | news')
 @section('content')
 <section class="banner-top">
     <div class="container">

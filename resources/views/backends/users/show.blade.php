@@ -96,16 +96,6 @@
                                             href="{{route('user.edit', $user->id)}}"
                                         ><i class="far fa-edit"></i>
                                         </a>
-                                        <button type="button" disabled
-                                            id="btn-deleted"
-                                            class="btn btn-sm btn-danger btn-circle"
-                                            onclick="deletePopup(this)"
-                                            data-id="{{ $user->id }}"
-                                            data-name="{{ $user->name}}"
-                                            data-toggle="modal" data-target="#deleteuser"
-                                            title="{{__('button.delete')}}"
-                                            ><i class="fa fa-trash"></i>
-                                        </button>
                                         </div>
                                     </td>
                                 </tr>

@@ -17,7 +17,7 @@
                         </li>
                         <li class="contact-menu menu-logo">
                             <a href="{{ route('home') }}">
-                                <img src="{{ URL('theme/img/logo.png')}}" alt="Glass care shop" />
+                                <img src="{{ URL('theme/img/logo.png')}}" alt="Swipe" />
                             </a>
                         </li>
 						<li>

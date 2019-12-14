@@ -1,5 +1,5 @@
 @extends('backends.layouts.auth')
-@section('title', 'Glass care shop | login')
+@section('title', 'Swipe | login')
 @section('content')
 <div class="container">
     <!-- Row -->
@@ -13,7 +13,7 @@
                 <div class="col-lg-6">
                 <div class="p-5">
                     <div class="text-center">
-                    <h1 class="h-s-1 text-pink mb-4 font-national-cartoon">Glass care shop</h1>
+                    <h1 class="h-s-1 text-pink mb-4 font-national-cartoon">Swipe</h1>
                     </div>
                     <form action="{{ route('login.post') }}" method="POST" class="user">
                         @csrf

@@ -12,7 +12,7 @@
             <div class="carousel-inner">
                 <div class="item slide1 active">
                     <div class="item-slide">
-                        <img src="{{ URL('theme/img/slider-1.jpg') }}" alt="About glass care shop">
+                        <img src="{{ URL('theme/img/slider-1.jpg') }}" alt="About Swipe">
                         <div class="carousel-caption">
                             <h1>About of Glass<br>care shop.</h1>
                             <a href="{{ route('about') }}">About</a>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="item slide1">
                     <div class="item-slide">
-                        <img src="{{ URL('theme/img/slider-2.jpg') }}" alt="About glass care shop">
+                        <img src="{{ URL('theme/img/slider-2.jpg') }}" alt="About Swipe">
                         <div class="carousel-caption">
                             <h1>Collection of Glass<br>care shop.</h1>
                             <a href="{{ route('collections.index') }}">Collection</a>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="item slide1">
                     <div class="item-slide">
-                        <img src="{{ URL('theme/img/slider-1.jpg') }}" alt="About glass care shop">
+                        <img src="{{ URL('theme/img/slider-1.jpg') }}" alt="About Swipe">
                         <div class="carousel-caption">
                             <h1>Shop of Glass<br>care shop.</h1>
                             <a href="{{ route('shop') }}">shop</a>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="item slide1">
                     <div class="item-slide">
-                        <img src="{{ URL('theme/img/slider-3.jpg') }}" alt="About glass care shop">
+                        <img src="{{ URL('theme/img/slider-3.jpg') }}" alt="About Swipe">
                         <div class="carousel-caption">
                             <h1>News of Glass<br>care shop.</h1>
                             <a href="{{ route('news.index') }}">News</a>

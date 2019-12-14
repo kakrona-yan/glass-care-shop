@@ -55,7 +55,7 @@
                                     </div>
                                 </td>
                                 <td>{{$product->title}}</td>
-                                <td></td>
+                                <td>{{$product->category ? $product->category->name : ""}}</td>
                                 <td>{{$product->product_code}}</td>
                                 <td>{{$product->product_import}}</td>
                                 <td class="text-right">{{$product->price}}</td>

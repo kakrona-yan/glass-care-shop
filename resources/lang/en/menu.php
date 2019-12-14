@@ -1,6 +1,6 @@
 <?php
 return [
-    'shop_name' => 'GCS',
+    'shop_name' => 'Swipe',
     'dashboard' => 'Dashboard',
     'user' => 'Users',
     'category' => 'Categories',

@@ -1,5 +1,5 @@
 @extends('frontends.layouts.master')
-@section('title', 'Glass care shop | about')
+@section('title', 'Swipe | about')
 @section('content')
 <section class="banner-top">
     <div class="container">
@@ -31,7 +31,7 @@
                         </figure>
                     </div>
                     <div class="media-body">
-                        <h1>WELLCOME TO GLASS CARE SHOP</h1>
+                        <h1>WELLCOME TO Swipe</h1>
                         <h2>MR.OWNER</h2>
                     </div>
                 </div>

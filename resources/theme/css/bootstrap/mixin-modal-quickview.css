@@ -85,7 +85,7 @@ ul.breadcrumb li + li:before {
   font-family: Poppins;
   font-weight: 500;
   font-size: 16px;
-  color:#f783ac;
+  color:#0ac4ff;
   color: #888888;
   content: ">"; }
 
@@ -94,17 +94,17 @@ ul.breadcrumb li a {
   font-family: Poppins;
   font-weight: 500;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   color: #888888;
   text-decoration: none; }
 
 ul.breadcrumb li:last-child a {
-  color:#f783ac;
+  color:#0ac4ff;
   font-weight: bold; }
 
 /* Add a color on mouse-over */
 ul.breadcrumb li a:hover {
-  color:#f783ac;
+  color:#0ac4ff;
   text-decoration: none; }
 
 @media all and (min-width: 320px) {
@@ -150,13 +150,13 @@ ul.breadcrumb li a:hover {
   height: 14px;
   cursor: pointer;
   background: none;
-  background-color:#f783ac;
+  background-color:#0ac4ff;
   border: none;
   outline: none; }
 
 .ui-slider-range {
   background: none;
-  background-color:#f783ac;
+  background-color:#0ac4ff;
   border: none; }
 
 #slider-3 {
@@ -170,13 +170,13 @@ ul.breadcrumb li a:hover {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   outline: 0; }
 
 /*end*/
 /*---------*/
 .active-btn {
-  background:#f783ac !important;
+  background:#0ac4ff !important;
   color: #fff; }
 
 /*custom select*/
@@ -192,7 +192,7 @@ ul.breadcrumb li a:hover {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   width: 154px;
   height: 36px;
   margin-left: 20px; }
@@ -323,7 +323,7 @@ figure.bg-input::after {
     display: inline-block;
     width: 30px;
     background: #fff;
-    color:#f783ac;
+    color:#0ac4ff;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -376,7 +376,7 @@ input[type=number]::-webkit-inner-spin-button {
       content: "";
       width: 30px;
       height: 2px;
-      background:#f783ac;
+      background:#0ac4ff;
       bottom: -5px;
       left: 0; }
   .modal-body .title-quick {
@@ -406,13 +406,13 @@ input[type=number]::-webkit-inner-spin-button {
     font-family: Poppins;
     font-weight: 600;
     font-size: 24px;
-    color:#f783ac;
+    color:#0ac4ff;
     margin-top: 0; }
   .modal-content .detail p {
     font-family: Poppins;
     font-weight: 400;
     font-size: 14px;
-    color:#f783ac;
+    color:#0ac4ff;
     color: #888888;
     padding-bottom: 20px; }
   .modal-content .detail .star {
@@ -424,14 +424,14 @@ input[type=number]::-webkit-inner-spin-button {
       font-family: Poppins;
       font-weight: 400;
       font-size: 14px;
-      color:#f783ac;
+      color:#0ac4ff;
       color: #888888;
       padding-left: 10px; }
   .modal-content .detail .prince {
     font-family: Poppins;
     font-weight: 600;
     font-size: 24px;
-    color:#f783ac;
+    color:#0ac4ff;
     margin-right: 230px;
     padding-bottom: 30px;
     border-bottom: 1px solid #ddd; }
@@ -447,19 +447,19 @@ input[type=number]::-webkit-inner-spin-button {
       font-family: Poppins;
       font-weight: 600;
       font-size: 18px;
-      color:#f783ac; }
+      color:#0ac4ff; }
     .modal-content .detail .fi-option::before {
       content: "";
       width: 30px;
       height: 2px;
-      background:#f783ac;
+      background:#0ac4ff;
       position: absolute;
       bottom: 12px; }
   .modal-content .detail .size {
     font-family: Poppins;
     font-weight: 400;
     font-size: 18px;
-    color:#f783ac; }
+    color:#0ac4ff; }
     .modal-content .detail .size .lb-size {
       padding-right: 182px; }
     .modal-content .detail .size .sta-red {
@@ -501,7 +501,7 @@ input[type=number]::-webkit-inner-spin-button {
     font-family: Poppins;
     font-weight: 400;
     font-size: 18px;
-    color:#f783ac;
+    color:#0ac4ff;
     padding: 30px 0; }
     .modal-content .detail .Quality .text-qua {
       padding-right: 20px; }
@@ -509,22 +509,22 @@ input[type=number]::-webkit-inner-spin-button {
       font-family: Poppins;
       font-weight: 600;
       font-size: 24px;
-      color:#f783ac;
+      color:#0ac4ff;
       padding-left: 90px;
       padding-right: 5px; }
     .modal-content .detail .Quality .total {
       font-family: Poppins;
       font-weight: 600;
       font-size: 24px;
-      color:#f783ac; }
+      color:#0ac4ff; }
   .modal-content .detail .add-cart .btn-add-cart {
     display: inline-block;
     font-family: Abril Fatface;
     font-weight: 400;
     font-size: 24px;
-    color:#f783ac;
+    color:#0ac4ff;
     padding: 13px 30px;
-    background:#f783ac;
+    background:#0ac4ff;
     color: #fff;
     transition: all .3s ease;
     border: 1px solid black; }
@@ -540,7 +540,7 @@ input[type=number]::-webkit-inner-spin-button {
       .modal-content .detail .add-cart .btn-add-cart:hover:hover {
         background-position: 100%;
         background-color: #fff;
-        color:#f783ac;
+        color:#0ac4ff;
         text-decoration: none; }
   .modal-content .detail .add-cart .list-icon {
     display: inline-block;
@@ -552,6 +552,6 @@ input[type=number]::-webkit-inner-spin-button {
     margin-left: 15px;
     transition: all .3s ease; }
     .modal-content .detail .add-cart .list-icon:hover {
-      color:#f783ac; }
+      color:#0ac4ff; }
 
 /*# sourceMappingURL=mixin-modal-quickview.css.map */

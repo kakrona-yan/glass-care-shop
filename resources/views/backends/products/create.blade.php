@@ -140,7 +140,7 @@
                                     <label for="category text-center"><i class="fas fa-tags"></i> {{__('product.list.category')}}</label>
                                     <select class="form-control" name="category_id" id="category_id">
                                         @foreach($categories as $id => $name)
-                                            <option value="{{ $id }}" {{ $id = $request->category_id ? 'selected' : '' }}>{{ $name }}</option>
+                                            <option value="{{ $id }}" {{ $id == $request->category_id ? 'selected' : '' }}>{{ $name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -154,7 +154,9 @@
                                                     <input type="file" name="thumbnail">
                                                 </span>
                                             </div>
-                                            <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i> {{__('button.delete')}}</span>
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <span class="btn btn-circle img-remove-btn"><i class="fa fa-fw fa-times"></i> {{__('button.delete')}}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     @if ($errors->has('thumbnail'))

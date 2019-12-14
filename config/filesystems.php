@@ -69,6 +69,18 @@ return [
             'url' => env('APP_URL') . '/storage/images/user',
             'visibility' => 'public',
         ],
+        'product' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/product'),
+            'url' => env('APP_URL') . '/storage/images/product',
+            'visibility' => 'public',
+        ],
+        'promotion_banner' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/promotion_banner'),
+            'url' => env('APP_URL') . '/storage/images/promotion_banner',
+            'visibility' => 'public',
+        ],
 
     ],
 

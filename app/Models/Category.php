@@ -39,7 +39,7 @@ class Category extends BaseModel
 
     public function products()
     {
-        return $this->belongsToMany('App\Models\Products', 'category_id');
+        return $this->hasMany('App\Models\Products', 'category_id');
     }
     
     public function news()

@@ -1,5 +1,5 @@
 @extends('frontends.layouts.master')
-@section('title', 'Glass care shop | Look')
+@section('title', 'Swipe | Look')
 @push('head-styles')
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/css/style-portfolio.css') }}"> 
 @endpush

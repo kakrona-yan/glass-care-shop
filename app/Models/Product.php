@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Constants\DeleteStatus;
 
-class Product extends Model
+class Product extends BaseModel
 {
     /**
      * The attributes that are mass assignable.
@@ -29,6 +29,15 @@ class Product extends Model
         'is_delete'
     ];
 
+    /**
+     * The product that belong to the category
+     * From table user
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id');
+    }
+    
     public function filter($request)
     {
         $products = $this->where('is_delete', '<>', DeleteStatus::DELETED)

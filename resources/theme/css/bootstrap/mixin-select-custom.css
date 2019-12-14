@@ -85,7 +85,7 @@ ul.breadcrumb li + li:before {
   font-family: Poppins;
   font-weight: 500;
   font-size: 16px;
-  color:#f783ac;
+  color:#0ac4ff;
   color: #888888;
   content: ">"; }
 
@@ -94,17 +94,17 @@ ul.breadcrumb li a {
   font-family: Poppins;
   font-weight: 500;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   color: #888888;
   text-decoration: none; }
 
 ul.breadcrumb li:last-child a {
-  color:#f783ac;
+  color:#0ac4ff;
   font-weight: bold; }
 
 /* Add a color on mouse-over */
 ul.breadcrumb li a:hover {
-  color:#f783ac;
+  color:#0ac4ff;
   text-decoration: none; }
 
 @media all and (min-width: 320px) {
@@ -150,13 +150,13 @@ ul.breadcrumb li a:hover {
   height: 14px;
   cursor: pointer;
   background: none;
-  background-color:#f783ac;
+  background-color:#0ac4ff;
   border: none;
   outline: none; }
 
 .ui-slider-range {
   background: none;
-  background-color:#f783ac;
+  background-color:#0ac4ff;
   border: none; }
 
 #slider-3 {
@@ -170,13 +170,13 @@ ul.breadcrumb li a:hover {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   outline: 0; }
 
 /*end*/
 /*---------*/
 .active-btn {
-  background:#f783ac !important;
+  background:#0ac4ff !important;
   color: #fff; }
 
 /*custom select*/
@@ -192,7 +192,7 @@ ul.breadcrumb li a:hover {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   width: 154px;
   height: 36px;
   margin-left: 20px; }
@@ -312,7 +312,7 @@ figure.bg-input::after {
   font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  color:#f783ac;
+  color:#0ac4ff;
   width: 154px;
   height: 36px;
   margin-left: 20px; }
