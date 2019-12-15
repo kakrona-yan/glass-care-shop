@@ -22,5 +22,5 @@ return [
     'admin' => 'Admin',
     'normal' => 'Normal',
     'select' => 'please select',
-    'confirm_msg' => 'Do you want to delete this data??'
+    'confirm_msg' => 'Do you want to delete this data?'
 ];

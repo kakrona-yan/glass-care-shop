@@ -106,6 +106,36 @@ Route::group(
                 Route::post('/storeOrUpdate', 'SettingsController@storeOrUpdate')
                     ->name('storeOrUpdate');
             });
+            // Customers
+            Route::group(['prefix' => 'customers', 'as' => 'customer.'], function() {
+                Route::get('/', 'CustomersController@index')->name('index');
+                Route::get('/create', 'CustomersController@create')->name('create');
+                Route::post('/store', 'CustomersController@store')->name('store');
+                Route::get('/show/{id}', 'CustomersController@show')->name('show');
+                Route::get('/edit/{id}', 'CustomersController@edit')->name('edit');
+                Route::post('/update/{id}', 'CustomersController@update')->name('update');
+                Route::post('/destroy', 'CustomersController@destroy')->name('destroy');
+            });
+            // Staffs
+            Route::group(['prefix' => 'staffs', 'as' => 'staff.'], function() {
+                Route::get('/', 'StaffsController@index')->name('index');
+                Route::get('/create', 'StaffsController@create')->name('create');
+                Route::post('/store', 'StaffsController@store')->name('store');
+                Route::get('/show/{id}', 'StaffsController@show')->name('show');
+                Route::get('/edit/{id}', 'StaffsController@edit')->name('edit');
+                Route::post('/update/{id}', 'StaffsController@update')->name('update');
+                Route::post('/destroy', 'StaffsController@destroy')->name('destroy');
+            });
+            // Staffs
+            Route::group(['prefix' => 'sales', 'as' => 'sale.'], function() {
+                Route::get('/', 'SalesController@index')->name('index');
+                Route::get('/create', 'SalesController@create')->name('create');
+                Route::post('/store', 'SalesController@store')->name('store');
+                Route::get('/show/{id}', 'SalesController@show')->name('show');
+                Route::get('/edit/{id}', 'SalesController@edit')->name('edit');
+                Route::post('/update/{id}', 'SalesController@update')->name('update');
+                Route::post('/destroy', 'SalesController@destroy')->name('destroy');
+            });
         });
     }
 );

@@ -71,6 +71,11 @@ class User extends Authenticatable
         return $this->role == UserRole::ROLE_NORMAL ? true : false;
     }
 
+    public function isRoleStaff()
+    {
+        return $this->role == UserRole::ROLE_NORMAL ? true : false;
+    }
+
     public function filter($request)
     {
         $users = $this->where('is_delete', '<>', DeleteStatus::DELETED)

@@ -128,3 +128,10 @@ if (!function_exists('strSlug')) {
         return Str::slug($str, '-');
     }
 }
+
+if (!function_exists('str_limit')) {
+    function str_limit($str, $lenght = 20)
+    {
+        return Str::limit($str, $lenght);
+    }
+}

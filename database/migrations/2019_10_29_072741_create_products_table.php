@@ -20,8 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('slug', 100)->nullable();
             $table->string('product_code', 100)->nullable();
             $table->string('product_import', 100)->nullable();
-            $table->decimal('price', 8, 2);
-            $table->decimal('price_discount', 8, 2)->nullable();
+            $table->decimal('price', 10, 0);
+            $table->decimal('price_discount', 10, 0)->nullable();
             $table->string('thumbnail')->nullable();
             $table->string('promotion_banner')->nullable();
             $table->text('description')->nullable();
