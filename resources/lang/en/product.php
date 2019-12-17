@@ -16,6 +16,8 @@ return [
         'thumbnail' => 'Photo',
         'description' => 'Description', 
         'promotion_banner' => 'Promotion banner',
+        'product_free' => 'Product free',
+        'in_store' => 'In-Store',
         'active' => 'Active',
         'action' => 'Action',
     ],

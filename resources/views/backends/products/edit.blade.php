@@ -111,6 +111,38 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="in_store">{{__('product.list.in_store')}}:</label>
+                                            <input type="text" class="form-control {{ $errors->has('in_store') ? ' is-invalid' : '' }}" 
+                                                placeholder="in-store"
+                                                name="in_store"
+                                                value="{{ old('in_store', $product->in_store) }}"
+                                            >
+                                            @if ($errors->has('in_store'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('in_store') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="product_free">{{__('product.list.product_free')}}:</label>
+                                            <input type="text" class="form-control {{ $errors->has('product_free') ? ' is-invalid' : '' }}" 
+                                                placeholder="product free"
+                                                name="product_free"
+                                                value="{{ old('product_free', $product->product_free) }}"
+                                            >
+                                            @if ($errors->has('product_free'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('product_free') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group description">
                                     <textarea class="form-control" id="description" rows="3" name="description">
                                         {{$product->description}}

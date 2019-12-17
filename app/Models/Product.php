@@ -20,6 +20,7 @@ class Product extends BaseModel
         'product_import',
         'price',
         'price_discount',
+        'product_free',
         'thumbnail',
         'promotion_banner',
         'description',
