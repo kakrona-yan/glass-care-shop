@@ -457,6 +457,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    img, .img-responsive{
+        max-width: 185px !important;
+    }
 }
 .product-title-flower{
     &  h5{
