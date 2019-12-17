@@ -17,9 +17,9 @@ class CreateSaleProductsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('sale_id')->length(11);
             $table->integer('product_id')->length(11);
-            $table->decimal('rate', 10, 0);
+            $table->decimal('rate', 10, 2);
             $table->decimal('quantity', 10, 0)->nullable();
-            $table->decimal('amount', 10, 0)->nullable();
+            $table->decimal('amount', 10, 2)->nullable();
             $table->decimal('discount', 10, 0)->nullable();
             $table->boolean('discount_type')->default(1)->comment('0：%、1：fix');
             $table->boolean('is_active')->default(1)->comment('0：in-active、1：active');

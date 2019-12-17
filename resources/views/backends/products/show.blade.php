@@ -47,7 +47,7 @@
                                 </tr>
                                 <tr>
                                     <th>{{ __('product.list.product_title') }}</th>
-                                    <td>{{$product->tile}}</td>
+                                    <td>{{$product->title}}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('product.list.category') }}</th>
@@ -68,6 +68,14 @@
                                 <tr>
                                     <th>{{ __('product.list.price_discount') }}</th>
                                     <td>{{$product->price_discount}}</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('product.list.in_store') }}</th>
+                                    <td>{{$product->in_store}}</td>
+                                </tr>
+                                <tr>
+                                    <th>{{ __('product.list.product_free') }}</th>
+                                    <td>{{$product->product_free}}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('product.list.active') }}</th>

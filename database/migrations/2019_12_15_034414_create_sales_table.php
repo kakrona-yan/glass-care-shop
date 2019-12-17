@@ -18,10 +18,10 @@ class CreateSalesTable extends Migration
             $table->integer('staff_id')->length(11);
             $table->integer('customer_id')->length(11);
             $table->string('quotaion_no', 100)->nullable();
-            $table->decimal('money_change', 10, 0);
+            $table->decimal('money_change', 10, 2);
             $table->decimal('total_quantity', 10, 0)->nullable();
             $table->decimal('total_discount', 10, 0)->nullable();
-            $table->decimal('total_amount', 10, 0)->nullable();
+            $table->decimal('total_amount', 10, 2)->nullable();
             $table->dateTime('sale_date');
             $table->text('note')->nullable();
             $table->boolean('is_active')->default(1)->comment('0：in-active、1：active');

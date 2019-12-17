@@ -82,7 +82,7 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label for="price">{{__('product.list.price')}}:</label>
+                                            <label for="price">{{__('product.list.price')}}($):</label>
                                             <input type="text" class="form-control {{ $errors->has('price') ? ' is-invalid' : '' }}" 
                                                 placeholder="price"
                                                 name="price"
