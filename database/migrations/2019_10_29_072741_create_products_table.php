@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug', 255)->nullable();
             $table->string('product_code', 100)->nullable();
             $table->string('product_import', 100)->nullable();
-            $table->decimal('price', 10, 1);
+            $table->decimal('price', 10, 2);
             $table->decimal('price_discount', 10, 0)->nullable();
             $table->string('thumbnail')->nullable();
             $table->string('promotion_banner')->nullable();
