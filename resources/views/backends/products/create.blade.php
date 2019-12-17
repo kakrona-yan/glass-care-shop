@@ -163,7 +163,7 @@
                             <div id="add-product-right" class="tab-pane active">
                                 <div class="form-group">
                                     <div class="date-public"><i class="far fa-calendar-alt"></i> Date:{{ date('Y-M-d') }}</div>
-                                    <div class="form-group modal-footer mt-3">
+                                    <div class="form-group modal-footer mt-3 justify-content-center">
                                         <button type="submit" class="btn btn-circle btn-light w-btn-125 mr-2" name="is_active" value="0">{{__('button.save_draft')}}</button>
                                         <button type="submit" class="btn btn-circle btn-primary w-btn-125 mr-2" name="is_active" value="1">{{__('button.save')}}</button>
                                     </div>
