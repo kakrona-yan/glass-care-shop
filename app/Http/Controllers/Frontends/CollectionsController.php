@@ -4,9 +4,14 @@ namespace App\Http\Controllers\Frontends;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Http\Constants\DeleteStatus;
 
 class CollectionsController extends Controller
 {
+    public function __construct(Product $product) {
+        $this->product = $product;
+    }
     /**
      * Show the application collection.
      *
@@ -15,9 +20,12 @@ class CollectionsController extends Controller
     public function getCollection()
     {
         try {
-            $slug = 'iphone-x';
+            $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
+                ->orderBy('id', 'DESC')
+                ->paginate(config('pagination.product_limit'));
+            flashDanger($products->count(), __('flash.empty_data'));
             return view('frontends.pages.collections.index', [
-                'slug' => $slug,
+                'products' => $products,
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'frontends.pages.collections.index');

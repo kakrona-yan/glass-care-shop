@@ -140,6 +140,7 @@ class ProductsController extends Controller
             if (!$product) {
                 return response()->view('errors.404', [], 404);
             }
+            $requestProduct['slug'] = strSlug($requestProduct['title']);
             // check empty thumbnail
             if (!empty($request->thumbnail)) {
                 $requestProduct['thumbnail'] = uploadFile($requestProduct['thumbnail'], config('upload.product'));
