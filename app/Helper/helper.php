@@ -56,9 +56,9 @@ if(! function_exists('uploadFile')){
     $ext = $file->getClientOriginalExtension();
     $imageName = uniqid().'.'.$ext;
     \Storage::disk($config)->put($imageName, file_get_contents($file));
-    $urlImage = Storage::disk($config)->path($imageName);
+    // $urlImage = Storage::disk($config)->path($imageName);
     // make thumnail
-    uploadThumbnail($urlImage, 500);
+    // uploadThumbnail($urlImage, 500);
     return $imageName;
   }
 }
