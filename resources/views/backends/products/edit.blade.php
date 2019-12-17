@@ -144,9 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group description">
-                                    <textarea class="form-control" id="description" rows="3" name="description">
-                                        {{$product->description}}
-                                    </textarea>
+                                    <textarea class="form-control" id="description" rows="3" name="description">{{$product->description}}</textarea>
                                 </div>
                             </div><!--/tab-add-product-->
                         </div>

@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group description">
-                                    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                                    <textarea class="form-control" id="description" rows="3" name="description">{{ old('description', $request->description) }}</textarea>
                                 </div>
                             </div><!--/tab-add-product-->
                         </div>
