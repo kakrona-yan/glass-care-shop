@@ -27,7 +27,7 @@ class ProductCreateRequest extends FormRequest
         $priceDiscount = $request->get('price_discount');
         $productFree = $request->get('product_free');
         return [
-            'title' => 'required|max:255|unique:products,title',
+            'title' => 'required|max:200|unique:products,title',
             'category_id' => 'required',
             'price' => 'required|numeric',
             'price_discount' => $priceDiscount && !empty($priceDiscount)? 'numeric' : '',
