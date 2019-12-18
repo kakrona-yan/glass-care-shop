@@ -22,7 +22,7 @@ class CollectionsController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getCollection(Request $request)
+    public function index(Request $request)
     {
         try {
             \Log::debug($request->query('category'));

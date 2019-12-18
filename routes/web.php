@@ -155,7 +155,7 @@ Route::group([
     Route::get('/shop', 'PagesController@shop')->name('shop');
     // collection
     Route::group(['prefix' => 'collections', 'as' => 'collections.'], function () {
-        Route::get('/', 'CollectionsController@getCollection')->name('index');
+        Route::get('/', 'CollectionsController@index')->name('index');
         Route::get('/{slug}', 'CollectionsController@getCollectionBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('detail');
     });
