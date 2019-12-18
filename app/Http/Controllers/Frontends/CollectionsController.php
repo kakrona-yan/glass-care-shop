@@ -22,10 +22,10 @@ class CollectionsController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function getCollection(Request $request)
     {
         try {
-            \Log::debug($request->query('category'));
+            \Log::debug(\Request::all());
             $products = $this->product->getProduct($request);
             $categories = $this->category->getCategories();
             flashDanger($products->count(), __('flash.empty_data'));

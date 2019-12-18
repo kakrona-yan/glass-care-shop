@@ -56,7 +56,7 @@ class Product extends BaseModel
     {
         $products = $this->where('is_delete', '<>', DeleteStatus::DELETED);
         if (!empty($request->category)) {
-            $products->where('category', $request->category);
+            $products->where('category_id', $request->category);
         }
         return $products->orderBy('id', 'DESC')->paginate(config('pagination.product_limit'));
     }
