@@ -40,8 +40,12 @@ class CollectionsController extends Controller
     public function getCollectionBySlug($slug)
     {
         try {
+            $product = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
+                ->where('slug', $slug)->firstOrFail();
+            flashDanger($product->count(), __('flash.empty_data'));
             return view('frontends.pages.collections.collection-detail', [
-                'slug' => $slug,
+                'product' => $product,
+                'slug' => $slug
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'frontends.pages.collections.collection-detail');

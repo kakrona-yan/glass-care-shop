@@ -17,7 +17,7 @@
                 <li class="breadcrumb-item active">
                     <a href="{{ route('collections.index') }}"> {{ __('page.collection') }}</a>
                 </li>
-                <li class="breadcrumb-item" aria-current="page">Glass iPhone X</li>
+                <li class="breadcrumb-item" aria-current="page">{{$product->title}}</li>
             </ol>
         </nav>
     </div>
@@ -28,7 +28,7 @@
             <div class="col-md-5 col-xs-12 mb-10">
                 <div class="">
                     <ul id="glasscase" class="gc-start">
-                        <li><img src="{{ URL('/theme/img/890x490.png') }}" alt="Text" data-gc-caption="Your caption text" /></li>
+                        <li><img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="Text" data-gc-caption="{{$product->title}}"></li>
                         <li><img src="{{ URL('/theme/img/product2.jpg') }}" alt="Text" /></li>
                         <li><img src="{{ URL('/theme/img/product3.jpg') }}" alt="Text" /></li>
                         <li><img src="{{ URL('/theme/img/product4.jpg') }}" alt="Text" /></li>
@@ -37,14 +37,20 @@
             </div>
             <div class="col-md-5 col-xs-12 mb-10">
                 <div class="product-title">
-                    <h5><a href="{{ route('collections.detail', $slug) }}">iPhone X</a></h5>
-                    <p>HL34-LS-0428</p>
-                    <div class="prince">$207.2<s class="strike">$250.9</s></div>
+                    <h5><a href="{{ route('collections.detail', $slug) }}">{{$product->title}}</a></h5>
+                    <p class="product-box--user">By Ower</p>
+                    <p class="product-box--category">
+                        <i class="fas fa-bullhorn mr-1 text-blue-100"></i>
+                        <span>{{$product->category ? $product->category->name : ''}}</span>
+                    </p>
+                    <p>{{$product->product_code}}</p>
+                    <div class="prince">Price: ${{$product->price}}</div>
+                    <div class="in_store text-blue-100">Store: {{$product->in_store}}</div>
                     <div class="product-decription">
                         <h5><i class="fas fa-atom"></i> Specifications</h5>
-                        <ul class="list-detail">
-                            <li>DESIGNED FOR iPHONE - The Purity Screen Protector for iPhone 8 / 7 is an ultra-thin tempered glass screen protector designed to provide ultimate protection for your iPhone's screen.</li>     
-                        </ul>
+                        <div class="list-detail">
+                            <p>{{$product->description}}</p>
+                        </div>
                     </div>
                 </div>
             </div>

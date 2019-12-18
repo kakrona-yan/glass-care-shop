@@ -503,6 +503,13 @@ a{
 .product-title-slic{
     padding: 10px;
 }
+.in_store.text-blue-100 {
+    padding: 10px;
+    border: 1px solid;
+    max-width: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+}
 @-webkit-keyframes spinner-border {
   to {
     transform: rotate(360deg);
