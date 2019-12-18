@@ -548,6 +548,12 @@ a{
     height: 1rem;
     border-width: 0.2em;
 }
+.item-show{
+    a{
+        display: block;
+        width: 100%;
+    }
+}
 /* 
 * Resposive
 */
