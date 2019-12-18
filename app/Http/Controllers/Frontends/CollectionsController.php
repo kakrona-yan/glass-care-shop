@@ -5,11 +5,16 @@ namespace App\Http\Controllers\Frontends;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 use App\Http\Constants\DeleteStatus;
 
 class CollectionsController extends Controller
 {
-    public function __construct(Product $product) {
+    public function __construct(
+        Category $category,
+        Product $product
+    ) {
+        $this->category = $category;
         $this->product = $product;
     }
     /**
@@ -17,15 +22,15 @@ class CollectionsController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getCollection()
+    public function getCollection(Request $request)
     {
         try {
-            $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
-                ->orderBy('id', 'DESC')
-                ->paginate(config('pagination.product_limit'));
+            $products = $this->product->getProduct($request);
+            $categories = $this->category->getCategories();
             flashDanger($products->count(), __('flash.empty_data'));
             return view('frontends.pages.collections.index', [
                 'products' => $products,
+                'categories' => $categories
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'frontends.pages.collections.index');

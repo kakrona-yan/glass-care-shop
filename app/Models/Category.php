@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Constants\DeleteStatus;
 use App\Http\Constants\CategoryType;
+use App\Models\Product;
 
 class Category extends BaseModel
 {
@@ -39,7 +40,7 @@ class Category extends BaseModel
 
     public function products()
     {
-        return $this->hasMany('App\Models\Products', 'category_id');
+        return $this->hasMany('App\Models\Product', 'category_id');
     }
     
     public function news()
@@ -95,4 +96,10 @@ class Category extends BaseModel
         }
         return $categoryTypeText;
     }
+    public function getCategories() {
+        return $this->withCount('products')
+            ->where('category_type', CategoryType::CATEGORY_TYPE_PRODUCT)
+            ->get();
+    }
+    
 }

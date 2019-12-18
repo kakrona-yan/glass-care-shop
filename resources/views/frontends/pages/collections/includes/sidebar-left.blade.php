@@ -2,18 +2,11 @@
     <div class="collapse navbar-collapse" id="mysidebar">
         <ul class="list-group list-3">
             <li class="list-group-item">GlASS SCREEN</li>
-            <li class="list-group-item list-item">
-                <a href="#">iPhone x</a><span>(15)</span>
+            @foreach ($categories as $category)
+                <li class="list-group-item list-item">
+                <a href="{{ route('collections.index')}}?category={{$category->id}}">{{ $category->name}}</a><span>{{$category->products_count}}</span>
             </li>
-            <li class="list-group-item list-item">
-                <a href="#">iPhone 11</a><span>(29)</span>
-            </li>
-            <li class="list-group-item list-item">
-                <a href="#">iPhone 7</a><span>(10)</span>
-            </li>
-            <li class="list-group-item list-item">
-                <a href="#">iPad</a><span>(16)</span>
-            </li>
+            @endforeach
         </ul>
     </div>
 </div>

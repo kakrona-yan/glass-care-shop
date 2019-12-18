@@ -51,4 +51,14 @@ class Product extends BaseModel
         }
         return $products->paginate($limit);
     }
+
+    public function getProduct($request)
+    {
+        $products = $this->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'DESC');
+        if ($request->exists('category') && !empty($request->category)) {
+            $products->where('category_id', $request->category);
+        }
+        return $products->paginate(config('pagination.product_limit'));
+    }
 }
