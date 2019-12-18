@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontends;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Http\Constants\DeleteStatus;
@@ -25,7 +25,6 @@ class CollectionsController extends Controller
     public function getCollection(Request $request)
     {
         try {
-            dd($request->get('category'));
             $products = $this->product->getProduct($request);
             $categories = $this->category->getCategories();
             flashDanger($products->count(), __('flash.empty_data'));
