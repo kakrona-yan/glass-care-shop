@@ -552,8 +552,12 @@ a{
 */
 
 @media (max-width: 991px) {
+    .header{
+        padding: 0px;
+    }
     .show-img{
         .container{
+            margin: 0px auto;
             &::before {
                 width: calc(100% + 0px);
             }
@@ -561,5 +565,9 @@ a{
     }
     .glass-image{
         max-width: 100%;
+    }
+    #slider-baner .carousel-inner {
+        background: #90d0da;
+        min-height: 250px;
     }
 }
