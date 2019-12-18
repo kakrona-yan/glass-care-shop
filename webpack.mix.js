@@ -20,6 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .copyDirectory('resources/theme', 'public/theme')
     .sass('resources/sass/theme/main.scss', 'public/theme/css')
+    .copyDirectory('node_modules/fslightbox/index.js', 'public/vendor/fslightbox/index.js')
     // .purgeCss()
     .webpackConfig({
         module: {

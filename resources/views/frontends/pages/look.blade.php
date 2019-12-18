@@ -21,36 +21,23 @@
         </nav>
     </div>
 </section>
-<section class="container glass-main glass-content">
-    <!-- Photo grid -->
-    <div class="glass-row glass-grayscale-min">
-      <div class="glass-quarter">
-        <img src="{{ URL('theme/img/product1.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-        <img src="{{ URL('theme/img/product4.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-        <img src="{{ URL('theme/img/product2.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-     </div>
-     <div class="glass-quarter">
-        <img src="{{ URL('theme/img/product3.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-        <img src="{{ URL('theme/img/product4.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-        <img src="{{ URL('theme/img/product1.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-      </div>
-      <div class="glass-quarter">
-        <img src="{{ URL('theme/img/product3.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-        <img src="{{ URL('theme/img/product2.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-        <img src="{{ URL('theme/img/product1.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-      </div>
-      <div class="glass-quarter">
-        <img src="{{ URL('theme/img/product3.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-        <img src="{{ URL('theme/img/product4.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-        <img src="{{ URL('theme/img/product1.jpg') }}" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-      </div>
-    </div>
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="glass-modal glass-black" style="padding-top:0" onclick="this.style.display='none'">
-        <span class="glass-button glass-black glass-xlarge glass-display-topright btn-red">&times;</span>
-        <div class="glass-modal-content glass-animate-zoom glass-center glass-transparent glass-padding-64">
-            <img id="img01" class="glass-image">
-            <p id="caption"></p>
+<section class="container">
+    <div class="glass-main glass-content">
+        <!-- Photo grid -->
+        <div class="glass-row glass-grayscale-min">
+        <div class="glass-quarter">
+            <img src="{{ URL('theme/img/product1.jpg') }}" style="width:100%">
+        </div>
+        <div class="glass-quarter">
+            <img src="{{ URL('theme/img/product3.jpg') }}" style="width:100%">
+        </div>
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="glass-modal glass-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="glass-button glass-black glass-xlarge glass-display-topright btn-red">&times;</span>
+            <div class="glass-modal-content glass-animate-zoom glass-center glass-transparent glass-padding-64">
+                <img id="img01" class="glass-image">
+                <p id="caption"></p>
+            </div>
         </div>
     </div>
 </section>
