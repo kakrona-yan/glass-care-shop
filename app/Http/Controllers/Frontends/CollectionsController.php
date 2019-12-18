@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontends;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Http\Constants\DeleteStatus;
