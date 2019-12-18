@@ -4,7 +4,7 @@
             <li class="list-group-item">GlASS SCREEN</li>
             @foreach ($categories as $category)
                 <li class="list-group-item list-item">
-                <a href="{{ route('collections.index')}}?category={{$category->id}}">{{ $category->name}}</a><span>{{$category->products_count}}</span>
+                <a href="{{ route('collections.index')}}?category_id={{$category->id}}">{{ $category->name}}</a><span>{{$category->products_count}}</span>
             </li>
             @endforeach
         </ul>
