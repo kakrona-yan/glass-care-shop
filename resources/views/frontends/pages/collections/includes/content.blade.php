@@ -10,7 +10,7 @@
                         </a>
                     </figure>
                     <p class="product-box--category d-rs-none">
-                        <i class="fas fa-tags mr-1"></i>
+                        <i class="fas fa-bullhorn mr-1 text-blue-100"></i>
                         <span>{{$product->category ? $product->category->name : ''}}</span>
                     </p>
                 </div>

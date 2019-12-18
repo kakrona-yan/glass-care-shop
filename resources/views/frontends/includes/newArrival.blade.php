@@ -4,62 +4,74 @@
             <h1>New Arrivals</h1>
             <p>More recently with desktop publishing software</p>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="product-slick slider">
-                    <div class="product-slic product-box">
-                        <div class="product-image-slic">
-                            <figure class="img-cavas mx-h-200">
-                                <a href="{{ route('collections.index') }}">
-                                    <img src="{{ URL('theme/img/340x420.png') }}" class="img-responsive" alt="holiwood">
-                                </a>
-                            </figure>
-                            <div class="product-icon-slic">
-                                <a href="#myModal" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="prince">$160.8</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-        <div class="category">
-            <!-- Modal quick view -->
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="product-content row">
-                                <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="img-content">
-                                        <img src="{{ URL('theme/img/340x420.png') }}" class="img-responsive" alt="img-holiwood">
+        @if( Session::has('flash_danger') )
+            <p class="alert text-center {{ Session::get('alert-class', '') }}">
+                <span class="spinner-border spinner-border-sm text-danger align-middle"></span> {{ Session::get('flash_danger') }}
+            </p>
+        @else
+            <div class="container">
+                <div class="row">
+                    @foreach ($products as $product)
+                        <div class="product-slick slider">
+                            <div class="product-slic product-box">
+                                <div class="product-image-slic">
+                                    <figure class="img-cavas mx-h-200">
+                                        <a href="{{ route('collections.detail', $product->slug) }}">
+                                            <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="holiwood">
+                                        </a>
+                                    </figure>
+                                    <div class="product-icon-slic">
+                                        <a href="#product_{{$product->id}}" data-toggle="modal" data-target="#product_{{$product->id}}"><i class="far fa-eye"></i></a>
                                     </div>
                                 </div>
-                                <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
-                                    <h1>Queen Rose - Pink</h1>
-                                    <p class="p1">It is a long established fact that a reader will be distracted by the
-                                        readable<br class="hidden-md hidden-sm hidden-xs"> content of a page when looking at
-                                        its layout.</p>
-                                    <div class="prince">Price:<span>$250.9</span></div>
-                                    <div class="product-decription">
-                                        <ul class="list-detail">
-                                            <li>DESIGNED FOR iPHONE - The Purity Screen Protector for iPhone 8 / 7 is an ultra-thin tempered glass screen protector designed to provide ultimate protection for your iPhone's screen.</li>     
-                                        </ul>
-                                    </div>
+                                <div class="product-title-slic">
+                                    <h5><a href="{{ route('collections.detail', $product->slug) }}">{{$product->title}}</a></h5>
+                                    <div class="prince">${{$product->price}}</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
+            
             </div>
-        </div>
+            <div class="category">
+                <!-- Modal quick view -->
+                @foreach ($products as $product)
+                    <div id="product_{{$product->id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="product-content row">
+                                        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="img-content">
+                                                <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="img-holiwood">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
+                                            <h1>{{$product->title}}</h1>
+                                            <div class="product-box--user">By Ower</div>
+                                            <div class="product-box--category">
+                                                <i class="fas fa-bullhorn mr-1 text-blue-100"></i>
+                                                <span>{{$product->category ? $product->category->name : ''}}</span>
+                                            </div>
+                                            <p class="p-title">{{$product->product_code}}</p>
+                                            <div class="prince">Price:<span>${{$product->price}}</span></div>
+                                            <div class="product-decription p-title">
+                                                <h4><i class="fas fa-atom"></i> Specifications</h4>
+                                                <p>{{$product->description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 </section>

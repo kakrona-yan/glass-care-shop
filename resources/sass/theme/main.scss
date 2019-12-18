@@ -37,6 +37,9 @@ a{
         font-size: 20px;
     }
 }
+.text-blue-100{
+    color: #26c6da;
+}
 /**
 * Page about
 */
@@ -457,8 +460,19 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     img, .img-responsive{
         max-width: 185px !important;
+    }
+}
+.mx-h-200 {
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img, .img-responsive{
+        max-width: 300px !important;
     }
 }
 .product-title-flower{
@@ -481,6 +495,49 @@ a{
     h1{
         margin-bottom: 15px;
     }
+}
+.modal-header .close{
+    & span{
+        position: relative;
+        top: -1px;
+    }
+}
+@-webkit-keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border .75s linear infinite;
+          animation: spinner-border .75s linear infinite;
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
+.align-middle {
+    vertical-align: middle !important;
+}
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.2em;
 }
 /* 
 * Resposive
