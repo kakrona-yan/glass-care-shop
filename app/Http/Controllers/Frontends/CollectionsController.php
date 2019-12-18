@@ -25,7 +25,7 @@ class CollectionsController extends Controller
     public function getCollection(Request $request)
     {
         try {
-            \Log::($request->query('category'));
+            \Log::debug($request->query('category'));
             $products = $this->product->getProduct($request);
             $categories = $this->category->getCategories();
             flashDanger($products->count(), __('flash.empty_data'));
