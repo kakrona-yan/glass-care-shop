@@ -11,28 +11,27 @@
         @else
             <div class="container">
                 <div class="row">
-                    @foreach ($products as $product)
-                        <div class="product-slick slider">
-                            <div class="product-slic product-box">
-                                <div class="product-image-slic">
-                                    <figure class="img-cavas mx-h-200">
-                                        <a href="{{ route('collections.detail', $product->slug) }}">
-                                            <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="holiwood">
-                                        </a>
-                                    </figure>
-                                    <div class="product-icon-slic">
-                                        <a href="#product_{{$product->id}}" data-toggle="modal" data-target="#product_{{$product->id}}"><i class="far fa-eye"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-slic">
-                                    <h5><a href="{{ route('collections.detail', $product->slug) }}">{{$product->title}}</a></h5>
-                                    <div class="prince">${{$product->price}}</div>
+                    <div class="product-slick slider">
+                        @foreach ($products as $product)
+                        <div class="product-slic product-box">
+                            <div class="product-image-slic">
+                                <figure class="img-cavas mx-h-200">
+                                    <a href="{{ route('collections.detail', $product->slug) }}">
+                                        <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="holiwood">
+                                    </a>
+                                </figure>
+                                <div class="product-icon-slic">
+                                    <a href="#product_{{$product->id}}" data-toggle="modal" data-target="#product_{{$product->id}}"><i class="far fa-eye"></i></a>
                                 </div>
                             </div>
+                            <div class="product-title-slic">
+                                <h5><a href="{{ route('collections.detail', $product->slug) }}">{{$product->title}}</a></h5>
+                                <div class="prince">${{$product->price}}</div>
+                            </div>
                         </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            
             </div>
             <div class="category">
                 <!-- Modal quick view -->

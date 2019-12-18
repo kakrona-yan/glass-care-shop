@@ -22,7 +22,8 @@ class HomesController extends Controller
     {
         $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
             ->orderBy('id', 'DESC')
-            ->paginate(config('pagination.product_limit'));
+            ->limit(12)
+            ->get();
         flashDanger($products->count(), __('flash.empty_data'));
         return view('frontends.home', [
             'products' => $products,
