@@ -25,11 +25,11 @@
                 <button class="sp1 hidden-sm hidden-xs">Sidebar</button>
                 <button id="btn-list"><i class="fas fa-list"></i></button>
                 <button id="btn-grid"><i class="fas fa-th"></i></button>
-                <span class="sp2 hidden-xs">Showing 1 - 12 of 30 results</span>
+                @if($products->count() > 0)
+                <span class="sp2 hidden-xs">Showing {{$products->currentPage()}} - {{$products->lastItem()}} of {{$products->total()}} results</span>
+                @endif
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                
-            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6"></div>
         </div>
         <div class="row">
             <!-- content collection-->
