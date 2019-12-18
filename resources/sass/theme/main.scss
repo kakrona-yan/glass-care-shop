@@ -374,6 +374,7 @@ a{
     }
 }
 .mobile-menu{
+    z-index: 100;
     & a.active{
         color: $pink-2;
     }
@@ -554,6 +555,13 @@ a{
 @media (max-width: 991px) {
     header{
         padding: 0px;
+        .menu-main li a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #eae9e9;
+            font-weight: 400;
+        }
     }
     .show-img{
         .container{
