@@ -25,32 +25,18 @@
     <div class="glass-main glass-content">
         <!-- Photo grid -->
         <div class="glass-row glass-grayscale-min">
-        <div class="glass-quarter">
-            <img src="{{ URL('theme/img/product1.jpg') }}" style="width:100%">
-        </div>
-        <div class="glass-quarter">
-            <img src="{{ URL('theme/img/product3.jpg') }}" style="width:100%">
-        </div>
-        <!-- Modal for full size images on click-->
-        <div id="modal01" class="glass-modal glass-black" style="padding-top:0" onclick="this.style.display='none'">
-            <span class="glass-button glass-black glass-xlarge glass-display-topright btn-red">&times;</span>
-            <div class="glass-modal-content glass-animate-zoom glass-center glass-transparent glass-padding-64">
-                <img id="img01" class="glass-image">
-                <p id="caption"></p>
+        @foreach ($products as $product)
+            <div class="glass-quarter">
+                <a data-fslightbox="gallery" href="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}">
+                    <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" alt="{{$product->title}}">
+                </a>
             </div>
-        </div>
+        @endforeach
+        
     </div>
 </section>
 @endsection
 
 @push('footer-script')
-<script>
-    // Modal Image Gallery
-    function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-    }
-</script>
+<script src="{{ URL('vendor/fslightbox/index.js') }}"></script>
 @endpush
