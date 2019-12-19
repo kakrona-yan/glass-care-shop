@@ -38,7 +38,7 @@
 .glass-responsive{display:block;overflow-x:auto}
 .glass-container:after,.glass-container:before,.glass-panel:after,.glass-panel:before,.glass-row:after,.glass-row:before,.glass-row-padding:after,.glass-row-padding:before,
 .glass-cell-row:before,.glass-cell-row:after,.glass-clear:after,.glass-clear:before,.glass-bar:before,.glass-bar:after{content:"";display:table;clear:both}
-.glass-col,.glass-half,.glass-third,.glass-twothird,.glass-threequarter,.glass-quarter{float:left;width:100%;padding: 0 4px;}
+.glass-col,.glass-half,.glass-third,.glass-twothird,.glass-threequarter,.glass-quarter{float:left;width:100%;padding: 4px;}
 .glass-col.s1{width:8.33333%}.glass-col.s2{width:16.66666%}.glass-col.s3{width:24.99999%}.glass-col.s4{width:33.33333%}
 .glass-col.s5{width:41.66666%}.glass-col.s6{width:49.99999%}.glass-col.s7{width:58.33333%}.glass-col.s8{width:66.66666%}
 .glass-col.s9{width:74.99999%}.glass-col.s10{width:83.33333%}.glass-col.s11{width:91.66666%}.glass-col.s12{width:99.99999%}
