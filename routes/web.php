@@ -152,10 +152,10 @@ Route::group([
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('/look', 'PagesController@look')->name('look');
     Route::get('/contact', 'PagesController@contact')->name('contact');
-    Route::get('/shop', 'PagesController@shop')->name('shop');
+    Route::get('/our-place', 'PagesController@shop')->name('shop');
     // collection
     Route::group(['prefix' => 'collections', 'as' => 'collections.'], function () {
-        Route::get('/', 'CollectionsController@getCollection')->name('index');
+        Route::get('/shop', 'CollectionsController@getCollection')->name('index');
         Route::get('/{slug}', 'CollectionsController@getCollectionBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('detail');
     });
