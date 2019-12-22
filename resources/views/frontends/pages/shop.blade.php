@@ -29,16 +29,16 @@
             </div>
             <ul class="list-group mt-30">
                 <li class="list-group-item p-30">
-                    <p><i class="fas fa-map-marker-alt text-bold"></i> str 200, Phnom Penh, Cambodia</p>
+                    <p><i class="fas fa-map-marker-alt text-bold"></i> Street 213 and street 182</p>
                 </li>
             </ul>
         </div>
     </div> 
-    <div class="shop-map">
+    <div class="shop-map container">
         <div class="row mlr-0">
             <div class="col-md-6 plr-0">
-                <figure class="img-cavas flex-img">
-                    <img src="{{ URL('theme/img/map-cambodia.jpg') }}" alt="img-holiwood">
+                <figure class="img-cavas">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.8472441504596!2d104.90595391480795!3d11.562806391790904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518503c7d2ed%3A0xbffc2d145fbc6aad!2sSwipe%20Company!5e0!3m2!1sen!2skh!4v1576987759176!5m2!1sen!2skh" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </figure>
             </div>
             <div class="col-md-6 plr-0 shop-bg-right">
@@ -46,11 +46,10 @@
                     <i class="fas fa-sun"></i> Why Choose Us
                 </div>
                 <ul class="list-group mt-3">
-                    <li class="list-group-item">New screen <span class="badge">12</span></li>
-                    <li class="list-group-item">Protect your Phone <span class="badge">5</span></li>
-                    <li class="list-group-item">Protect your Phone <span class="badge">3</span></li>
-                    <li class="list-group-item">Protect your Phone <span class="badge">5</span></li>
-                    <li class="list-group-item">Protect your Phone <span class="badge">5</span></li>
+                    <li class="list-group-item">Up-to-date</li>
+                    <li class="list-group-item">Premium quality</li>
+                    <li class="list-group-item">We care about customer need</li>
+                    <li class="list-group-item">Safe and convenient to use</li>
                 </ul>
             </div>
         </div>
