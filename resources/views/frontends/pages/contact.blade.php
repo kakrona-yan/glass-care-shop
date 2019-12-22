@@ -29,7 +29,7 @@
                         </div>
                         <div class="contact--text">
                             <h1>Our Address</h1>
-                            <h2>str 200, Phnom Penh, Cambodia</h2>
+                            <h2><a href="https://www.google.com/maps?q=Swipe+Company,+182+Oknha+Tep+Phan+St.+(182),+Phnom+Penh,+Cambodia&ftid=0x3109518503c7d2ed:0xbffc2d145fbc6aad&hl=en-KH&gl=kh&shorturl=1" target="_blank">Street 213 and street 182</a></h2>
                         </div>
                     </div>
                 </div>
