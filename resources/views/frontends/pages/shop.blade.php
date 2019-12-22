@@ -25,11 +25,11 @@
         </div>
         <div class="shop">
             <div class="shop-box">
-                PHNOM PENH
+                <a href="https://www.google.com/maps?q=Swipe+Company,+182+Oknha+Tep+Phan+St.+(182),+Phnom+Penh,+Cambodia&ftid=0x3109518503c7d2ed:0xbffc2d145fbc6aad&hl=en-KH&gl=kh&shorturl=1" target="_blank">PHNOM PENH</a>
             </div>
             <ul class="list-group mt-30">
                 <li class="list-group-item p-30">
-                    <p><i class="fas fa-map-marker-alt text-bold"></i> Street 213 and street 182</p>
+                    <p><i class="fas fa-map-marker-alt text-bold"></i><a href="https://www.google.com/maps?q=Swipe+Company,+182+Oknha+Tep+Phan+St.+(182),+Phnom+Penh,+Cambodia&ftid=0x3109518503c7d2ed:0xbffc2d145fbc6aad&hl=en-KH&gl=kh&shorturl=1" target="_blank"> Street 213 and street 182</a></p>
                 </li>
             </ul>
         </div>
