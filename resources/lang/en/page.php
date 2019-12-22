@@ -4,10 +4,10 @@ return [
     'website' => 'About Swipe',
     'home' => 'Home',
     'about' => 'About',
-    'collection' => 'Collection',
+    'collection' => 'Shop',
     'look' => 'Look',
     'contact' => 'Contact Us',
-    'shop' => 'Shop',
+    'shop' => 'Our Place',
     'news' => 'News',
     'footer' => [
         'site_map' => 'SITE MAP',
@@ -15,7 +15,7 @@ return [
         'follow_us' => 'FOLLOW US',
         'copy_right' => 'Copyright',
         'power_by' => '2019 By Swipe',
-        'mail' => 'glasscarescreen@gmail.com',
+        'mail' => 'Swipe1shop@gmail.com',
         'tel' => '(+855) 093 399 330',
     ]
 ];
