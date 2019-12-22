@@ -38,7 +38,9 @@
         <div class="row mlr-0">
             <div class="col-md-6 plr-0">
                 <figure class="img-cavas">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.8472441504596!2d104.90595391480795!3d11.562806391790904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518503c7d2ed%3A0xbffc2d145fbc6aad!2sSwipe%20Company!5e0!3m2!1sen!2skh!4v1576987759176!5m2!1sen!2skh" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <a data-fslightbox href="{{ URL('theme/img/map-cambodia.jpg') }}">
+                        <img src="{{ URL('theme/img/map-cambodia.jpg') }}" alt="Swipe">
+                    </a>
                 </figure>
             </div>
             <div class="col-md-6 plr-0 shop-bg-right">
@@ -58,3 +60,6 @@
 <!--Blog-->
 @include('frontends.includes.blog')
 @endsection
+@push('footer-script')
+<script src="{{ URL('vendor/fslightbox/index.js') }}"></script>
+@endpush
