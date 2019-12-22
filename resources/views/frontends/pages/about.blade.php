@@ -35,8 +35,8 @@
                         <h2>MR.OWNER</h2>
                     </div>
                 </div>
-                <p>Floristry can involve the cultivation of flowers as well as their arrange-ment, and to the business of selling them. Much of the raw material supplied for the floristry trade comes from the cut flowers industry<br><br>
-                    Florist shops are the main flower-only outlets, but supermarkets, garden supply stores also sell flowers</p>
+                    <p>Swipe company is a company which provides phone accessories such as screen protector and phone cables. We are planning to contribute our products to phone shops and phone accessories shop in PhnomPenh and in the province in the near future. Our products come with the best quality and good reasonable price. Especially, we also creat videos to review and detail quality of all products. 
+                        So be sure to check it out and know the difference about our products.</p>
                     <div class="social-well">
                         <span>SOCIAL:</span>
                         <a href="#" id="link-insta2"></a>
