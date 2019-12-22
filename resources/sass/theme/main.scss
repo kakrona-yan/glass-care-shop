@@ -219,7 +219,7 @@ a{
             align-items: center;
         }
         .shop-bg-right{
-            height: 485px;
+            min-height: 427px;
             background: $pink-2;
             padding: 45px 20px;
             .list-group-item{
@@ -240,6 +240,9 @@ a{
 }
 .mlr-0 {
     margin: 0px auto;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.60), 0 1px 5px rgba(0, 0, 0, 0.60);
+    border-top: 2px solid #087eb3;
+    border-radius: 4px;
 }
 .plr-0{
     padding: 0px;
