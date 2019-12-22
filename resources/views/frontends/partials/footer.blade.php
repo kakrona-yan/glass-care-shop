@@ -27,7 +27,7 @@
                     <h3>{{ __('page.footer.follow_us') }}</h3>
                     <div class="social">
                         <a href="#" id="link-insta"></a>
-                        <a href="#" id="link-fb"></a>
+                        <a href="https://www.facebook.com/Swipe-111849350266066/" id="link-fb" target="_blank"></a>
                         <a href="#" id="link-tw"></a>
                     </div>
                 </div>
