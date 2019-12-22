@@ -557,7 +557,40 @@ a{
 /* 
 * Resposive
 */
+.circle {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 300px;
+    border-radius: 50%;
+    border: 1px solid #0ac4ff;
+    cursor: pointer;
+}
 
+.circle:before, .circle:after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transition: box-shadow 0.4s ease-in-out;
+}
+.circle:after {
+    transform: rotate(45deg);
+}
+
+.circle:hover:before, .circle:hover:after {
+    box-shadow:
+        15px 0 0 0 rgba(255,0,0,0.5) inset,
+        0 15px 0 0 rgba(255,150,0,0.5) inset,
+        -15px 0 0 0 rgba(0,255,0,0.5) inset,
+        0 -15px 0 0 rgba(0,150,255,0.5) inset;
+}
 @media (max-width: 991px) {
     header{
         padding: 0px;
