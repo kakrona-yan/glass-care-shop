@@ -298,6 +298,10 @@ a{
     top: -30px;
     border-radius: 6px;
 }
+iframe {
+    width: 100%;
+    max-width: 100%;
+}
 .contact{
     margin-bottom: 50px;
     &-link{
