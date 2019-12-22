@@ -31,7 +31,7 @@
                         </figure>
                     </div>
                     <div class="media-body">
-                        <h1>WELLCOME TO Swipe</h1>
+                        <h1>WELLCOME TO SWIPE</h1>
                         <h2>Swipe</h2>
                     </div>
                 </div>
