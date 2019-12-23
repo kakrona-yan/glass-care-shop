@@ -1,4 +1,4 @@
-.glass-image{max-width: 650px;height:auto;padding: 5px;background: #7f7c7c;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}.glass-quarter img{vertical-align:middle;margin-bottom: 8px !important;}
+.glass-image{max-width: 650px;height:auto;padding: 5px;background: #7f7c7c;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}.glass-quarter img{vertical-align:middle;}
 .glass-table,.glass-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.glass-table-all{border:1px solid #ccc}
 .glass-bordered tr,.glass-table-all tr{border-bottom:1px solid #ddd}.glass-striped tbody tr:nth-child(even){background-color:#f1f1f1}
 .glass-table-all tr:nth-child(odd){background-color:#fff}.glass-table-all tr:nth-child(even){background-color:#f1f1f1}
@@ -201,4 +201,4 @@
 .glass-border-dark-grey,.glass-hover-border-dark-grey:hover,.glass-border-dark-gray,.glass-hover-border-dark-gray:hover{border-color:#616161!important}
 .glass-border-pale-red,.glass-hover-border-pale-red:hover{border-color:#ffe7e7!important}.glass-border-pale-green,.glass-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .glass-border-pale-yellow,.glass-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.glass-border-pale-blue,.glass-hover-border-pale-blue:hover{border-color:#e7ffff!important}.btn-red {background-color: #e81000 !important;}
-.glass-quarter a{ box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);display: block;}
+.glass-quarter a{ box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);display: block; margin-bottom: 8px !important;}
