@@ -1,5 +1,8 @@
 @extends('backends.layouts.master')
 @section('title', __('product.title'))
+@push('header-style')
+<link href="{{ asset('theme/bootstrap-wysihtml/css/bootstrap-wysihtml5.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 <div id="product-list">
     <!-- Page Heading -->
@@ -144,7 +147,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group description">
-                                    <textarea class="form-control" id="description" rows="3" name="description">{{$product->description}}</textarea>
+                                    <textarea class="form-control textarea" id="description" rows="3" name="description">{{$product->description}}</textarea>
                                 </div>
                             </div><!--/tab-add-product-->
                         </div>
@@ -215,6 +218,22 @@
     $(function(){
         $("#category_id").select2({
             allowClear: false
+        });
+    });
+</script>
+<script src="{{asset('theme/bootstrap-wysihtml/js/wysihtml5-0.3.0.js')}}"></script>
+<script src="{{asset('theme/bootstrap-wysihtml/js/bootstrap-wysihtml5.js')}}"></script>
+<script>
+    $(function(){
+        $('.textarea').wysihtml5({
+            "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+            "emphasis": true, //Italics, bold, etc. Default true
+            "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+            "html": false, //Button which allows you to edit the generated HTML. Default false
+            "link": true, //Button to insert a link. Default true
+            "image": true, //Button to insert an image. Default true,
+            "color": true, //Button to change color of font  
+            "blockquote": true, //Blockquote  
         });
     });
 </script>
