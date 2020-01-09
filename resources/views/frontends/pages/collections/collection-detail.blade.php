@@ -29,9 +29,6 @@
                 <div class="">
                     <ul id="glasscase" class="gc-start">
                         <li><img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="Text" data-gc-caption="{{$product->title}}"></li>
-                        <li><img src="{{ URL('/theme/img/product2.jpg') }}" alt="Text" /></li>
-                        <li><img src="{{ URL('/theme/img/product3.jpg') }}" alt="Text" /></li>
-                        <li><img src="{{ URL('/theme/img/product4.jpg') }}" alt="Text" /></li>
                     </ul>
                 </div>
             </div>
