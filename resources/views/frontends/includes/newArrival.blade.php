@@ -1,8 +1,8 @@
 <section id="new-arrival">
     <div class="deal-day count">
         <div class="title-center">
-            <h1>New Arrivals</h1>
-            <p>More recently with desktop publishing software</p>
+            <h1>Shop New Arrivals</h1>
+            <p>More recently with Shop Best Sellers</p>
         </div>
         @if( Session::has('flash_danger') )
             <p class="alert text-center {{ Session::get('alert-class', '') }}">
