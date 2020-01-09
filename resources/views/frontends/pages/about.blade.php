@@ -55,7 +55,7 @@
     </div>
 </section>
 <!--Blog-->
-@include('frontends.includes.blog')
+{{-- @include('frontends.includes.blog') --}}
 @endsection
 @push('footer-script')
 <script src="{{ URL('vendor/fslightbox/index.js') }}"></script>

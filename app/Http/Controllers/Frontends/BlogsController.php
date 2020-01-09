@@ -16,4 +16,11 @@ class BlogsController extends Controller
     {
         return view('frontends.pages.news.index');
     }
+
+    public function getNewsBySlug(Request $request, $slug)
+    {
+        return view('frontends.pages.news.news-detail', [
+            'slug' => $slug
+        ]);
+    }
 }
