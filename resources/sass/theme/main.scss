@@ -745,5 +745,9 @@ iframe {
     }
     #header-banner {
         height: auto;
+        justify-content: flex-start;
+        img {
+            max-width: initial;
+        }
     }
 }
