@@ -152,6 +152,7 @@ Route::group([
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('/look', 'PagesController@look')->name('look');
     Route::get('/contact', 'PagesController@contact')->name('contact');
+    Route::post('/contact', 'PagesController@postContact')->name('post.contact');
     Route::get('/our-place', 'PagesController@shop')->name('shop');
     // collection
     Route::group(['prefix' => 'collections', 'as' => 'collections.'], function () {

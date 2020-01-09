@@ -80,21 +80,42 @@
                     </figure>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 message-contact">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-dismissible">
+                            <strong><i class="fas fa-info-circle"></i> {{ $message }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <h1>Send us a message</h1>
-                    <form class="form-group" action="" method="post">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <form class="form-group" action="{{route('post.contact')}}" method="post">
+                        @csrf
+                        <div class="col-xs-12">
                             <label for="name-ip">Name<span>*</span></label><br>
-                            <input type="text" name="input-name" id="name-ip" class="input-lg form-control" placeholder="Mark Stevens">
+                            <input type="text" name="name" id="name-ip" class="input-lg form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="name">
+                            @if ($errors->has('name'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xs-12">
                             <label for="mail-ip">Mail<span>*</span></label><br>
-                            <input type="text" name="input-mail" id="mail-ip" class="input-lg form-control" placeholder="Mark Stevens">
+                            <input type="text" name="email" id="mail-ip" class="input-lg form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="email">
+                            @if ($errors->has('name'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <label>What's on your mind?<span>*</span></label>
-                            <textarea placeholder="Write your message here..." class="form-control"></textarea>
+                        <div class="col-xs-12">
+                            <label>What's on your mind?</label>
+                            <textarea name="message" placeholder="Write your message here..." class="form-control"></textarea>
                         </div>
-                        <button type="submit">Send message</button>
+                        <div class="col-xs-12">
+                            <button type="submit">Send message</button>
+                        </div>
                     </form>
                 </div>
             </div>
