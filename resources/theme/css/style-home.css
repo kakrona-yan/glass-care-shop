@@ -1253,10 +1253,14 @@ header .menu-main {
 position: relative;
 padding-top: 20px; }
 header .menu-main li {
-padding: 0px 22px;
+padding: 0px 10px;
 display: flex;
 justify-content: center;
 align-items: center;
+width: 150px;
+}
+li.contact-menu.menu-logo {
+    width: 200px;
 }
 header .menu-main li:first-child a {
 padding-left: 0; }

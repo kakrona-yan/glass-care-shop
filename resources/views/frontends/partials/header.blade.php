@@ -36,7 +36,7 @@
                         <a href="{{ route('news.index') }}">{{ __('page.news') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li>
+                    <li class="hidden-lg hidden-md">
                         <figure id="btn-close-menu" class="hidden-lg hidden-md"><i class="far fa-times-circle"></i></figure>
                     </li>
                 </ul>
