@@ -728,7 +728,7 @@ iframe {
         .container{
             margin: 0px auto;
             &::before {
-                width: calc(100% + 0px);
+                width: auto;
             }
         }
     }

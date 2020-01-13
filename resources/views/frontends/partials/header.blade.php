@@ -32,7 +32,7 @@
                         <a href="{{ route('shop') }}">{{ __('page.shop') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li class="{{ Route::currentRouteName() == 'news' ? 'active' : '' }}">
+                    <li class="{{ Route::currentRouteName() == 'news.index' ? 'active' : '' }}">
                         <a href="{{ route('news.index') }}">{{ __('page.news') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
@@ -47,13 +47,13 @@
                 <a href="{{ route('home') }}" class="menu-rs {{ Route::currentRouteName() =='home' ? 'active' : '' }}">
                     <i class="fas fa-home"></i>
                 </a>
-                <a href="{{ route('collections.index') }}" class="menu {{Route::currentRouteName() =='collection' ? 'active' : '' }}">
+                <a href="{{ route('collections.index') }}" class="menu {{Route::currentRouteName() =='collections.index' ? 'active' : '' }}">
                     <i class="fas fa-laptop-medical"></i>
                 </a>
                 <a href="{{ route('shop') }}" class="menu {{ Route::currentRouteName() =='shop' ? 'active' : '' }}">
                     <i class="fas fa-store-alt"></i>
                 </a>
-                <a href="{{ route('news.index') }}" class="menu {{Route::currentRouteName() =='news' ? 'active' : '' }}">
+                <a href="{{ route('news.index') }}" class="menu {{Route::currentRouteName() =='news.index' ? 'active' : '' }}">
                     <i class="far fa-newspaper"></i>
                 </a>
                 <a href="javascript:void(0)" id ="btn-navi">
