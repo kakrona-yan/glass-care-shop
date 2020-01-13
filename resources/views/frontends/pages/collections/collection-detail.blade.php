@@ -57,6 +57,7 @@
         </div>
     </div>
 </section>
+ @include('frontends.pages.collections.includes.related-product')
 @endsection
 @push('footer-script')
 <script src="{{ URL('theme/js/product-zoom.js') }}"></script>

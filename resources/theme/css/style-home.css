@@ -1457,7 +1457,7 @@ header .menu-main li.blog-menu .dropdown-menu.menu-home-lv2 .li-home:hover i {
 visibility: visible;
 opacity: 1;
 transform: translateX(18px); }
-header .menu-main li.blog-menu .dropdown-menu.menu-home-lv2 .li-home:hover a {
+header .menu-main li.blog-menu .dropdown-menu.menu-home-lv2 .li-home:hover a{
 text-decoration: none;
 color:#0ac4ff;
 font-weight: 600;
@@ -1480,13 +1480,19 @@ left: auto;
 visibility: hidden;
 opacity: 0; 
 }
-header .menu-main li:hover .hv-menu {
+header .menu-main li.active .hv-menu {
+  opacity: 1;
+  visibility: visible;
+}
+header .menu-main li:hover .hv-menu,
+header .menu-main li.active {
 visibility: unset;
 opacity: 1;
 transform: translateX(5px);
 transition: all .35s ease; }
-header .menu-main li a {font-size: 18px;color: #555555;text-transform: uppercase;padding: 15px 0px;font-family: "Source Sans Pro", Helvetica, sans-serif;font-weight: 100;}
-header .menu-main li a:hover {
+header .menu-main li a {font-size: 18px;color: #555555;text-transform: uppercase;padding: 15px 0px;font-family: "Source Sans Pro", Helvetica, sans-serif;font-weight: 700;}
+header .menu-main li a:hover,
+header .menu-main li.active a{
 background-color: unset; 
 color: #0ac4ff;
 }
@@ -2174,9 +2180,9 @@ color: lightgrey;
 padding-left: 10px; }
 .product-slick .product-slic .product-image-slic {
 position: relative;
-transition: all .5s ease; border-top: 3px solid #067799;}
+transition: all .5s ease; border-top: 3px solid #0ac4ff;}
 .product-slick .product-slic .product-image-slic:hover {
-border-top: 3px solid #0ac4ff; }
+border-top: 3px solid #eaa092; }
 .product-slick .product-slic .product-image-slic:hover .product-icon-slic {
 opacity: 1;
 transform: scale(1); }

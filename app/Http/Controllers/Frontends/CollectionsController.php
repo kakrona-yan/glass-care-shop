@@ -47,10 +47,21 @@ class CollectionsController extends Controller
         try {
             $product = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
                 ->where('slug', $slug)->firstOrFail();
+            $relatedProducts = [];
+            if($product && $product->category) {
+                $categoryId = $product->category->id;
+                $relatedProducts = $this->product->whereHas('category', function ($category) use ($categoryId) {
+                    $category->where('id', $categoryId);
+                })
+                ->limit(20)
+                ->inRandomOrder()
+                ->get();
+            }
             flashDanger($product->count(), __('flash.empty_data'));
             return view('frontends.pages.collections.collection-detail', [
                 'product' => $product,
-                'slug' => $slug
+                'slug' => $slug,
+                'relatedProducts' => $relatedProducts
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'frontends.pages.collections.collection-detail');

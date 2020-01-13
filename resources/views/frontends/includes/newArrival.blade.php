@@ -17,7 +17,7 @@
                             <div class="product-image-slic">
                                 <figure class="img-cavas mx-h-200">
                                     <a href="{{ route('collections.detail', $product->slug) }}">
-                                        <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="holiwood">
+                                        <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="{{$product->title}}">
                                     </a>
                                 </figure>
                                 <div class="product-icon-slic">

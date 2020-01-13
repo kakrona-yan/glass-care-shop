@@ -7,15 +7,15 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 menu-mobile flex-center">
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav menu-main">
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'about' ? 'active' : '' }}">
                         <a href="{{ route('about') }}">{{ __('page.about') }}</a>
                         <figure class="hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'collections.index' ? 'active' : '' }}">
                         <a href="{{ route('collections.index') }}">{{ __('page.collection') }}</a>
                         <figure class="hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'look' ? 'active' : '' }}">
                         <a href="{{ route('look') }}">{{ __('page.look') }}</a>
                         <figure class="hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
@@ -24,15 +24,15 @@
                             <img src="{{ URL('theme/img/logo.png')}}" alt="Swipe" />
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">
                         <a href="{{ route('contact') }}">{{ __('page.contact') }}</a>
                         <figure class="hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'shop' ? 'active' : '' }}">
                         <a href="{{ route('shop') }}">{{ __('page.shop') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'news' ? 'active' : '' }}">
                         <a href="{{ route('news.index') }}">{{ __('page.news') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>

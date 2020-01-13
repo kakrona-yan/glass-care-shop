@@ -31,7 +31,7 @@
         @endforeach
     </div>
     @if( Session::has('flash_danger') )
-        <p class="alert text-center {{ Session::get('alert-class', '') }}">
+        <p class="alert {{ Session::get('alert-class', '') }}">
             <span class="spinner-border spinner-border-sm text-danger align-middle"></span> {{ Session::get('flash_danger') }}
         </p>
     @endif
