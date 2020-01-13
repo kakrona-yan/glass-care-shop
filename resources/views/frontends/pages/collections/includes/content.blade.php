@@ -22,7 +22,7 @@
                         <div class="prince">${{$product->price}}</div>
                         <div class="product-decription p-title">
                             <h4><i class="fas fa-atom"></i> Specifications</h4>
-                            <p>{{$product->description}}</p>
+                            <p>{!! nl2br($product->description) !!}</p>
                         </div>
                     </div>
                 </div>

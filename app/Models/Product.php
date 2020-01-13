@@ -30,6 +30,11 @@ class Product extends BaseModel
         'is_delete'
     ];
 
+    public function productImages()
+    {
+        return $this->hasMany('App\Models\ProductImage', 'product_id', 'id');
+    }
+    
     /**
      * The product that belong to the category
      * From table user

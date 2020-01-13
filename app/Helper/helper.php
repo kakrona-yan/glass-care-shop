@@ -41,10 +41,9 @@ if (! function_exists('uploadImage')) {
         if($ext == "jpeg") $ext = "jpg";
         $imageName = uniqid() . '.' . $ext;
         \Storage::disk($path)->put($imageName, $image);
-        $urlImage = "storage/image/{$path}/{$imageName}";
+        // $urlImage = "storage/image/{$path}/{$imageName}";
         // make thumnail
-        uploadThumbnail($urlImage, 500);
-        
+        // uploadThumbnail($urlImage, 500);
         return $imageName;
     }
 }
@@ -133,5 +132,17 @@ if (!function_exists('str_limit')) {
     function str_limit($str, $lenght = 20)
     {
         return Str::limit($str, $lenght);
+    }
+}
+
+/**
+ * checkImageSize
+ */
+if (!function_exists('checkImageSize')) {
+    function checkImageSize($imageBase64)
+    {
+        $size = strlen(base64_decode($imageBase64));
+        $size_mb = $size / 1024000;
+        return ($size_mb > 10);
     }
 }

@@ -72,7 +72,25 @@ class ProductsController extends Controller
             $product['slug'] = strSlug($product['title']);
             $product['thumbnail'] = isset($product['thumbnail']) ? uploadFile($product['thumbnail'], config('upload.product')) : '';
             // $product['promotion_banner'] = isset($product['promotion_banner']) ? uploadFile($product['promotion_banner'], config('upload.promotion_banner')) : '';
-            $this->product->create($product);
+            $productStore = $this->product->create($product);
+           
+            if ($productStore) {
+                // store table product_images
+                if (isset($product['product_gallery']) && !empty($product['product_gallery'])) {
+                    foreach ($product['product_gallery'] as $productGallery) {
+                        if (isBase64($productGallery)) {
+                            if (checkImageSize($productGallery)) {
+                                return redirect()->route('product.index')
+                                    ->with('maxSizeImage', __('validation.max'));
+                            }
+                            $this->productImage->create([
+                                'product_id' => $productStore->id,
+                                'thumbnail' => uploadImage($productGallery, config('upload.product_gallery'))
+                            ]);
+                        }
+                    }
+                }
+            }
             return \Redirect::route('product.index')
                 ->with('success', __('flash.store'));
         } catch (\ValidationException $e) {
@@ -154,7 +172,37 @@ class ProductsController extends Controller
                 unset($requestProduct['promotion_banner']);
             }
             $product->update($requestProduct);
-
+            if ($product) {
+                // update and delete table product_gallery
+                if (isset($requestProduct['product_gallery_id'])) {
+                    $productIds = preg_split("/,/", $requestProduct['product_gallery_id']);
+                    foreach ($productIds as $key => $productId) {
+                        $productImage = $this->productImage->where('product_id', $product->id)
+                            ->where('id', $productId)
+                            ->first();
+                        if ($productImage) {
+                            $productImage->delete();
+                            deleteFile($productImage->thumbnail, config('upload.product_gallery'));
+                        }
+                    }
+                }
+                // add new table product_gallery
+                if (isset($requestProduct['product_gallery']) && !empty($requestProduct['product_gallery'])) {
+                    foreach ($requestProduct['product_gallery'] as $productGallery) {
+                        if (isBase64($productGallery)) {
+                            if (checkImageSize($productGallery)) {
+                                return redirect()->route('product.monthly')
+                                    ->with('maxSizeImage', __('validation.max'));
+                            }
+                            $this->productImage->create([
+                                'product_id' => $product->id,
+                                'thumbnail' => uploadImage($productGallery, config('upload.product_gallery'))
+                            ]);
+                        }
+                    }
+                }
+            }
+            
             return \Redirect::route('product.index')
                 ->with('warning', __('flash.update'));
         } catch (\ValidationException $e) {

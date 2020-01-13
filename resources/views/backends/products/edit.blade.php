@@ -149,6 +149,31 @@
                                 <div class="form-group description">
                                     <textarea class="form-control textarea" id="description" rows="3" name="description">{{$product->description}}</textarea>
                                 </div>
+                                <div class="form-group">
+                                    <fieldset class="edit-master-registration-fieldset">
+                                        <legend class="edit-application-information-legend">Gallery Product:</legend>
+                                        @if (session('maxSizeImage'))
+                                        <div class="text-danger">{{ session('maxSizeImage') }}</div>
+                                        @endif
+                                        <div id="upload">
+                                            <label for="productImages" class="mb-1 py-2 btn btn-circle btn-primary"><i class="fas fa-plus-circle mr-1"></i> Upload Gallery</label>
+                                            <input type="file" id="productImages" accept="image/*" class="upload-label d-none" multiple>
+                                        </div>
+                                        <div class="multi-image row">
+                                            <input id="product_gallery_id" type="hidden" name="product_gallery_id" value="">
+                                            @foreach ($product->productImages as $productImage)
+                                            @isset($productImage->thumbnail)
+                                                <div class="col-6 col-md-3 align-content-end text-center">
+                                                <div class="product-thumb align-middle">
+                                                    <img class="mw-100 mh-100" src='{{ getUploadUrl($productImage->thumbnail, config('upload.product_gallery')) }}'/>
+                                                </div>
+                                                <p><button type="button" class="mt-1 btn btn-circle btn_remove" data-id="{{$productImage->id}}">Remove</button></p>
+                                            </div>
+                                            @endisset
+                                            @endforeach
+                                        </div>
+                                    </fieldset>
+                                </div>
                             </div><!--/tab-add-product-->
                         </div>
                     </div>
@@ -230,11 +255,44 @@
             "emphasis": true, //Italics, bold, etc. Default true
             "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
             "html": false, //Button which allows you to edit the generated HTML. Default false
-            "link": true, //Button to insert a link. Default true
-            "image": true, //Button to insert an image. Default true,
+            "link": false, //Button to insert a link. Default true
+            "image": false, //Button to insert an image. Default true,
             "color": true, //Button to change color of font  
             "blockquote": true, //Blockquote  
         });
+
+        var imagesPreview = function(input, placeToInsertImagePreview) {
+		if (input.files) {
+			var filesAmount = input.files.length;
+			for (let i = 0; i < filesAmount; i++) {
+				var reader = new FileReader();
+				reader.onload = function(event) {
+					const div = `<div class="col-6 col-md-3 align-content-end text-center">
+									<div class="product-thumb align-middle">
+										<input type="hidden" name="product_gallery[]" value="${event.target.result}" class="d-none">
+										<img class="mw-100 mh-100" src='${event.target.result}'/>
+									</div>
+									<p><button type="button" class="mt-1 btn btn-circle btn_remove">Remove</button></p>
+								</div>`
+					$(placeToInsertImagePreview).append(div);
+				}
+				reader.readAsDataURL(input.files[i]);
+			}
+		}
+	};
+
+    $('#productImages').on('change', function() {
+        imagesPreview(this, 'div.multi-image');
+	});
+	var element = [];
+	$(document).on('click', '.btn_remove', function(e){
+		e.preventDefault();
+		var id = $(this).attr('data-id');
+		element.push(id);
+		$('#product_gallery_id').val(element);
+		$(this).parent().parent().remove();
+		$(this).remove();
+	});	
     });
 </script>
 @endpush

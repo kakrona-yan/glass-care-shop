@@ -93,6 +93,12 @@ return [
             'url' => env('APP_URL') . '/storage/images/staff',
             'visibility' => 'public',
         ],
+        'product_gallery' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/product_gallery'),
+            'url' => env('APP_URL') . '/storage/images/product_gallery',
+            'visibility' => 'public',
+        ],
 
     ],
 

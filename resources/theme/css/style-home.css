@@ -2174,9 +2174,9 @@ color: lightgrey;
 padding-left: 10px; }
 .product-slick .product-slic .product-image-slic {
 position: relative;
-transition: all .5s ease; }
+transition: all .5s ease; border-top: 3px solid #067799;}
 .product-slick .product-slic .product-image-slic:hover {
-box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2); }
+border-top: 3px solid #0ac4ff; }
 .product-slick .product-slic .product-image-slic:hover .product-icon-slic {
 opacity: 1;
 transform: scale(1); }

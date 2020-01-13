@@ -17,4 +17,9 @@ class ProductImage extends Model
         'is_active',
         'is_delete'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Product', 'product_id');
+    }
 }

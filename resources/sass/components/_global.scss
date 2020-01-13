@@ -270,3 +270,31 @@ input{
 .font-xs-14-14{
   font-size: 14px;
 }
+.edit-application-information-legend{
+  border-style: none;
+  border-width: 0;
+  font-size: 18px;
+  color: #4e73df;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  width: auto;
+  padding: 0 10px;
+}
+.edit-application-information-fieldset {
+	text-align: center;
+  border: 2px solid #555;
+  padding: 10px;
+}
+.edit-master-registration-fieldset{
+	border: 2px solid #4e73df;
+  padding: 10px;
+}
+.product-thumb {
+  border: 1px solid #ccc;
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  padding: 10px;
+}

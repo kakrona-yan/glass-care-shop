@@ -46,7 +46,7 @@
                     <div class="product-decription">
                         <h5><i class="fas fa-atom"></i> Specifications</h5>
                         <div class="list-detail">
-                            <p>{{$product->description}}</p>
+                            <p>{!! nl2br($product->description) !!}</p>
                         </div>
                     </div>
                 </div>
