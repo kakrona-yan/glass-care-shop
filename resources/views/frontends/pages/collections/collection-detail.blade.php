@@ -29,6 +29,9 @@
                 <div class="">
                     <ul id="glasscase" class="gc-start">
                         <li><img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="Text" data-gc-caption="{{$product->title}}"></li>
+                        @foreach ($product->productImages as $productImage)
+                            <li><img src="{{$productImage->thumbnail? asset(getUploadUrl($productImage->thumbnail, config('upload.product_gallery'))) : asset('images/no-thumbnail.jpg') }}" alt="Text" /></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
