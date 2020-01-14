@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Constants\DeleteStatus;
+use App\Models\News;
 
 class HomesController extends Controller
 {
-    public function __construct(Product $product)
-    {
+    public function __construct(
+        Product $product,
+        News $news
+    ){
         $this->product = $product;
+        $this->news = $news;
     }
    /**
      * Show the application home.
@@ -24,9 +28,14 @@ class HomesController extends Controller
             ->orderBy('id', 'DESC')
             ->limit(12)
             ->get();
+        $blogs = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'DESC')
+            ->limit(4)
+            ->get();
         flashDanger($products->count(), __('flash.empty_data'));
         return view('frontends.home', [
             'products' => $products,
+            'blogs' => $blogs
         ]);
     }
 }

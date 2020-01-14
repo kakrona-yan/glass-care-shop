@@ -81,7 +81,7 @@ class NewsController extends Controller
                 $news = $request->all();
                 $news['permalink'] = strSlug($news['title']);
                 $news['thumbnail'] = isset($news['thumbnail']) ? uploadFile($news['thumbnail'], config('upload.news')) : '';
-                $news['author'] = \Auth::id();
+                $news['author'] = \Auth::user()->name;
                 $this->news->create($news);
                 return \Redirect::route('news.index')
                     ->with('success', __('flash.store'));
@@ -174,6 +174,7 @@ class NewsController extends Controller
                 } else {
                     unset($requestNews['thumbnail']);
                 }
+                $requestNews['author'] = \Auth::user()->name;
                 $news->update($requestNews);
 
                 return \Redirect::route('news.index')

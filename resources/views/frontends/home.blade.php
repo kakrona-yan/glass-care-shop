@@ -12,7 +12,7 @@
 <!--New Arrival-->
 @include('frontends.includes.newArrival')
 <!--Blog-->
-{{-- @include('frontends.includes.blog') --}}
+@include('frontends.includes.blog')
 @endsection
 @push('footer-script')
 <script src="{{ URL('theme/js/function-slick.js') }}"></script>
