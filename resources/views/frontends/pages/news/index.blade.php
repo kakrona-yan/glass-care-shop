@@ -18,4 +18,16 @@
         </nav>
     </div>
 </section>
+<section class="blog">
+    <div class="container">
+        @include('frontends.pages.news.include.slider')
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                @include('frontends.pages.news.include.content')
+            </div>
+            <div class="col-xs-12 col-md-4"></div>
+        </div>
+    </div>
+</section>
+            
 @endsection
