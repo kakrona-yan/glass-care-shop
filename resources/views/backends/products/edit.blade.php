@@ -196,13 +196,18 @@
                                         <button type="submit" class="btn btn-circle btn-primary w-btn-125 mr-2" name="is_active" value="1">{{__('button.save')}}</button>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group select-group">
                                     <label for="category text-center"><i class="fas fa-tags"></i> {{__('product.list.category')}}</label>
-                                    <select class="form-control" name="category_id" id="category_id">
+                                    <select class="form-control {{ $errors->has('category_id') ? ' is-invalid' : '' }}" name="category_id" id="category_id">
                                         @foreach($categories as $id => $name)
                                             <option value="{{ $id }}" {{ $id == $product->category_id ? 'selected' : '' }}>{{ $name }}</option>
                                         @endforeach
                                     </select>
+                                    @if ($errors->has('category_id'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('category_id') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="thumbnail text-center"><i class="fas fa-image"></i> {{__('button.thumbnail')}}</label>

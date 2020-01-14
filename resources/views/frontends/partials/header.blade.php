@@ -32,8 +32,8 @@
                         <a href="{{ route('shop') }}">{{ __('page.shop') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
-                    <li class="{{ Route::currentRouteName() == 'news.index' ? 'active' : '' }}">
-                        <a href="{{ route('news.index') }}">{{ __('page.news') }}</a>
+                    <li class="{{ Route::currentRouteName() == 'blog.index' ? 'active' : '' }}">
+                        <a href="{{ route('blog.index') }}">{{ __('page.news') }}</a>
                         <figure class=" hidden-sm hidden-md hidden-xs hv-menu"></figure>
                     </li>
                     <li class="hidden-lg hidden-md">
@@ -53,7 +53,7 @@
                 <a href="{{ route('shop') }}" class="menu {{ Route::currentRouteName() =='shop' ? 'active' : '' }}">
                     <i class="fas fa-store-alt"></i>
                 </a>
-                <a href="{{ route('news.index') }}" class="menu {{Route::currentRouteName() =='news.index' ? 'active' : '' }}">
+                <a href="{{ route('blog.index') }}" class="menu {{Route::currentRouteName() =='blog.index' ? 'active' : '' }}">
                     <i class="far fa-newspaper"></i>
                 </a>
                 <a href="javascript:void(0)" id ="btn-navi">

@@ -11,7 +11,7 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle text-capitalize" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600">{{ Auth::user() ? Auth::user()->name : '' }}</span>
-                <img class="img-profile rounded-circle" src="{{ Auth::user()->thumbnail? getUploadUrl(Auth::user()->thumbnail, config('upload.user')) : asset('images/avatar.png') }}" width="45"/>
+                <img class="img-profile rounded-circle" src="{{ Auth::user() && Auth::user()->thumbnail? getUploadUrl(Auth::user()->thumbnail, config('upload.user')) : asset('images/avatar.png') }}" width="45"/>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

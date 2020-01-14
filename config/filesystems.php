@@ -99,6 +99,12 @@ return [
             'url' => env('APP_URL') . '/storage/images/product_gallery',
             'visibility' => 'public',
         ],
+        'news' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/news'),
+            'url' => env('APP_URL') . '/storage/images/news',
+            'visibility' => 'public',
+        ],
 
     ],
 

@@ -1,7 +1,7 @@
 @extends('backends.layouts.master')
-@section('title', __('user.title'))
+@section('title', __('news.title'))
 @section('content')
-<div id="user-list">
+<div id="news-list">
      <!-- Page Heading -->
      <div class="d-sm-flex align-items-center justify-content-between border-bottom mb-3 pb-3">
         <nav aria-label="breadcrumb">
@@ -13,18 +13,19 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <span class="sub-title">{{ __('user.sub_title') }}</span>
+                    <span class="sub-title">{{ __('news.sub_title') }}</span>
                 </li>
             </ol>
         </nav>
-        <a href="{{route('user.create')}}" 
+        <a href="{{route('news.create')}}" 
             class="btn btn-circle btn-primary"
             data-toggle="tooltip" 
             data-placement="left" title="" 
             data-original-title="{{__('button.add_new')}}"
         ><i class="fas fa-plus-circle"></i> {{__('button.add_new')}}</a>
     </div>
-    <!--list product-->
+    <!--list news-->
+    @include('backends.news.include._list_news')
 </div>
 
 @endsection

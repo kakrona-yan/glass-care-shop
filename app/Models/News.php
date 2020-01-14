@@ -23,6 +23,15 @@ class News extends BaseModel
         'is_delete'
     ];
 
+    /**
+     * The product that belong to the category
+     * From table user
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id');
+    }
+    
     public function filter($request)
     {
         $news = $this->where('is_delete', '<>', DeleteStatus::DELETED)

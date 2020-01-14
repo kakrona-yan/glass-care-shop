@@ -56,15 +56,15 @@ class Category extends BaseModel
 
     public function getCategoryNameByProducts()
     {
-        return $this->pluck('name','id')
-            ->where('category_type', CategoryType::CATEGORY_TYPE_PRODUCT)
+        return $this->where('category_type', CategoryType::CATEGORY_TYPE_PRODUCT)
+            ->pluck('name', 'id')
             ->all();
     }
 
     public function getCategoryNameByNews()
     {
-        return $this->pluck('name','id')
-            ->where('category_type', CategoryType::CATEGORY_TYPE_NEWS)
+        return $this->where('category_type', CategoryType::CATEGORY_TYPE_NEWS)
+            ->pluck('name', 'id')
             ->all();
     }
 

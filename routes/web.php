@@ -161,7 +161,7 @@ Route::group([
             ->where('slug', '[A-Za-z0-9_\-]+')->name('detail');
     });
     // news
-    Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
+    Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
         Route::get('/', 'BlogsController@getNews')->name('index');
         Route::get('/{slug}', 'BlogsController@getNewsBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('detail');
