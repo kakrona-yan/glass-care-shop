@@ -28,7 +28,8 @@ $(function () {
     // slick banner slider
     $('.responsive-slick-banner').slick({
         dots: false,
-        infinite: false,
+        infinite: true,
+        autoplay: true,
         speed: 1200,
         slidesToShow: 3,
         slidesToScroll: 1,
