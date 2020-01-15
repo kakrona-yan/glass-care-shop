@@ -13,7 +13,7 @@
                 <span class="inline"><i class="far fa-calendar-alt"></i><span> {{date('M, d Y', strtotime($blog->created_at))}}</span></span>
                 <span class="inline"><i class="far fa-user"></i><span> {{$blog->author}}</span></span>
             </div>
-            <div class="blog-description"> <p>{!! Str::limit(nl2br($blog->content), 145) !!}</p></div>
+            <div class="blog-description"> <p>{!! Str::limit(nl2br($blog->content), 245) !!}</p></div>
             <a href="{{ route('blog.detail', $blog->permalink )}}" class="read-more"><i class="fas fa-long-arrow-alt-right"></i> Read more</a>
         </div>
     </div>
