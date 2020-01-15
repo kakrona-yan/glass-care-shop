@@ -20,7 +20,9 @@ class DashboardController extends Controller
     public function index()
     {
         $productCount = $this->product->count();
-        $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)->paginate(config('pagination.limit'));
+        $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'desc')
+            ->paginate(config('pagination.limit'));
         return view('backends.dashboard', [
             'productCount' => $productCount,
             'products' => $products
