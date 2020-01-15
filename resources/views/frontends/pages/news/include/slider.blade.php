@@ -2,6 +2,7 @@
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/slick/slick.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/slick/slick-theme.css') }}">   
 @endpush
+<div class="container">
 <div id="blog-slider" class="mb-50">
     <div class="slider responsive-slick-banner">
         @foreach ($blogSliders as $blogSlider)
@@ -21,6 +22,7 @@
             </div>
         @endforeach
     </div>
+</div>
 </div>
 @push('footer-script')
 <script>

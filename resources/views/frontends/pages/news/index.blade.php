@@ -19,8 +19,8 @@
     </div>
 </section>
 <section class="blog">
+    @include('frontends.pages.news.include.slider')
     <div class="container">
-        @include('frontends.pages.news.include.slider')
         <div class="row">
             <div class="col-xs-12 col-md-8">
                 @include('frontends.pages.news.include.content')
