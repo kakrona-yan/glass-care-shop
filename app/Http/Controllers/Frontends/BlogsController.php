@@ -51,7 +51,8 @@ class BlogsController extends Controller
                 $relatedPosts = $this->news->whereHas('category', function ($category) use ($categoryId) {
                     $category->where('id', $categoryId);
                 })
-                ->limit(20)
+                ->where('permalink', '<>', $slug)
+                ->limit(4)
                 ->inRandomOrder()
                 ->get();
             }
