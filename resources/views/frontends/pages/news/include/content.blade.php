@@ -1,8 +1,12 @@
 <div class="blog-content">
+    @php
+        $color = 1;    
+    @endphp
     @foreach ($blogs as $blog)
     <div class="row">
         <div class="col-xs-12 col-md-5">
             <a href="{{ route('blog.detail', $blog->permalink )}}">
+                <div class="post-day {{$color > 3 ? 'color-blue' : ''}}">{{date('d', strtotime($blog->created_at))}}</div>
                 <img src="{{$blog->thumbnail? asset(getUploadUrl($blog->thumbnail, config('upload.news'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="{{$blog->title}}">
             </a>
         </div>
@@ -18,6 +22,9 @@
         </div>
     </div>
     <div class="row-border-buttom"></div>
+    @php
+        $color ++;    
+    @endphp
     @endforeach
     <div class="mt-20">
         {{ $blogs->appends(request()->query())->links() }}
