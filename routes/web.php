@@ -167,3 +167,7 @@ Route::group([
             ->where('slug', '[A-Za-z0-9_\-]+')->name('detail');
     });
 });
+// route laravel filemanager
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
