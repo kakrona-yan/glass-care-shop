@@ -44,4 +44,12 @@ class News extends BaseModel
         }
         return $news->paginate($limit);
     }
+
+    public static function latestNews()
+    {
+        return self::where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'DESC')
+            ->limit(5)
+            ->get();
+    }
 }

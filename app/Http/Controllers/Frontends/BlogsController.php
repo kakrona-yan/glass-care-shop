@@ -42,8 +42,27 @@ class BlogsController extends Controller
 
     public function getNewsBySlug(Request $request, $slug)
     {
-        return view('frontends.pages.news.news-detail', [
-            'slug' => $slug
-        ]);
+        try {
+            $news = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
+                ->where('permalink', $slug)->firstOrFail();
+            $relatedPosts = [];
+            if ($news && $news->category) {
+                $categoryId = $news->category->id;
+                $relatedPosts = $this->news->whereHas('category', function ($category) use ($categoryId) {
+                    $category->where('id', $categoryId);
+                })
+                ->limit(20)
+                ->inRandomOrder()
+                ->get();
+            }
+            flashDanger($news->count(), __('flash.empty_data'));
+            return view('frontends.pages.news.news-detail', [
+                'news' => $news,
+                'slug' => $slug,
+                'relatedPosts' => $relatedPosts
+            ]);
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'frontends.pages.news.news-detail');
+        }
     }
 }

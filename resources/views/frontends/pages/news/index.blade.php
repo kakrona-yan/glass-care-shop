@@ -25,7 +25,9 @@
             <div class="col-xs-12 col-md-8">
                 @include('frontends.pages.news.include.content')
             </div>
-            <div class="col-xs-12 col-md-4"></div>
+            <div class="col-xs-12 col-md-4">
+                @include('frontends.pages.news.include.sidebar-right')
+            </div>
         </div>
     </div>
 </section>
