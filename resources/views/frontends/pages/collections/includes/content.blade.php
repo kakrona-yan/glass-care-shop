@@ -17,7 +17,7 @@
                 <div class="product-box--content">
                     <div class="product-title-flower">
                         <h5><a href="{{ route('collections.detail', $product->slug) }}">{{$product->title}}</a></h5>
-                        <p class="product-box--user">By Ower</p>
+                        <p class="product-box--user">By Ratanak</p>
                         <p class="p-title">{{$product->product_code}}</p>
                         <div class="prince">${{$product->price}}</div>
                         <div class="product-decription p-title">

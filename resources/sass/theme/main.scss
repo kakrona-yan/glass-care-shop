@@ -942,3 +942,27 @@ iframe {
 .mt-20{
     margin-top: 20px;
 }
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #0ac4ff;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 4px 0px;
+    font-size: 14px !important;
+}
+.content .pagi .pagination li a {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

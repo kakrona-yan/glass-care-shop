@@ -38,7 +38,7 @@
             <div class="col-md-5 col-xs-12 mb-10">
                 <div class="product-title">
                     <h5><a href="{{ route('collections.detail', $slug) }}">{{$product->title}}</a></h5>
-                    <p class="product-box--user">By Ower</p>
+                    <p class="product-box--user">By ratanak</p>
                     <p class="product-box--category">
                         <i class="fas fa-bullhorn mr-1 text-blue-100"></i>
                         <span>{{$product->category ? $product->category->name : ''}}</span>

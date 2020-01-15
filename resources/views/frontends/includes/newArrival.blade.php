@@ -52,7 +52,7 @@
                                         </div>
                                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
                                             <h1>{{$product->title}}</h1>
-                                            <div class="product-box--user">By Ower</div>
+                                            <div class="product-box--user">By Ratanak</div>
                                             <div class="product-box--category">
                                                 <i class="fas fa-bullhorn mr-1 text-blue-100"></i>
                                                 <span>{{$product->category ? $product->category->name : ''}}</span>
