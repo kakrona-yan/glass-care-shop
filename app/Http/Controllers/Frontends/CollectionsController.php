@@ -53,6 +53,7 @@ class CollectionsController extends Controller
                 $relatedProducts = $this->product->whereHas('category', function ($category) use ($categoryId) {
                     $category->where('id', $categoryId);
                 })
+                ->where('slug', '<>', $slug)
                 ->limit(20)
                 ->inRandomOrder()
                 ->get();
