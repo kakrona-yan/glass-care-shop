@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-md-8">
-                <div class="blog-last-title">{!! Str::limit(nl2br($latestPost->title), 145) !!}</div>
+                <div class="blog-last-title"><a href="{{ route('blog.detail', $latestPost->permalink )}}">{!! Str::limit(nl2br($latestPost->title), 145) !!}</a></div>
                 <span class="post-category">{{$latestPost->category ? $latestPost->category->name : ''}}</span></span>
                 <span class="post-date"><i class="far fa-calendar-alt"></i><span> {{date('M, d Y', strtotime($latestPost->created_at))}}</span></span>
                 
