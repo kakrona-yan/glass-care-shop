@@ -2133,12 +2133,12 @@ left: -44px; }
 .product-slick .slick-prev::before {
 content: url(img/Next.png) !important;
 transform: rotateY(180deg);
-width: 64px;
-height: 64px;
+width: 45px;
+height: 45px;
 background: #0ac4ff;
 display: inline-block;
 text-align: center;
-padding: 20px 0px;
+padding: 10px 0px;
 border-radius: 50px; 
 }
 .product-slick .slick-next {
@@ -2146,12 +2146,12 @@ top: 37% !important;
 right: 0; }
 .product-slick .slick-next::before {
 content: url(img/Next.png) !important;
-width: 64px;
-height: 64px;
+width: 45px;
+height: 45px;
 background: #0ac4ff;
 display: inline-block;
 text-align: center;
-padding: 20px 0px;
+padding: 10px 0px;
 border-radius: 50px;}
 .product-slick .product-slic .product-title-slic {
 text-align: center;

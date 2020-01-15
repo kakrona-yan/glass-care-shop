@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($blogs as $blog)
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 product-blog">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 product-blog mb-30">
                     <a href="{{ route('blog.detail', $blog->permalink )}}">
                         <img src="{{$blog->thumbnail? asset(getUploadUrl($blog->thumbnail, config('upload.news'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="{{$blog->title}}">
                     </a>

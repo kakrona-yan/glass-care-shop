@@ -1070,3 +1070,27 @@ iframe {
         }
     }
 }
+@media (max-width: 768px) {
+    #blog-slider {
+        .slick-slider {
+            margin-right:0px;
+            margin-left:0px;
+        }
+        .slick-slide, .slick-list {
+            text-align:center;
+            margin-right:0px !important;
+            margin-left:0px !important;
+        }
+
+        .slick-prev::before{
+            left: 20px;
+        }
+        .slick-next::before{
+            right: -17px;
+            left: -16px;
+        }
+    }//blog-slider
+    .product-content{
+        padding: 0px 15px;
+    }
+}
