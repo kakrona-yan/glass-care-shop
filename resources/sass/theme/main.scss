@@ -969,57 +969,59 @@ iframe {
     border-bottom-left-radius: 0px;
 }
 // sidebar
-.sidebar {
-    margin-top: 30px;
-    margin-bottom: 90px;
-    .widget {
-        margin-bottom: 31px;
-        padding: 20px;
-        border: 1px solid #e5e5e5;
-        overflow: hidden;
-        & > h2 {
-            position: relative;
-            margin-bottom: 34px;
+.blog, .blog-detail{
+    .sidebar {
+        margin-top: 30px;
+        margin-bottom: 90px;
+        .widget {
+            margin-bottom: 31px;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+            & > h2 {
+                position: relative;
+                margin-bottom: 34px;
+                text-align: center;
+                text-transform: uppercase;
+                overflow: visible;
+                font-size: 16px;
+                font-weight: bold;
+                &:after {
+                    background: #0ac4ff;
+                    width: 33px;
+                    height: 1px;
+                    position: absolute;
+                    content: '';
+                    margin-left: -17px;
+                    left: 50%;
+                    bottom: -15px;
+                }
+            }
+            &_text img {
+                margin: 10px 0 25px;
+            }
+            
+        }
+        .textwidget{
             text-align: center;
-            text-transform: uppercase;
-            overflow: visible;
-            font-size: 16px;
-            font-weight: bold;
-            &:after {
-                background: #0ac4ff;
-                width: 33px;
-                height: 1px;
-                position: absolute;
-                content: '';
-                margin-left: -17px;
-                left: 50%;
-                bottom: -15px;
+            h3{
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+                color: #e69c8f;
             }
         }
-        &_text img {
-            margin: 10px 0 25px;
-        }
-        
-    }
-    .textwidget{
-        text-align: center;
-        h3{
-            font-size: 16px;
-            font-weight: bold;
+        .social-well {
             text-align: center;
+        }
+        .post-category, .post-date {
+            font-size: 12px;
             color: #e69c8f;
         }
-    }
-    .social-well {
-        text-align: center;
-    }
-    .post-category, .post-date {
-        font-size: 12px;
-        color: #e69c8f;
-    }
-    .post-category:after {
-        content: '/';
-        margin-left: 4px;
+        .post-category:after {
+            content: '/';
+            margin-left: 4px;
+        }
     }
 }
 // blog detail
