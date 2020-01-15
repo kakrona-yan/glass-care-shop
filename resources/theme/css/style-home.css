@@ -2935,7 +2935,7 @@ display: none;
     color: black;
     background: #eeeeee;
     border: 0;
-    padding: 6px 10px;
+    padding: 5px 10px;
     color: black; 
   }
 }
@@ -2951,8 +2951,7 @@ border-radius: 0;
 background: black;
 color: #fff; }
 .content .pagi .pagination li:last-child a {
-border-radius: 0;
-padding: 10px 1px; }
+border-radius: 0; }
 .content .pagi .pagination li:last-child a:hover {
 background: #eeeeee; }
 .content .pagi .pagination li:last-child a:hover img {
