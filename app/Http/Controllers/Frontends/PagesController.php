@@ -39,6 +39,7 @@ class PagesController extends Controller
     {
         try {
             $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
+                ->where('is_active', 1)
                 ->get();
             $categories = $this->category->getCategories();
             flashDanger($products->count(), __('flash.empty_data'));

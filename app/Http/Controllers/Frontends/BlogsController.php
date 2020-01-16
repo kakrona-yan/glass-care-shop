@@ -27,6 +27,7 @@ class BlogsController extends Controller
         try {
             $blogs = $this->news->getNews($request);
             $blogSliders = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
+                ->where('is_active', 1)
                 ->orderBy('id', 'DESC')
                 ->limit(10)
                 ->get();
