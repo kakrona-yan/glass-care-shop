@@ -45,7 +45,7 @@ class Category extends BaseModel
     
     public function news()
     {
-        return $this->belongsToMany('App\Models\News', 'category_id');
+        return $this->hasMany('App\Models\News', 'category_id');
     }
 
     public function getCategoryName()
@@ -96,9 +96,17 @@ class Category extends BaseModel
         }
         return $categoryTypeText;
     }
+
     public function getCategories() {
         return $this->withCount('products')
             ->where('category_type', CategoryType::CATEGORY_TYPE_PRODUCT)
+            ->get();
+    }
+
+    public function getNewsCategories()
+    {
+        return $this->withCount('news')
+            ->where('category_type', CategoryType::CATEGORY_TYPE_NEWS)
             ->get();
     }
     

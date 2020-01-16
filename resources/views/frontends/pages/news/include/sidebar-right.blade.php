@@ -2,7 +2,9 @@
     <div id="sidebar-1" class="widget">
         <h2 class="widget-title">ABOUT ME</h2>			
         <div class="textwidget">
-            <img src="{{ URL('images/about.jpg') }}" alt="Swipe">
+            <a href="{{route('about')}}">
+                <img src="{{ URL('images/about.jpg') }}" alt="Swipe">
+            </a>
             <h3>Swipe</h3>
             <p>Swipe company is a company which provides phone accessories such as screen protector and phone cables. </p>
         </div>

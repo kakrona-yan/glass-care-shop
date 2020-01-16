@@ -45,6 +45,19 @@ class News extends BaseModel
         return $news->paginate($limit);
     }
 
+    public function getNews($request)
+    {
+        $news = $this->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'DESC');
+        // Check flash danger
+        flashDanger($news->count(), __('flash.empty_data'));
+        $limit = config('pagination.limit');
+        if (!empty($request->category)) {
+            $news->where('category_id', $request->category);
+        }
+        return $news->paginate($limit);
+    }
+
     public static function latestNews()
     {
         return self::where('is_delete', '<>', DeleteStatus::DELETED)
@@ -52,4 +65,5 @@ class News extends BaseModel
             ->limit(5)
             ->get();
     }
+
 }

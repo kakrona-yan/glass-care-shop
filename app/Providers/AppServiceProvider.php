@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\News;
+use App\Models\Category;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +29,9 @@ class AppServiceProvider extends ServiceProvider
         // Using Closure based composers to all post
         View::composer('*', function ($view) {
             $view->with('latestNews', News::latestNews());
+            $category = new Category();
+            $view->with('productCategories', $category->getCategories());
+            $view->with('newsCategories', $category->getNewsCategories());
         });
     }
 }

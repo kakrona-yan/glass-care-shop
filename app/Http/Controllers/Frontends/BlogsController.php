@@ -25,7 +25,7 @@ class BlogsController extends Controller
     public function getNews(Request $request)
     {
         try {
-            $blogs = $this->news->filter($request);
+            $blogs = $this->news->getNews($request);
             $blogSliders = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
                 ->orderBy('id', 'DESC')
                 ->limit(10)

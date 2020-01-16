@@ -68,7 +68,15 @@ class Menu
                 'sub_menu' => null
             ],
             [
-                // Setting management
+                // Sale management
+                'route' => 'sale.index',
+                'icon' => 'far fa-newspaper',
+                'label' => __('menu.sale'),
+                'role_type' => $this->RoleType('sale.index'),
+                'sub_menu' => null
+            ],
+            [
+                // News management
                 'route' => 'news.index',
                 'icon' => 'far fa-newspaper',
                 'label' => __('menu.news'),
@@ -81,14 +89,6 @@ class Menu
                 'icon' => 'fas fa-cogs',
                 'label' => __('menu.setting'),
                 'role_type' => $this->RoleType('setting.index'),
-                'sub_menu' => null
-            ],
-            [
-                // Setting management
-                'route' => 'sale.index',
-                'icon' => 'far fa-newspaper',
-                'label' => __('menu.sale'),
-                'role_type' => $this->RoleType('sale.index'),
                 'sub_menu' => null
             ],
         ];

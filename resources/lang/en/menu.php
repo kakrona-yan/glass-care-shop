@@ -8,7 +8,7 @@ return [
     'news' => 'News',
     'customer' => 'Customers',
     'staff' => 'Staffs',
-    'sale' => 'Sales',
+    'sale' => 'Manage Sales',
     'setting' => 'Setting',
     'view_site' => 'View Site'
 ];
