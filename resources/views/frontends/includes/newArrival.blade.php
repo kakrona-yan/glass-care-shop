@@ -12,10 +12,13 @@
             <div class="container">
                 <div class="row">
                     <div class="product-slick slider">
+                        @php
+                            $color = 1;    
+                        @endphp
                         @foreach ($products as $product)
                         <div class="product-slic product-box">
                             <div class="product-image-slic">
-                                <div class="product-cagegory">
+                                <div class="product-cagegory {{$color > 2 ? 'color-pink' : ''}}">
                                     <a href="{{ route('collections.index')}}?category={{$product->category->id}}">{{$product->category->name }}</a>
                                 </div>
                                 <figure class="img-cavas mx-h-200">
@@ -32,6 +35,9 @@
                                 <div class="prince">${{$product->price}}</div>
                             </div>
                         </div>
+                        @php
+                            $color ++;
+                        @endphp
                         @endforeach
                     </div>
                 </div>
