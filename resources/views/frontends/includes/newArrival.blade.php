@@ -15,6 +15,9 @@
                         @foreach ($products as $product)
                         <div class="product-slic product-box">
                             <div class="product-image-slic">
+                                <div class="product-cagegory">
+                                    <a href="{{ route('collections.index')}}?category={{$product->category->id}}">{{$product->category->name }}</a>
+                                </div>
                                 <figure class="img-cavas mx-h-200">
                                     <a href="{{ route('collections.detail', $product->slug) }}">
                                         <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="{{$product->title}}">
