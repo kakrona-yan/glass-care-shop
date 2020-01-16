@@ -34,7 +34,7 @@
                         <img src="{{$news->thumbnail? asset(getUploadUrl($news->thumbnail, config('upload.news'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="{{$news->title}}">
                     </div>
                     <div class="blog-detail-description">
-                        {!! nl2br($news->content) !!}
+                        {!! $news->content !!}
                     </div>
                     <div class="blog-detail-related">
                         <section id="blog-list">
