@@ -47,7 +47,7 @@ class News extends BaseModel
 
     public function getNews($request)
     {
-        $news = $this->where('is_delete', '<>', DeleteStatus::DELETED)
+        $news = $this->where('is_delete', '<>', DeleteStatus::DELETED)->where('is_active', 1);
             ->orderBy('id', 'DESC');
         // Check flash danger
         flashDanger($news->count(), __('flash.empty_data'));
@@ -60,7 +60,7 @@ class News extends BaseModel
 
     public static function latestNews()
     {
-        return self::where('is_delete', '<>', DeleteStatus::DELETED)
+        return self::where('is_delete', '<>', DeleteStatus::DELETED)->where('is_active', 1);
             ->orderBy('id', 'DESC')
             ->limit(5)
             ->get();

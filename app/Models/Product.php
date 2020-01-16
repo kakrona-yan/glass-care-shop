@@ -59,7 +59,7 @@ class Product extends BaseModel
 
     public function getProduct($request)
     {
-        $products = $this->where('is_delete', '<>', DeleteStatus::DELETED);
+        $products = $this->where('is_delete', '<>', DeleteStatus::DELETED)->where('is_active', 1);
         if (!empty($request->category)) {
             $products->where('category_id', $request->category);
         }
