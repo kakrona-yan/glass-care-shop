@@ -14,7 +14,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-md-7">
-            <div class="blog--category">{{$blog->category ? $blog->category->name : ''}}</div>
+            <div class="blog--category"><a href="{{ route('blog.index')}}?category={{$blog->category->id}}">{{$blog->category ? $blog->category->name : ''}}</a></div>
             <div class="blog-title"><a href="{{ route('blog.detail', $blog->permalink )}}">{{$blog->title}}</a></div>
             <div class="blog--inline">
                 <span class="inline"><i class="far fa-calendar-alt"></i><span> {{date('M, d Y', strtotime($blog->created_at))}}</span></span>
