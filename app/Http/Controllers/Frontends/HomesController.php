@@ -25,12 +25,12 @@ class HomesController extends Controller
     public function home()
     {
         $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
-            ->where('is_active', 1);
+            ->where('is_active', 1)
             ->orderBy('id', 'DESC')
             ->limit(12)
             ->get();
         $blogs = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
-            ->where('is_active', 1);
+            ->where('is_active', 1)
             ->orderBy('id', 'DESC')
             ->limit(4)
             ->get();
