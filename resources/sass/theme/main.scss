@@ -1027,6 +1027,25 @@ iframe {
     .blog-last-title a {
         color: #333;
     }
+    .category-box {
+        h3{
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        a {
+            display: inline-block;
+            padding: 6px 14px;
+            margin: 0 2px 6px 0;
+            border: 1px solid #aaa;
+            font-size: 9px !important;
+            text-transform: uppercase;
+            color: #e69c8f;
+            &:hover{
+                background: #333333;
+                border-color: #333333;
+            }
+        }
+    }
 }
 // blog detail
 .blog-detail{
@@ -1195,5 +1214,9 @@ iframe {
     }//blog-slider
     .product-content{
         padding: 0px 15px;
+    }
+    .fb-box iframe {
+        max-width: 100%;
+        width: 100% !important;
     }
 }

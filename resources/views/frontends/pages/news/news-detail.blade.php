@@ -25,7 +25,7 @@
             <div class="col-xs-12 col-md-8">
                 <div class="blog-detail--content">
                     <div class="blog-detail--title">{!! $news->title !!}</div>
-                    <div class="blog-detail--categoy">{{$news->category ? $news->category->name : ''}}</div>
+                    <div class="blog-detail--categoy"><a href="{{ route('blog.index')}}?category={{$news->category->id}}">{{$news->category ? $news->category->name : ''}}</a></div>
                     <div class="blog-header-text">
                         <span class="blog-detail-creator"><i class="far fa-user"></i> {{$news->author}}</span>
                         <span class="blog-detail-date"><i class="far fa-calendar-alt"></i><span> {{date('M, d Y', strtotime($news->created_at))}}</span>
