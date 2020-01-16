@@ -98,14 +98,18 @@ class Category extends BaseModel
     }
 
     public function getCategories() {
-        return $this->withCount('products')
+        return $this->withCount(['products' => function ($query) {
+                $query->where('is_active', 1);
+            }])
             ->where('category_type', CategoryType::CATEGORY_TYPE_PRODUCT)
             ->get();
     }
 
     public function getNewsCategories()
     {
-        return $this->withCount('news')
+        return $this->withCount(['news' => function ($query) {
+                $query->where('is_active', 1);
+            }])
             ->where('category_type', CategoryType::CATEGORY_TYPE_NEWS)
             ->get();
     }
