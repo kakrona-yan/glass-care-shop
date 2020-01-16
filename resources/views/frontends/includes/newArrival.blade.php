@@ -17,9 +17,9 @@
                         @endphp
                         @foreach ($products as $product)
                         <div class="product-slic product-box">
-                            <div class="product-image-slic">
+                            <div class="product-image-slic {{$color > 2 ? 'border-pink' : ''}}">
                                 <div class="product-cagegory {{$color > 2 ? 'color-pink' : ''}}">
-                                    <a href="{{ route('collections.index')}}?category={{$product->category->id}}">{{$product->category->name }}</a>
+                                    <a href="{{ route('collections.index')}}?category={{$product->category->id}}"><i class="fas fa-bullhorn mr-1"></i>{{$product->category->name }}</a>
                                 </div>
                                 <figure class="img-cavas mx-h-200">
                                     <a href="{{ route('collections.detail', $product->slug) }}">
