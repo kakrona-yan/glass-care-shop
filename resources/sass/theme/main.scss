@@ -1111,6 +1111,44 @@ iframe {
         }
     }
 }
+.product-blog-box{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    background: #fff;
+    padding-bottom: 20px;
+    .post-day {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 99;
+        padding: 5px 0px;
+        width: 50px;
+        height: 60px;
+        background: #e69c96;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        &.color-blue {
+            background: #0ac4ff;
+        }
+        .day {
+            font-size: 34px;
+            line-height: 32px;
+        }
+        .month {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}
+.product-blog-detail{
+    padding: 10px 15px;
+    a{
+        color: #333333;
+        &:hover{
+            color: #0ac4ff;
+        }
+    }
+}
 @media (max-width: 768px) {
     #blog-slider {
         .slick-slider {
