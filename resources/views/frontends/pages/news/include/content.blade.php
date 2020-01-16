@@ -6,7 +6,10 @@
     <div class="row">
         <div class="col-xs-12 col-md-5">
             <a href="{{ route('blog.detail', $blog->permalink )}}">
-                <div class="post-day {{$color > 3 ? 'color-blue' : ''}}">{{date('d', strtotime($blog->created_at))}}</div>
+                <div class="post-day {{$color > 3 || $color % 2 == 0 ? 'color-blue' : ''}}">
+                    <div class="day">{{date('d', strtotime($blog->created_at))}}</div>
+                    <div class="month">{{date('M', strtotime($blog->created_at))}}</div>
+                </div>
                 <img src="{{$blog->thumbnail? asset(getUploadUrl($blog->thumbnail, config('upload.news'))) : asset('images/no-thumbnail.jpg') }}" class="img-responsive" alt="{{$blog->title}}">
             </a>
         </div>

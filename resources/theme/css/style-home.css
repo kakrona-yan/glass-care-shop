@@ -2174,7 +2174,7 @@ padding-right: 2px; }
 font-family: Poppins;
 font-weight: 600;
 font-size: 18px;
-color:#333333;
+color:#e69c8f;
 padding-top: 5px; }
 .product-slick .product-slic .product-title-slic .prince .strike {
 font-size: 14px;
@@ -2960,7 +2960,9 @@ transform: translateX(2px); }
 padding-bottom: 30px;
 transition: all .5s ease-in-out; }
 .content .content-flower .product-flower .product-title-flower {
-padding-bottom: 5px; }
+padding-bottom: 5px; 
+text-align: center;
+}
 .content .content-flower .product-flower .product-title-flower h5 a {
 font-family: Poppins;
 font-weight: 700;
@@ -2981,7 +2983,7 @@ display: none; }
 font-family: Poppins;
 font-weight: 600;
 font-size: 16px;
-color: black;
+color: #e69c8f;
 padding-top: 5px; }
 .content .content-flower .product-flower .product-title-flower .prince .strike {
 font-size: 14px;
