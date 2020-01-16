@@ -761,6 +761,7 @@ iframe {
         text-transform: uppercase;
         position: relative;
         font-weight: 700;
+        border-top: 4px solid #e69c8f;
         &:before {
             content: " ";
             position: absolute;
