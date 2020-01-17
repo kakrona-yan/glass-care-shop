@@ -32,11 +32,11 @@
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="fa-1x font-weight-bold text-danger text-uppercase mb-1"><a href="{{route('customer.index')}}">Total Customers</a></div>
+                        <div class="fa-1x font-weight-bold text-danger text-uppercase mb-1"><a href="{{route('user.index')}}">Total Customers</a></div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$userCount}}</div>
                     </div>
                     <div class="col-auto">
-                        <a href="{{route('customer.index')}}"><i class="fas fa-users fa-3x text-danger"></i></a>
+                        <a href="{{route('user.index')}}"><i class="fas fa-users fa-3x text-danger"></i></a>
                     </div>
                 </div>
                 </div>
