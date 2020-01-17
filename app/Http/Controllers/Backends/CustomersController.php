@@ -62,17 +62,45 @@ class CustomersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CustomerCreateRequest $request)
+    public function store(Request $request)
     {
         try {
-            $customerRequest = $request->all();
-            if ($request->exists('thumbnail') && !empty($customerRequest['thumbnail'])) {
-                $customerRequest['thumbnail'] = uploadFile($customerRequest['thumbnail'], config('upload.customer'));
+            // Rules of field
+            $email = $request->email;
+            $ruleEmail = '';
+            if ($email && !empty($email)) {
+                $ruleEmail = 'email|unique:staffs,email';
             }
-            $customerRequest['dob'] = date('Y-m-d', strtotime($customerRequest['dob']));
-            $this->customer->create($customerRequest);
-            return \Redirect::route('customer.index')
-                ->with('success',__('flash.store'));
+            $rules = [
+                'name' => 'required',
+                'gender' => 'required|min:4|max:6',
+                'email' => $ruleEmail,
+                'phone1' => 'required',
+                'address' => 'required',
+                'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
+            ];
+            // Set field of Validattion
+            $validator = \Validator::make([
+                'name' => $request->name,
+                'gender' => $request->gender,
+                'email' => $request->email,
+                'phone1' => $request->phone1,
+                'phone2' => $request->phone2,
+                'address' => $request->address,
+                'thumbnail' => $request->thumbnail,
+            ], $rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            } else {
+                $customerRequest = $request->all();
+                if ($request->exists('thumbnail') && !empty($customerRequest['thumbnail'])) {
+                    $customerRequest['thumbnail'] = uploadFile($customerRequest['thumbnail'], config('upload.customer'));
+                }
+                $customerRequest['dob'] = $customerRequest['dob'] ? date('Y-m-d', strtotime($customerRequest['dob'])) : null;
+                $this->customer->create($customerRequest);
+                return \Redirect::route('customer.index')
+                    ->with('success',__('flash.store'));
+            }
         }catch (\ValidationException $e) {
             return exceptionError($e, 'customers.index');
         }
@@ -90,7 +118,7 @@ class CustomersController extends Controller
             if (!$customer) {
                 return response()->view('errors.404', [], 404);
             }
-            return view('customers.show', [
+            return view('backends.customers.show', [
                 'customer' => $customer,
             ]);
         } catch (\ValidationException $e) {
@@ -110,7 +138,7 @@ class CustomersController extends Controller
             if (!$customer) {
                 return response()->view('errors.404', [], 404);
             }
-            return view('customers.edit', [
+            return view('backends.customers.edit', [
                 'request' => $request,
                 'customer' => $customer,
             ]);
@@ -126,21 +154,51 @@ class CustomersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CustomerUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
         try {
-            $customerRequest = $request->all();
-            $customer = $this->customer->available($id);
-            if (!$customer) {
-                return response()->view('errors.404', [], 404);
+            // Rules of field
+            $email = $request->email;
+            $ruleEmail = '';
+            if ($email && !empty($email)) {
+                $ruleEmail = 'email|unique:customers,email,' . $id;
             }
-            if (!empty($request->thumbnail)) {
-                $customerRequest['thumbnail'] = uploadFile($request->thumbnail, config('upload.customer'));
+            $rules = [
+                'name' => 'required',
+                'gender' => 'required|min:4|max:6',
+                'dob' => 'required',
+                'email' => $ruleEmail,
+                'phone1' => 'required',
+                'address' => 'required',
+                'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
+            ];
+            // Set field of Validattion
+            $validator = \Validator::make([
+                'name' => $request->name,
+                'gender' => $request->gender,
+                'dob' => $request->dob,
+                'email' => $request->email,
+                'phone1' => $request->phone1,
+                'phone2' => $request->phone2,
+                'address' => $request->address,
+                'thumbnail' => $request->thumbnail,
+            ], $rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            } else {
+                $customerRequest = $request->all();
+                $customer = $this->customer->available($id);
+                if (!$customer) {
+                    return response()->view('errors.404', [], 404);
+                }
+                if (!empty($request->thumbnail)) {
+                    $customerRequest['thumbnail'] = uploadFile($request->thumbnail, config('upload.customer'));
+                }
+                $customerRequest['dob'] =  $customerRequest['dob'] ? date('Y-m-d', strtotime($customerRequest['dob'])) : null;
+                $customer->update($customerRequest);
+                return \Redirect::route('customer.index')
+                    ->with('warning',__('flash.update'));
             }
-            $customerRequest['dob'] = date('Y-m-d', strtotime($customerRequest['dob']));
-            $customer->update($customerRequest);
-            return \Redirect::route('customer.index')
-                ->with('warning',__('flash.update'));
         } catch (\ValidationException $e) {
             return exceptionError($e, 'customers.index');
         }

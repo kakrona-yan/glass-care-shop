@@ -61,15 +61,48 @@ class StaffsController extends Controller
      */
     public function store(Request $request)
     {
+        
         try {
-            $staffRequest = $request->all();
-            if ($request->exists('thumbnail') && !empty($staffRequest['thumbnail'])) {
-                $staffRequest['thumbnail'] = uploadFile($staffRequest['thumbnail'], config('upload.staff'));
+            // Rules of field
+            $email = $request->email;
+            $ruleEmail = '';
+            if ($email && !empty($email)) {
+                $ruleEmail = 'email|unique:staffs,email';
             }
-            $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
-            $this->staff->create($staffRequest);
-            return \Redirect::route('staff.index')
-                ->with('success',__('flash.store'));
+            $rules = [
+                'firstname' => 'required',
+                'lastname' => 'required',
+                'gender' => 'required|min:4|max:6',
+                'dob' => 'required',
+                'email' => $ruleEmail,
+                'phone1' => 'required',
+                'address' => 'required',
+                'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
+            ];
+            // Set field of Validattion
+            $validator = \Validator::make([
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'gender' => $request->gender,
+                'dob' => $request->dob,
+                'email' => $request->email,
+                'phone1' => $request->phone1,
+                'phone2' => $request->phone2,
+                'address' => $request->address,
+                'thumbnail' => $request->thumbnail,
+            ], $rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            } else {
+                $staffRequest = $request->all();
+                if ($request->exists('thumbnail') && !empty($staffRequest['thumbnail'])) {
+                    $staffRequest['thumbnail'] = uploadFile($staffRequest['thumbnail'], config('upload.staff'));
+                }
+                $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
+                $this->staff->create($staffRequest);
+                return \Redirect::route('staff.index')
+                    ->with('success',__('flash.store'));
+            }
         }catch (\ValidationException $e) {
             return exceptionError($e, 'backends.staffs.index');
         }
@@ -128,18 +161,50 @@ class StaffsController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $staffRequest = $request->all();
-            $staff = $this->staff->available($id);
-            if (!$staff) {
-                return response()->view('errors.404', [], 404);
+            // Rules of field
+            $email = $request->email;
+            $ruleEmail = '';
+            if ($email && !empty($email)) {
+                $ruleEmail = 'email|unique:staffs,email,' . $id;
             }
-            if (!empty($request->thumbnail)) {
-                $staffRequest['thumbnail'] = uploadFile($request->thumbnail, config('upload.staff'));
+            $rules = [
+                'firstname' => 'required',
+                'lastname' => 'required',
+                'gender' => 'required|min:4|max:6',
+                'dob' => 'required',
+                'email' => $ruleEmail,
+                'phone1' => 'required',
+                'address' => 'required',
+                'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
+            ];
+            // Set field of Validattion
+            $validator = \Validator::make([
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'gender' => $request->gender,
+                'dob' => $request->dob,
+                'email' => $request->email,
+                'phone1' => $request->phone1,
+                'phone2' => $request->phone2,
+                'address' => $request->address,
+                'thumbnail' => $request->thumbnail,
+            ], $rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            } else {
+                $staffRequest = $request->all();
+                $staff = $this->staff->available($id);
+                if (!$staff) {
+                    return response()->view('errors.404', [], 404);
+                }
+                if (!empty($request->thumbnail)) {
+                    $staffRequest['thumbnail'] = uploadFile($request->thumbnail, config('upload.staff'));
+                }
+                $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
+                $staff->update($staffRequest);
+                return \Redirect::route('staff.index')
+                    ->with('warning',__('flash.update'));
             }
-            $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
-            $staff->update($staffRequest);
-            return \Redirect::route('staff.index')
-                ->with('warning',__('flash.update'));
 
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.staffs.index');

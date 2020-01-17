@@ -84,14 +84,14 @@
                                 </td>
                                 <td>{{ str_limit($customer->address, 30) }}</td>
                                 <td>
-                                    <a class="btn btn-circle btn-circlebtn-sm btn-info btn-circle" 
+                                    <a class="btn btn-circle btn-circle btn-sm btn-info btn-circle" 
                                         data-toggle="tooltip" 
                                         data-placement="top"
                                         data-original-title="{{__('button.show')}}"
                                         href="{{route('customer.show', $customer->id)}}"
                                     ><i class="far fa-eye"></i>
                                     </a>
-                                    <a class="btn btn-circle btn-circlebtn-sm btn-warning btn-circle" 
+                                    <a class="btn btn-circle btn-circle btn-sm btn-warning btn-circle" 
                                         data-toggle="tooltip" 
                                         data-placement="top"
                                         data-original-title="{{__('button.edit')}}"
@@ -100,7 +100,7 @@
                                     </a>
                                     <button type="button"
                                         id="btn-deleted"
-                                        class="btn btn-circle btn-circlebtn-sm btn-danger btn-circle"
+                                        class="btn btn-circle btn-circle btn-sm btn-danger btn-circle"
                                         onclick="deletePopup(this)"
                                         data-id="{{ $customer->id }}"
                                         data-name="{{ $customer->name}}"

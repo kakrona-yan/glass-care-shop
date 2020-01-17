@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Constants\DeleteStatus;
+use App\Http\Constants\UserRole;
 
 class Customer extends BaseModel
 {
@@ -57,10 +58,10 @@ class Customer extends BaseModel
         if (is_null($gender) && empty($gender)) return;
         switch ($gender) {
             case "male":
-                $genderText = UserRole::USER_GANDER_TEXT_KM[1];
+                $genderText = UserRole::USER_GANDER_TEXT_EN[1];
                 break;
             case "female":
-                $genderText = UserRole::USER_GANDER_TEXT_KM[2];
+                $genderText = UserRole::USER_GANDER_TEXT_EN[2];
                 break;
         }
         return $genderText;

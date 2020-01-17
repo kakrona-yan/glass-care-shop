@@ -79,11 +79,6 @@
                                                     <div class="input-group-text"><span class="far fa-calendar-alt"></span></div>
                                                 </div>
                                             </div>
-                                            @if ($errors->has('dob'))
-                                                <span class="text-danger">
-                                                    <strong>{{ $errors->first('dob') }}</strong>
-                                                </span>
-                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label for="email">{{__('customer.list.email')}}:</label>
