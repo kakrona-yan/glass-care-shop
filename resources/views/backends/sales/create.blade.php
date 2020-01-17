@@ -113,15 +113,16 @@
     * return {html}
     */
     function renderProduct(productOrders) {
-       let html = '';
+        let html = '';
         html +='<div class="check-product">';
         html +='<ul class="m-0 p-0">';
         for (let index = 0; index < productOrders.length; index++) {
             const productOrder = productOrders[index];
+            let img = productOrder.thumbnail ? `{{config('app.url')}}/storage/images/product/${productOrder.thumbnail}` : '{{config('app.url')}}//images/no-thumbnail.jpg';
             html +='<li>';
             html +=`<input type="checkbox" id="product_${productOrder.id}" />`;
             html +=`<label for="product_${productOrder.id}">`;
-            html +=`<img src="{{config('app.url')}}/storage/images/product/${productOrder.thumbnail}" />`;
+            html +=`<img src="${img}" />`;
             html +=`<div class="py-1 text-center">${productOrder.title.slice(0, 10)+'...'}</div>`;
             html +=`<div class="py-1 text-center text-danger">${productOrder.price}$</div>`;
             html +='</label>';
