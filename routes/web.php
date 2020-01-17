@@ -135,6 +135,7 @@ Route::group(
                 Route::get('/edit/{id}', 'SalesController@edit')->name('edit');
                 Route::post('/update/{id}', 'SalesController@update')->name('update');
                 Route::post('/destroy', 'SalesController@destroy')->name('destroy');
+                Route::get('/product', 'SalesController@getProductByCategory')->name('product');
             });
         });
     }

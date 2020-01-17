@@ -66,4 +66,11 @@ class Customer extends BaseModel
         }
         return $genderText;
     }
+
+    public function getCustomer()
+    {
+        return $this->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->pluck('name', 'id')
+            ->all();
+    }
 }
