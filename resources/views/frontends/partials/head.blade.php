@@ -14,3 +14,12 @@
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/css/style-fix-nav.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/main.css') }}">
 @stack('head-styles')
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156482170-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156482170-1');
+</script>
