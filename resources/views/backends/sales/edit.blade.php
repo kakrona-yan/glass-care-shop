@@ -44,7 +44,7 @@
                                                     <select class="form-control" id="category_id" name="category_id">
                                                         <option value="">Please select</option>
                                                         @foreach($categories as $id => $name)
-                                                            <option value="{{ $id }}" {{ $id == $request->category_id ? 'selected' : '' }}>{{ $name }}</option>
+                                                            <option value="{{ $id }}" {{ $id == $sale->category_id ? 'selected' : '' }}>{{ $name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -61,7 +61,7 @@
                                                     <select class="form-control" id="customer_id" name="customer_id">
                                                         <option value="">Please select</option>
                                                         @foreach($customers as $id => $name)
-                                                            <option value="{{ $id }}" {{ $id == $request->customer_id ? 'selected' : '' }}>{{ $name }}</option>
+                                                            <option value="{{ $id }}" {{ $id == $sale->customer_id ? 'selected' : '' }}>{{ $name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -96,25 +96,25 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="total_quantity">Total Quantity</label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="total_quantity" name="total_quantity" readonly="" value="{{ old('total_quantity', $request->total_quantity ? $request->total_quantity : 0) }}">
+                                                    <input type="text" class="form-control" id="total_quantity" name="total_quantity" readonly="" value="{{ old('total_quantity', $sale->total_quantity ? $sale->total_quantity : 0) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="total_amount">Total Amount</label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="total_amount" name="total_amount" readonly="" value="{{ old('total_amount', $request->total_amount ? $request->total_amount : 0) }}">
+                                                    <input type="text" class="form-control" id="total_amount" name="total_amount" readonly="" value="{{ old('total_amount', $sale->total_amount ? $sale->total_amount : 0) }}">
                                                 </div>
                                             </div>
                                              <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="total_discount">Dicount</label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="total_discount" name="total_discount" value="{{ old('dototal_discountb', $request->total_discount ? $request->total_discount : 0) }}">
+                                                    <input type="text" class="form-control" id="total_discount" name="total_discount" value="{{ old('dototal_discountb', $sale->total_discount ? $sale->total_discount : 0) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="total_money_revice">Received Amount<span class="text-danger">*</span></label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="total_money_revice" name="money_change" value="{{ old('money_change', $request->money_change ? $request->money_change : 0) }}">
+                                                    <input type="text" class="form-control" id="total_money_revice" name="money_change" value="{{ old('money_change', $sale->money_change ? $sale->money_change : 0) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -126,7 +126,7 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="money_owed">Note</label>
                                                 <div class="col-9">
-                                                    <textarea class="form-control" name="note">{{ old('dob', $request->note) }}</textarea>
+                                                    <textarea class="form-control" name="note">{{ old('dob', $sale->note) }}</textarea>
                                                 </div>
                                             </div>
                                         </fieldset>
