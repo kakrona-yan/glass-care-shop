@@ -34,6 +34,10 @@
                         <div id="addsupplier" class="tab-pane active">
                             <form class="form-main" action="{{route('sale.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <div class="form-group w-50 d-inline-flex">
+                                    <button type="submit" class="btn btn-circle btn-primary w-25 mr-2">Update Sale</button>
+                                    <a href="{{route('sale.index')}}" class="btn btn-circle btn-secondary w-25">Back to sale list</a>
+                                </div>
                                 <div class="row mb-4">
                                     <div class="col-12 col-md-7 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
