@@ -260,7 +260,6 @@
         var id = $(this).attr("data-id");
         e.preventDefault();
         $('#product_'+id+'').remove();
-        index_sto--;
     });
 
 </script>
