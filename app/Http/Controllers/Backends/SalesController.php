@@ -57,11 +57,43 @@ class SalesController extends Controller
         }
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        try {
+            // Rules of field
+            
+            $rules = [
+               
+            ];
+            // Set field of Validattion
+            $validator = \Validator::make([
+               
+            ], $rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            } else {
+                
+                return \Redirect::route('sale.create')
+                    ->with('success', __('flash.store'));
+            }
+        } catch (\ValidationException $e) {
+            return exceptionError($e, 'customers.create');
+        }
+    }
+
     public function getProductByCategory(Request $request)
     {
         $productOrders = [];
         try {
-            $productOrders = $this->product->where('category_id', $request->category_id)
+            $productOrders = $this->product->where('is_delete', '<>', 0)
+                ->where('is_active', 1) // is_delete = 1 and is_active = 1
+                ->where('category_id', $request->category_id)
                 ->select(['id', 'category_id', 'title', 'price', 'in_store', 'thumbnail'])
                 ->orderBy('id', 'DESC')
                 ->get();

@@ -147,10 +147,11 @@
                                                         <th>Quantity</th>
                                                         <th>Unit Price</th>
                                                         <th>Total</th>
-                                                        <th>Action</th>
+                                                        <th style="width: 20px;">Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="dynamic_sale_product">
+
                                                 </tbody>
                                             </table>
                                         </fieldset>
@@ -195,6 +196,26 @@
         $('#customer_id').select2({
             allowClear: false
         });
+        $("input[name=total_discount], input[name=money_change], input[name=money_change]").keydown(function (e) {
+            // Deny if double dot is inputed
+            if (e.keyCode == 190 && this.value.split('.').length > 1) {
+                e.preventDefault();
+                return;
+            }
+            // Allow: backspace, delete, tab, escape, enter
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+                // Allow: Ctrl+A, Command+A
+                (e.keyCode === 190 || e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: home, end, left, right, down, up
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    // let it happen, don't do anything
+                    return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
     });
     /**
     * Render is html
@@ -207,10 +228,11 @@
         html +='<ul class="m-0 p-0">';
         for (let index = 0; index < productOrders.length; index++) {
             const productOrder = productOrders[index];
+            
             let img = productOrder.thumbnail ? `{{config('app.url')}}/storage/images/product/${productOrder.thumbnail}` : '{{config('app.url')}}//images/no-thumbnail.jpg';
             html +='<li>';
             html +=`<input type="checkbox" id="product_${productOrder.id}" />`;
-            html +=`<label for="product_${productOrder.id}">`;
+            html +=`<label for="product_${productOrder.id}" onclick="checkSaleProduct(${productOrder.id}, '${productOrder.title}', '${productOrder.price}')"}>`;
             html +=`<img src="${img}" />`;
             html +=`<div class="py-1 text-center">${productOrder.title.slice(0, 10)+'...'}</div>`;
             html +=`<div class="py-1 text-center text-danger">${productOrder.price}$</div>`;
@@ -220,5 +242,26 @@
         html +='</ul></div>';
         return html;
     }
+    
+    function checkSaleProduct(id, title, price) {
+        let html = '<tr id="product_'+id+'">';
+                html += '<td><input type="text" class="form-control" name="product_id" value="'+id+'" readonly/></td>';
+                html += '<td><input type="text" class="form-control" name="product_id" value="'+title+'" readonly/></td>';
+                html += '<td><input type="number" class="form-control" name="quantity" value="1" /></td>';
+                html += '<td><input type="number" class="form-control" name="rate" value="'+price+'" /></td>';
+                html += '<td><input type="text" class="form-control" name="amount" value="0" readonly/></td>';
+                html += '<td class="text-center">';
+                html += '    <button type="button" name="remove" data-id="'+id+'" class="remove_product btn btn-circle btn-circle btn-sm btn-danger btn-circle"><i class="fa fa-trash"></i></button>';
+                html += '</td>';
+                html += '</tr>';
+			$('#dynamic_sale_product').append(html);
+    }
+    $(document).on('click', '.remove_product', function(e){
+        var id = $(this).attr("data-id");
+        e.preventDefault();
+        $('#product_'+id+'').remove();
+        index_sto--;
+    });
+
 </script>
 @endpush

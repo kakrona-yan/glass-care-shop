@@ -13,5 +13,6 @@ return [
     'delete' => 'Detete',
     'ok' => 'OK',
     'close' => 'Close',
-    'save_draft' => 'Save draft'
+    'save_draft' => 'Save draft',
+    'remove' => 'Remove'
 ];
