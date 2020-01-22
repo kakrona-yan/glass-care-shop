@@ -311,9 +311,12 @@ input{
   }
   li {
     display: inline-block;
-    max-width: 158px;
+    max-width: 150px;
     vertical-align: top;
     width: 100%;
+    .text-center{
+      font-size: 12px;
+    }
   }
   input[type="checkbox"]{
     display: none;
@@ -362,5 +365,9 @@ input{
     transform: scale(0.9);
     /* box-shadow: 0 0 5px #333; */
     z-index: -1;
+  }
+  input[disabled]:checked + label {
+    background: #eaecf4;
+    cursor: not-allowed;
   }
 }

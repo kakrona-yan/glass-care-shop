@@ -67,7 +67,7 @@ class SalesController extends Controller
     {
         try {
             // Rules of field
-            
+            dd($request->all());
             $rules = [
                
             ];

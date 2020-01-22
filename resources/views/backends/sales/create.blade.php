@@ -39,7 +39,7 @@
                                     <a href="{{route('sale.index')}}" class="btn btn-circle btn-secondary w-25">Back to sale list</a>
                                 </div>
                                 <div class="row mb-4">
-                                    <div class="col-12 col-md-7 mb-3">
+                                    <div class="col-12 col-md-5 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Sale:</legend>
                                             <div class="form-group select-group row mb-4">
@@ -84,7 +84,7 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="col-12 col-md-5 mb-3">
+                                    <div class="col-12 col-md-7 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Product List:</legend>
                                             <div class="form-group select-group list-product">
@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 col-md-5 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Payment:</legend>
                                             <div class="form-group row">
@@ -135,15 +135,15 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="col-12 col-md-7 mb-3">
+                                    <div class="col-12 col-md-8 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Sale Product:</legend>
                                             <div class="table-responsive cus-table">
                                             <table class="table table-striped table-bordered">
                                                 <thead class="bg-primary text-light">
                                                     <tr>
-                                                        <th>#No</th>
-                                                        <th>Product Name</th>
+                                                        <th style="width: 80px;">#</th>
+                                                        <th style="width: 360px;">Product Name</th>
                                                         <th>Quantity</th>
                                                         <th>Unit Price</th>
                                                         <th>Total</th>
@@ -231,10 +231,10 @@
             
             let img = productOrder.thumbnail ? `{{config('app.url')}}/storage/images/product/${productOrder.thumbnail}` : '{{config('app.url')}}//images/no-thumbnail.jpg';
             html +='<li>';
-            html +=`<input type="checkbox" id="product_${productOrder.id}" />`;
-            html +=`<label for="product_${productOrder.id}" onclick="checkSaleProduct(${productOrder.id}, '${productOrder.title}', '${productOrder.price}')"}>`;
+            html +=`<input type="checkbox" id="product_${productOrder.id}" onclick="checkSaleProduct(${productOrder.id}, '${productOrder.title}', '${productOrder.price}')"/>`;
+            html +=`<label for="product_${productOrder.id}">`;
             html +=`<img src="${img}" />`;
-            html +=`<div class="py-1 text-center">${productOrder.title.slice(0, 10)+'...'}</div>`;
+            html +=`<div class="py-1 text-center">${productOrder.title.slice(0, 12)+'...'}</div>`;
             html +=`<div class="py-1 text-center text-danger">${productOrder.price}$</div>`;
             html +='</label>';
             html +='</li>';
@@ -242,24 +242,47 @@
         html +='</ul></div>';
         return html;
     }
-    
+    // variable sale product
+    var totalQuantity = 0;
+    var totalAmount = 0;
+    var totalDiscount = 0;
+    var moneyOwed = 0;
+
     function checkSaleProduct(id, title, price) {
-        let html = '<tr id="product_'+id+'">';
-                html += '<td><input type="text" class="form-control" name="product_id" value="'+id+'" readonly/></td>';
-                html += '<td><input type="text" class="form-control" name="product_id" value="'+title+'" readonly/></td>';
-                html += '<td><input type="number" class="form-control" name="quantity" value="1" /></td>';
-                html += '<td><input type="number" class="form-control" name="rate" value="'+price+'" /></td>';
-                html += '<td><input type="text" class="form-control" name="amount" value="0" readonly/></td>';
-                html += '<td class="text-center">';
-                html += '    <button type="button" name="remove" data-id="'+id+'" class="remove_product btn btn-circle btn-circle btn-sm btn-danger btn-circle"><i class="fa fa-trash"></i></button>';
-                html += '</td>';
-                html += '</tr>';
-			$('#dynamic_sale_product').append(html);
+        let html = '<tr id="sale_product_'+id+'">';
+            html += '<td><input type="hidden" class="form-control" name="product_id[]" value="'+id+'"/>'+id+'</td>';
+            html += '<td><input type="text" class="form-control" value="'+title+'" readonly/></td>';
+            html += '<td><input type="number" id="quantity_'+id+'" class="form-control" name="quantity[]" value="1" /></td>';
+            html += '<td><input type="number" id="rate_'+id+'" class="form-control" name="rate[]" value="'+price+'" /></td>';
+            html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="amount[]" value="'+price+'" readonly/></td>';
+            html += '<td class="text-center">';
+            html += '    <button type="button" data-id="'+id+'" data-quantity="1" data-amount="'+price+'" class="remove_product btn btn-circle btn-circle btn-sm btn-danger btn-circle"><i class="fa fa-trash"></i></button>';
+            html += '</td>';
+            html += '</tr>';
+        $('#dynamic_sale_product').append(html);
+        $('#product_'+id).prop('disabled', true);
+        // calculator
+        let quantity = $('#quantity_'+id).val();
+        let amount = $('#amount_'+id).val();
+        totalQuantity +=Number(quantity);
+        totalAmount += Number(amount);
+        $('input[name="total_quantity"]').val(totalQuantity);
+        $('input[name="total_amount"]').val(totalAmount);
+
     }
+    // remove product
     $(document).on('click', '.remove_product', function(e){
-        var id = $(this).attr("data-id");
+        let id = $(this).attr("data-id");
+        let quantity = $(this).attr("data-quantity");
+        let amount = $(this).attr("data-amount");
         e.preventDefault();
-        $('#product_'+id+'').remove();
+        $('#sale_product_'+id).remove();
+        $('#product_'+id).prop('checked', false);
+        $('#product_'+id).prop('disabled', false);
+        totalQuantity = Number(totalQuantity) - Number(quantity);
+        totalAmount = Number(totalAmount) - Number(amount);
+        $('input[name="total_quantity"]').val(totalQuantity);
+        $('input[name="total_amount"]').val(totalAmount);
     });
 
 </script>
