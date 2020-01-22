@@ -252,7 +252,7 @@
         let html = '<tr id="sale_product_'+id+'">';
             html += '<td><input type="hidden" class="form-control" name="product_id[]" value="'+id+'"/>'+id+'</td>';
             html += '<td><input type="text" class="form-control" value="'+title+'" readonly/></td>';
-            html += '<td><input type="number" id="quantity_'+id+'" class="form-control" name="quantity[]" value="1" /></td>';
+            html += '<td><input type="number" id="quantity_'+id+'" class="form-control" name="quantity[]" value="1" oninput="updateQuantity(this)"/></td>';
             html += '<td><input type="number" id="rate_'+id+'" class="form-control" name="rate[]" value="'+price+'" /></td>';
             html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="amount[]" value="'+price+'" readonly/></td>';
             html += '<td class="text-center">';
@@ -284,6 +284,9 @@
         $('input[name="total_quantity"]').val(totalQuantity);
         $('input[name="total_amount"]').val(totalAmount);
     });
-
+    // update quantity
+    function updateQuantity(data){
+        let quantity = $(data)[0] ? $(data)[0].value : 0;
+    }
 </script>
 @endpush
