@@ -166,8 +166,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-7 mb-4">
-            <div class="card shadow mb-4">
+        <div class="col-12 col-md-12 mb-2">
+            <div class="card shadow mb-2">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Products</h6>
@@ -223,20 +223,20 @@
                 </div>
             </div>
         </div><!--/col-12-->
-        <div class="col-12 col-md-5 mb-4">
+        <div class="col-12 col-md-12 mb-4">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Sales</h6>
                 </div>
                 <div class="card-body">
-                     <div class="table-responsive cus-table">
-                        <table class="table table-striped table-bordered">
+                    <div class="table-responsive cus-table">
+                        <table class="table table-bordered">
                             <thead class="bg-primary text-light">
                                 <tr>
-                                    <th>#No</th>
-                                    <th>Customer</th>
-                                    <th>Product</th>
+                                    <th class="text-center">#</th>
+                                    <th>Invoice Code</th>
+                                    <th>Customer Name</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
                                     <th>Sale Date</th>
@@ -244,8 +244,54 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach( $sales as $sale)
+                                    <tr>
+                                        <td class="text-center">
+                                            @if ($sale->productSales->count() > 0)
+                                            <a href="#slae_{{$sale->id}}" data-toggle="collapse"><i class="fas fa-plus"></i></a> | {{$sale->id}}
+                                            @else
+                                            {{$sale->id}}
+                                            @endif
+                                        </td>
+                                        <td>{{$sale->quotaion_no}}</td>
+                                        <td>{{$sale->customer ? $sale->customer->name : ''}}</td>
+                                        <td>{{$sale->total_quantity}}</td>
+                                        <td>{{$sale->total_amount}}</td>
+                                        <td>{{date('Y-m-d', strtotime($sale->sale_date))}}</td>
+                                        <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : ''}}</td>
+                                    </tr>
+                                    @if ($sale->productSales->count() > 0)
+                                    <tr>
+                                        <td colspan="7" id="slae_{{$sale->id}}" class="collapse">
+                                            <table class="table table-borderless" style="table-layout: fixed;">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-success">Product Name</th>
+                                                        <th class="text-success">Quantity</th>
+                                                        <th class="text-success">Rate</th>
+                                                        <th class="text-success">Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($sale->productSales as $productSale)
+                                                    <tr>
+                                                        <td>{{$productSale->product ? $productSale->product->title : '' }}</td>
+                                                        <td>{{$productSale->quantity}}</td>
+                                                        <td>{{$productSale->rate}}</td>
+                                                        <td>{{$productSale->amount}}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        {{ $sales->appends(request()->query())->links() }}
                     </div>
                 </div>
             </div>

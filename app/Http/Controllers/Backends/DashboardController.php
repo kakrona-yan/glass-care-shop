@@ -6,11 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Constants\DeleteStatus;
+use App\Models\Sale;
 
 class DashboardController extends Controller
 {
-    public function __construct(Product $product) {
+    public function __construct(
+        Product $product,
+        Sale $sale
+    ) {
         $this->product = $product;
+        $this->sale = $sale;
     }
     /**
      * Show the application dashboard.
@@ -28,6 +33,9 @@ class DashboardController extends Controller
         $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
             ->orderBy('id', 'desc')
             ->paginate(6);
+        $sales  = $this->sale->where('is_delete', '<>', DeleteStatus::DELETED)
+        ->orderBy('id', 'desc')
+        ->paginate(6);
         return view('backends.dashboard', [
             'productCount' => $productCount,
             'products' => $products,
@@ -35,7 +43,8 @@ class DashboardController extends Controller
             'staffCount' => $staffCount,
             'customerCount' => $customerCount,
             'categoryCount' => $categoryCount,
-            'newsCount' => $newsCount
+            'newsCount' => $newsCount,
+            'sales' => $sales
         ]);
 
     }
