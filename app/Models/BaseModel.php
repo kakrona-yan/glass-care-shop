@@ -54,4 +54,17 @@ abstract class BaseModel extends Model
             'is_delete' => DeleteStatus::DELETED
         ]);
     }
+
+    /**
+     * Auto increment uninque id string 
+     * @param $model
+     * @return string
+     * */
+    public function scopeIncrementStringUniqueInvoiceCode($model, $num = 1)
+    {
+        $lastest =  $model->select('id')
+            ->orderBy('id', 'DESC')->first();
+        $digits = $lastest ? $lastest->id + $num : $num;
+        return 'SMC-SO-'.str_pad($digits, 4, '0', STR_PAD_LEFT);
+    }
 }

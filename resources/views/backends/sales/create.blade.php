@@ -56,7 +56,8 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="invoiceCode">Invoice Code</label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="invoiceCode" name="invoiceCode" readonly="">
+                                                    <input type="text" class="form-control" id="invoiceCode" name="quotaion_no" readonly="" 
+                                                    value="{{old('quotaion_no', $invoiceCode)}}">
                                                 </div>
                                             </div>
                                             <div class="form-group select-group row">
@@ -68,6 +69,11 @@
                                                             <option value="{{ $id }}" {{ $id == $request->customer_id ? 'selected' : '' }}>{{ $name }}</option>
                                                         @endforeach
                                                     </select>
+                                                    @if ($errors->has('customer_id'))
+                                                        <span class="text-danger">
+                                                            <strong>{{ $errors->first('customer_id') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group select-group row">
@@ -75,11 +81,16 @@
                                                 <div class="col-9">
                                                     <div class="input-group date" data-provide="datepicker" data-date-format="YYYY-MM-MM">
                                                         <input type="text" class="form-control" name="sale_date"
-                                                            value="{{ old('dob', date('Y-m-d')) }}">
+                                                            value="{{ old('sale_date', date('Y-m-d')) }}">
                                                         <div class="input-group-append">
                                                             <div class="input-group-text"><span class="far fa-calendar-alt"></span></div>
                                                         </div>
                                                     </div>
+                                                    @if ($errors->has('sale_date'))
+                                                        <span class="text-danger">
+                                                            <strong>{{ $errors->first('sale_date') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -118,9 +129,14 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="total_money_revice">Received Amount<span class="text-danger">*</span></label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="total_money_revice" name="money_change" value="{{ old('money_change', $request->money_change ? $request->money_change : 0) }}"
+                                                    <input type="text" class="form-control {{ $errors->has('money_change') ? ' is-invalid' : '' }}" id="total_money_revice" name="money_change" value="{{ old('money_change', $request->money_change ? $request->money_change : 0) }}"
                                                         oninput="calculatorMoney(this)"
                                                     >
+                                                    @if ($errors->has('money_change'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('money_change') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -246,13 +262,14 @@
     }
     var totalQuantity = 0;
     var totalAmount = 0;
+    var i = 0;
     function checkSaleProduct(id, title, price) {
         let html = '<tr id="sale_product_'+id+'">';
-            html += '<td><input type="hidden" class="form-control" name="product_id[]" value="'+id+'"/>'+id+'</td>';
+            html += '<td><input type="hidden" class="form-control" name="sale_product['+i+'][product_id]" value="'+id+'"/>'+id+'</td>';
             html += '<td><input type="text" class="form-control" value="'+title+'" readonly/></td>';
-            html += '<td><input type="number" min="0" id="quantity_'+id+'" data-id="'+id+'" data-quantity="1" class="form-control" name="quantity[]" value="1" oninput="updateQuantity(this)"/></td>';
-            html += '<td><input type="number" min="0" id="rate_'+id+'" class="form-control" name="rate[]" value="'+price+'" readonly /></td>';
-            html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="amount[]" value="'+price+'" readonly /></td>';
+            html += '<td><input type="number" min="0" id="quantity_'+id+'" data-id="'+id+'" data-quantity="1" class="form-control" name="sale_product['+i+'][quantity]" value="1" oninput="updateQuantity(this)"/></td>';
+            html += '<td><input type="number" min="0" id="rate_'+id+'" class="form-control" name="sale_product['+i+'][rate]" value="'+price+'" readonly /></td>';
+            html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="sale_product['+i+'][amount]" value="'+price+'" readonly /></td>';
             html += '<td class="text-center">';
             html += '    <button type="button" data-id="'+id+'" data-quantity="1" data-amount="'+price+'" class="remove_product btn btn-circle btn-circle btn-sm btn-danger btn-circle"><i class="fa fa-trash"></i></button>';
             html += '</td>';
@@ -267,7 +284,7 @@
         totalAmount += Number(amount);
         $('input[name="total_quantity"]').val(totalQuantity);
         $('input[name="total_amount"]').val(totalAmount);
-
+        i++;
     }
     // remove product
     $(document).on('click', '.remove_product', function(e){
@@ -284,6 +301,7 @@
         totalAmountPayment = Number(totalAmountPayment) - Number(amount);
         $('input[name="total_quantity"]').val(totalQuantityPayment);
         $('input[name="total_amount"]').val(totalAmountPayment);
+        i--;
     });
     // update quantity
     function updateQuantity(data){

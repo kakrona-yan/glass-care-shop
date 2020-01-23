@@ -7,17 +7,23 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Customer;
+use App\Models\Sale;
+use App\Models\SaleProduct;
 
 class SalesController extends Controller
 {
     public function __construct(
         Category $category,
         Product $product,
-        Customer $customer
+        Customer $customer,
+        Sale $sale,
+        SaleProduct $saleProduct
     ) {
         $this->category = $category;
         $this->product = $product;
         $this->customer = $customer;
+        $this->sale = $sale;
+        $this->saleProduct = $saleProduct;
     }
 
     /**
@@ -47,10 +53,12 @@ class SalesController extends Controller
         try {
             $categories = $this->category->getCategoryNameByProducts();
             $customers = $this->customer->getCustomer();
+            $invoiceCode =  $this->sale->incrementStringUniqueInvoiceCode();
             return view('backends.sales.create', [
                 'request' => $request,
                 'categories' => $categories,
-                'customers' => $customers
+                'customers' => $customers,
+                'invoiceCode' => $invoiceCode
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.sales.create');
@@ -67,18 +75,40 @@ class SalesController extends Controller
     {
         try {
             // Rules of field
-            dd($request->all());
             $rules = [
-               
+                'customer_id' => 'required',
+                'sale_date' => 'required',
+                'money_change' => 'required',
             ];
             // Set field of Validattion
             $validator = \Validator::make([
-               
+                'customer_id' => $request->customer_id,
+                'sale_date' => $request->sale_date,
+                'money_change' => $request->money_change,
             ], $rules);
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             } else {
+                // insert to table sales
+                $requestSale = [];
+                $requestSale['staff_id'] = \Auth::id();
+                $requestSale['customer_id'] = $request->customer_id;
+                $requestSale['quotaion_no'] = $request->quotaion_no;
+                $requestSale['money_change'] = $request->money_change;
+                $requestSale['total_quantity'] = $request->total_quantity;
+                $requestSale['total_discount'] = $request->total_discount;
+                $requestSale['total_amount'] = $request->total_amount;
+                $requestSale['sale_date'] = date('Y-m-d', strtotime($request->sale_date));
+                $requestSale['note'] = $request->note;
+                // $sale = $this->sale->create($requestSale);
+                $requestSaleProduct = [];
                 
+            
+                dd($request->all());
+                // insert to table salesProduct
+                if($sale) {
+
+                }
                 return \Redirect::route('sale.create')
                     ->with('success', __('flash.store'));
             }
