@@ -11,6 +11,7 @@ class Staff extends BaseModel
     protected $table = 'staffs';
     
     protected $fillable = [
+        'user_id',
         'firstname',
         'lastname',
         'gender',
@@ -22,7 +23,13 @@ class Staff extends BaseModel
         'thumbnail',
         'is_active',
         'is_delete',
+        'password'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
 
     public function filter($request)
     {
@@ -82,4 +89,5 @@ class Staff extends BaseModel
             ->select(['id', 'firstname', 'lastname'])
             ->get();
     }
+    
 }

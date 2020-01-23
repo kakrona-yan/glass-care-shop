@@ -31,23 +31,24 @@
                <fieldset class="edit-master-registration-fieldset">
                     <legend class="edit-application-information-legend text-left">Sale Product:</legend>
                     <div class="table-responsive cus-table">
-                    <table class="table table-striped table-bordered">
-                        <thead class="bg-primary text-light">
-                            <tr>
-                                <th>#No</th>
-                                <th>Invoice Code</th>
-                                <th>Customer Name</th>
-                                <th>Product Name</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Sale Date</th>
-                                <th>Staff</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                        <table class="table table-striped table-bordered">
+                            <thead class="bg-primary text-light">
+                                <tr>
+                                    <th>#No</th>
+                                    <th>Invoice Code</th>
+                                    <th>Customer Name</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Sale Date</th>
+                                    <th>Staff</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </fieldset>
                 <div class="d-flex justify-content-center">
                     

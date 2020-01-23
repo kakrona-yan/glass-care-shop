@@ -62,6 +62,7 @@
                                     <th>{{ __('staff.list.gender') }}</th>
                                     <th>{{ __('staff.list.dob') }}</th>
                                     <th>{{ __('staff.list.email') }}</th>
+                                    <th>{{ __('staff.list.password') }}</th>
                                     <th>{{ __('staff.list.phone') }}</th>
                                     <th>{{ __('staff.list.address') }}</th>
                                     <th class="w-10">{{ __('staff.list.action') }}</th>
@@ -81,6 +82,7 @@
                                     <td>{{ $staff->getGender()}}</td>
                                     <td>{{ date('Y-m-d', strtotime($staff->dob))}}</td>
                                     <td>{{ $staff->email }}</td>
+                                    <td>{{ $staff->password }}</td>
                                     <td>
                                         <div class="d-flex flex-row">
                                             <i class="fas fa-phone-square-alt text-success my-1 mr-1"></i>

@@ -67,7 +67,7 @@ class StaffsController extends Controller
             $email = $request->email;
             $ruleEmail = '';
             if ($email && !empty($email)) {
-                $ruleEmail = 'email|unique:staffs,email';
+                $ruleEmail = 'email|unique:staffs|unique:users,email';
             }
             $rules = [
                 'firstname' => 'required',
@@ -78,6 +78,12 @@ class StaffsController extends Controller
                 'phone1' => 'required',
                 'address' => 'required',
                 'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
+                'password' => [
+                    'required',
+                    'max:30',
+                    'min:6',
+                    'regex:/^[!-~]+$/'
+                ],
             ];
             // Set field of Validattion
             $validator = \Validator::make([
@@ -90,16 +96,30 @@ class StaffsController extends Controller
                 'phone2' => $request->phone2,
                 'address' => $request->address,
                 'thumbnail' => $request->thumbnail,
+                'password' => $request->password,
             ], $rules);
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             } else {
                 $staffRequest = $request->all();
-                if ($request->exists('thumbnail') && !empty($staffRequest['thumbnail'])) {
-                    $staffRequest['thumbnail'] = uploadFile($staffRequest['thumbnail'], config('upload.staff'));
+                $user = [];
+                // insert user
+                $user['name'] = ucfirst($request->firstname) . ' ' . ucfirst($request->lastname);
+                $user['role'] = 2;
+                $user['email_verified_at'] = now();
+                $user['email'] = $staffRequest['email'];
+                $user['password'] =  bcrypt($staffRequest['password']);
+                $user['thumbnail'] = $request->thumbnail ? uploadFile($request->thumbnail, config('upload.user')) : '';
+                $user = $this->user->create($user);
+                if($user) {
+                    if ($request->exists('thumbnail') && !empty($staffRequest['thumbnail'])) {
+                        $staffRequest['thumbnail'] = uploadFile($staffRequest['thumbnail'], config('upload.staff'));
+                    }
+                    $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
+                    $staffRequest['user_id'] = $user->id;
+                    $this->staff->create($staffRequest);
                 }
-                $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
-                $this->staff->create($staffRequest);
+                
                 return \Redirect::route('staff.index')
                     ->with('success',__('flash.store'));
             }
@@ -165,7 +185,7 @@ class StaffsController extends Controller
             $email = $request->email;
             $ruleEmail = '';
             if ($email && !empty($email)) {
-                $ruleEmail = 'email|unique:staffs,email,' . $id;
+                $ruleEmail = 'email|unique:staffs||unique:users,email,' . $id;
             }
             $rules = [
                 'firstname' => 'required',
@@ -176,6 +196,12 @@ class StaffsController extends Controller
                 'phone1' => 'required',
                 'address' => 'required',
                 'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
+                'password' => [
+                    'required',
+                    'max:30',
+                    'min:6',
+                    'regex:/^[!-~]+$/'
+                ],
             ];
             // Set field of Validattion
             $validator = \Validator::make([
@@ -188,6 +214,7 @@ class StaffsController extends Controller
                 'phone2' => $request->phone2,
                 'address' => $request->address,
                 'thumbnail' => $request->thumbnail,
+                'password' => $request->password,
             ], $rules);
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
@@ -202,6 +229,20 @@ class StaffsController extends Controller
                 }
                 $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
                 $staff->update($staffRequest);
+                // update user
+                if($staff) {
+                    $user = [];
+                    if ($request->password && !empty($request->password)) {
+                        $user['password'] =  bcrypt($request->password);
+                    }
+                    if (!empty($request->thumbnail)) {
+                        $user['thumbnail'] = uploadFile($request->thumbnail, config('upload.user'));
+                    } 
+                    $user['name'] = ucfirst($request->firstname) . ' ' . ucfirst($request->lastname);
+                    $user['role'] = 2;
+                    $user['email'] = $staffRequest['email'];
+                    $staff->user->update($user);
+                }
                 return \Redirect::route('staff.index')
                     ->with('warning',__('flash.update'));
             }

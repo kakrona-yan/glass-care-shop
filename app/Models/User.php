@@ -45,6 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function staff()
+    {
+        return $this->hasOne('App\Models\Staff', 'user_id', 'id');
+    }
+
     public function roleType()
     {
         $role = $this->role;

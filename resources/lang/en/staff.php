@@ -12,6 +12,7 @@ return [
         'email' => 'E-mail',
         'address' => 'Address',
         'title' => 'Staff',
+        'password' => 'Password',
         'action' => 'Action'
     ],
     'sub_title' => 'Staffs',

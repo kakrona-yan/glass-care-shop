@@ -118,7 +118,9 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-md-3 col-form-label" for="total_money_revice">Received Amount<span class="text-danger">*</span></label>
                                                 <div class="col-9">
-                                                    <input type="text" class="form-control" id="total_money_revice" name="money_change" value="{{ old('money_change', $request->money_change ? $request->money_change : 0) }}">
+                                                    <input type="text" class="form-control" id="total_money_revice" name="money_change" value="{{ old('money_change', $request->money_change ? $request->money_change : 0) }}"
+                                                        oninput="calculatorMoney(this)"
+                                                    >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -242,19 +244,15 @@
         html +='</ul></div>';
         return html;
     }
-    // variable sale product
     var totalQuantity = 0;
     var totalAmount = 0;
-    var totalDiscount = 0;
-    var moneyOwed = 0;
-
     function checkSaleProduct(id, title, price) {
         let html = '<tr id="sale_product_'+id+'">';
             html += '<td><input type="hidden" class="form-control" name="product_id[]" value="'+id+'"/>'+id+'</td>';
             html += '<td><input type="text" class="form-control" value="'+title+'" readonly/></td>';
-            html += '<td><input type="number" id="quantity_'+id+'" class="form-control" name="quantity[]" value="1" oninput="updateQuantity(this)"/></td>';
-            html += '<td><input type="number" id="rate_'+id+'" class="form-control" name="rate[]" value="'+price+'" /></td>';
-            html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="amount[]" value="'+price+'" readonly/></td>';
+            html += '<td><input type="number" min="0" id="quantity_'+id+'" data-id="'+id+'" data-quantity="1" class="form-control" name="quantity[]" value="1" oninput="updateQuantity(this)"/></td>';
+            html += '<td><input type="number" min="0" id="rate_'+id+'" class="form-control" name="rate[]" value="'+price+'" readonly /></td>';
+            html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="amount[]" value="'+price+'" readonly /></td>';
             html += '<td class="text-center">';
             html += '    <button type="button" data-id="'+id+'" data-quantity="1" data-amount="'+price+'" class="remove_product btn btn-circle btn-circle btn-sm btn-danger btn-circle"><i class="fa fa-trash"></i></button>';
             html += '</td>';
@@ -263,8 +261,9 @@
         $('#product_'+id).prop('disabled', true);
         // calculator
         let quantity = $('#quantity_'+id).val();
-        let amount = $('#amount_'+id).val();
+        let rate = $('#rate_'+id).val();
         totalQuantity +=Number(quantity);
+        let amount = quantity * rate;
         totalAmount += Number(amount);
         $('input[name="total_quantity"]').val(totalQuantity);
         $('input[name="total_amount"]').val(totalAmount);
@@ -279,14 +278,40 @@
         $('#sale_product_'+id).remove();
         $('#product_'+id).prop('checked', false);
         $('#product_'+id).prop('disabled', false);
-        totalQuantity = Number(totalQuantity) - Number(quantity);
-        totalAmount = Number(totalAmount) - Number(amount);
-        $('input[name="total_quantity"]').val(totalQuantity);
-        $('input[name="total_amount"]').val(totalAmount);
+        let totalQuantityPayment = $('input[name="total_quantity"]').val();
+        let totalAmountPayment = $('input[name="total_amount"]').val();
+        totalQuantityPayment = Number(totalQuantityPayment) - Number(quantity);
+        totalAmountPayment = Number(totalAmountPayment) - Number(amount);
+        $('input[name="total_quantity"]').val(totalQuantityPayment);
+        $('input[name="total_amount"]').val(totalAmountPayment);
     });
     // update quantity
     function updateQuantity(data){
-        let quantity = $(data)[0] ? $(data)[0].value : 0;
+        let id = $(data).attr("data-id");
+        let quantity = $('#quantity_'+id).val();
+        let oldQuantity = $(data).attr("data-quantity");
+        let rate = $('#rate_'+id).val();
+        let oldAmount =$('#amount_'+id).val();
+        // Payment
+        let totalQuantityPayment = $('input[name="total_quantity"]').val();
+        let totalAmountPayment = $('input[name="total_amount"]').val();
+        let amount = quantity * rate;
+        totalQuantityPayment = totalQuantityPayment - Number(oldQuantity)
+        totalQuantityPayment += Number(quantity);
+        totalAmountPayment = totalAmountPayment - Number(oldAmount);
+        totalAmountPayment += Number(amount);
+        // output value
+        $('input[name="total_quantity"]').val(totalQuantityPayment);
+        $('input[name="total_amount"]').val(totalAmountPayment);
+        $('#amount_'+id).val(amount);
+        $(data).attr('data-quantity', quantity);
+    }
+    // calculatorMoney
+    function calculatorMoney(data) {
+        let revicePrice = $(data)[0] ? $(data)[0].value : 0;
+        let totalAmountPayment = $('input[name="total_amount"]').val();
+        let moneyOwed = Number(totalAmountPayment) - Number(revicePrice);
+        $("#money_owed").val(moneyOwed);
     }
 </script>
 @endpush

@@ -80,6 +80,18 @@
                                                 </div>
                                             @endif
                                         </div>
+                                         <div class="form-group">
+                                            <label for="password">{{__('user.list.password')}}:</label>
+                                            <input type="text" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" 
+                                                placeholder="password"
+                                                name="password" value="{{old('password', $request->password)}}"
+                                            >
+                                            @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
                                         <div class="form-group">
                                             <label for="dob">{{__('staff.list.dob')}}:</label>
                                             <div class="input-group date" data-provide="datepicker">

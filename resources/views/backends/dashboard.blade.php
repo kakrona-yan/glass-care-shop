@@ -12,6 +12,7 @@
     <!-- Content Row -->
     <div class="row">
         <!-- Product -->
+        @if(Auth::user()->isRoleAdmin())
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -116,6 +117,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <!-- Sale -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card">
@@ -228,8 +230,22 @@
                   <h6 class="m-0 font-weight-bold text-primary">Sales</h6>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive cus-table">
-                  
+                     <div class="table-responsive cus-table">
+                        <table class="table table-striped table-bordered">
+                            <thead class="bg-primary text-light">
+                                <tr>
+                                    <th>#No</th>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Sale Date</th>
+                                    <th>Staff</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
