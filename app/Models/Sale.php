@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Constants\DeleteStatus;
 
 class Sale extends BaseModel
 {
@@ -37,5 +38,18 @@ class Sale extends BaseModel
     public function productSales()
     {
         return $this->hasMany('App\Models\SaleProduct', 'sale_id', 'id');
+    }
+
+    public function filter($request)
+    {
+        $sales = $this->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->orderBy('id', 'DESC');
+        // Check flash danger
+        flashDanger($sales->count(), __('flash.empty_data'));
+        $limit = config('pagination.limit');
+        if ($request->exists('limit') && !is_null($request->limit)) {
+            $limit = $request->limit;
+        }
+        return $sales->paginate($limit);
     }
 }

@@ -34,9 +34,10 @@ class SalesController extends Controller
     public function index(Request $request)
     {
         try {
-          
+            $sales  = $this->sale->filter($request);
             return view('backends.sales.index', [
                 'request' => $request,
+                'sales' => $sales
             ]);
         } catch (\ValidationException $e) {
             return exceptionError($e, 'backends.sales.index');
@@ -91,26 +92,37 @@ class SalesController extends Controller
             } else {
                 // insert to table sales
                 $requestSale = [];
-                $requestSale['staff_id'] = \Auth::id();
-                $requestSale['customer_id'] = $request->customer_id;
-                $requestSale['quotaion_no'] = $request->quotaion_no;
-                $requestSale['money_change'] = $request->money_change;
-                $requestSale['total_quantity'] = $request->total_quantity;
-                $requestSale['total_discount'] = $request->total_discount;
-                $requestSale['total_amount'] = $request->total_amount;
-                $requestSale['sale_date'] = date('Y-m-d', strtotime($request->sale_date));
-                $requestSale['note'] = $request->note;
-                // $sale = $this->sale->create($requestSale);
-                $requestSaleProduct = [];
-                
-            
-                dd($request->all());
-                // insert to table salesProduct
-                if($sale) {
-
+                if ($request->exists('sale_product') && !empty($request->sale_product)) {
+                    $requestSale['staff_id'] = \Auth::id();
+                    $requestSale['customer_id'] = $request->customer_id;
+                    $requestSale['quotaion_no'] = $request->quotaion_no;
+                    $requestSale['money_change'] = $request->money_change;
+                    $requestSale['total_quantity'] = $request->total_quantity;
+                    $requestSale['total_discount'] = $request->total_discount;
+                    $requestSale['total_amount'] = $request->total_amount;
+                    $requestSale['sale_date'] = date('Y-m-d', strtotime($request->sale_date));
+                    $requestSale['note'] = $request->note;
+                    $sale = $this->sale->create($requestSale);
+                    // insert to table salesProduct
+                    if($sale) {
+                        $saleProducts = [];
+                        $saleProducts = $request->sale_product;
+                        foreach ($saleProducts as $key => $saleProduct) {
+                            $this->saleProduct->create([
+                                'sale_id'       => $sale->id,
+                                'product_id'    => $saleProduct['product_id'],
+                                'rate'          => $saleProduct['rate'],
+                                'quantity'      => $saleProduct['quantity'], 
+                                'amount'        => $saleProduct['amount']
+                            ]);
+                        }
+                    }
+                    return \Redirect::route('sale.create')
+                        ->with('success', __('flash.store'));
+                } else {
+                    return \Redirect::route('sale.create')
+                    ->with('danger', __('flash.empty_data'));
                 }
-                return \Redirect::route('sale.create')
-                    ->with('success', __('flash.store'));
             }
         } catch (\ValidationException $e) {
             return exceptionError($e, 'customers.create');

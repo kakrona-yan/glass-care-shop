@@ -260,9 +260,11 @@
         html +='</ul></div>';
         return html;
     }
+
+    var i = 0;
     var totalQuantity = 0;
     var totalAmount = 0;
-    var i = 0;
+    
     function checkSaleProduct(id, title, price) {
         let html = '<tr id="sale_product_'+id+'">';
             html += '<td><input type="hidden" class="form-control" name="sale_product['+i+'][product_id]" value="'+id+'"/>'+id+'</td>';
@@ -279,8 +281,8 @@
         // calculator
         let quantity = $('#quantity_'+id).val();
         let rate = $('#rate_'+id).val();
-        totalQuantity +=Number(quantity);
         let amount = quantity * rate;
+        totalQuantity +=Number(quantity);
         totalAmount += Number(amount);
         $('input[name="total_quantity"]').val(totalQuantity);
         $('input[name="total_amount"]').val(totalAmount);
@@ -288,19 +290,21 @@
     }
     // remove product
     $(document).on('click', '.remove_product', function(e){
-        let id = $(this).attr("data-id");
-        let quantity = $(this).attr("data-quantity");
-        let amount = $(this).attr("data-amount");
         e.preventDefault();
-        $('#sale_product_'+id).remove();
-        $('#product_'+id).prop('checked', false);
-        $('#product_'+id).prop('disabled', false);
+        let id = $(this).attr("data-id");
+        let quantity = $('#quantity_'+id).val();
+        let amount = $('#amount_'+id).val();  
         let totalQuantityPayment = $('input[name="total_quantity"]').val();
         let totalAmountPayment = $('input[name="total_amount"]').val();
         totalQuantityPayment = Number(totalQuantityPayment) - Number(quantity);
         totalAmountPayment = Number(totalAmountPayment) - Number(amount);
         $('input[name="total_quantity"]').val(totalQuantityPayment);
         $('input[name="total_amount"]').val(totalAmountPayment);
+        totalQuantity = totalQuantityPayment;
+        totalAmount = totalAmountPayment;
+        $('#sale_product_'+id).remove();
+        $('#product_'+id).prop('checked', false);
+        $('#product_'+id).prop('disabled', false);
         i--;
     });
     // update quantity
@@ -323,6 +327,8 @@
         $('input[name="total_amount"]').val(totalAmountPayment);
         $('#amount_'+id).val(amount);
         $(data).attr('data-quantity', quantity);
+        totalQuantity = totalQuantityPayment;
+        totalAmount = totalAmountPayment;
     }
     // calculatorMoney
     function calculatorMoney(data) {

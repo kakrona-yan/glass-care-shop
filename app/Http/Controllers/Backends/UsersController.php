@@ -8,12 +8,16 @@ use App\Models\User;
 use App\Http\Constants\UserRole;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\Staff;
 
 class UsersController extends Controller
 {
-    public function __construct(User $user)
-    {
+    public function __construct(
+        User $user,
+        Staff $staff
+    ){
         $this->user = $user;
+        $this->staff = $staff;
     }
     /**
      * Display a listing of the resource.
@@ -156,7 +160,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, int $id)
+    public function destroy(Request $request)
     {
         try {
             $id = $request->user_id;
@@ -164,6 +168,7 @@ class UsersController extends Controller
             if (!$user) {
                 return response()->view('errors.404', [], 404);
             }
+            $user->staff->remove();
             $user->remove();
             return redirect()->route('user.index')
                 ->with('danger', __('flash.destroy'));
