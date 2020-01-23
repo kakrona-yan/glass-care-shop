@@ -27,9 +27,7 @@
                                     <tr>
                                         <td class="text-center">
                                             @if ($sale->productSales->count() > 0)
-                                            <a href="#slae_{{$sale->id}}" data-toggle="collapse"><i class="fas fa-plus"></i></a> | {{$sale->id}}
-                                            @else
-                                            {{$sale->id}}
+                                            <a href="#slae_{{$sale->id}}" data-toggle="collapse" style="text-decoration: none !important;"><i class="fas fa-plus-circle"></i></a>
                                             @endif
                                         </td>
                                         <td>{{$sale->quotaion_no}}</td>
