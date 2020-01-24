@@ -160,8 +160,8 @@
                                             <table class="table table-striped table-bordered">
                                                 <thead class="bg-primary text-light">
                                                     <tr>
-                                                        <th style="width: 80px;">#</th>
-                                                        <th style="width: 360px;">Product Name</th>
+                                                        <th style="width: 50px;">#</th>
+                                                        <th>Product Name</th>
                                                         <th>Quantity</th>
                                                         <th>Unit Price</th>
                                                         <th>Total</th>
