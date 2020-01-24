@@ -134,8 +134,7 @@
                                 <th colspan="2">Staff</th>
                             </tr>
                             <tr>
-                                <td>{{ $sale->staff ? $sale->staff->lastname : '' }}</td>
-                                <td>{{ $sale->staff ? $sale->staff->firstname : ''}}</td>
+                                <td colspan="2">{{ $sale->staff ? $sale->staff->lastname $sale->staff->firstname: \Auth::user()->name} }}</td>
                             </tr>
                         </tbody>
                     </table>
