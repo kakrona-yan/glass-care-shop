@@ -256,7 +256,7 @@
                                     <td>{{$sale->total_quantity}}</td>
                                     <td>{{$sale->total_amount}}</td>
                                     <td>{{date('Y-m-d', strtotime($sale->sale_date))}}</td>
-                                    <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::name()}}</td>
+                                    <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
                                 </tr>
                                 @if ($sale->productSales->count() > 0)
                                 <tr>

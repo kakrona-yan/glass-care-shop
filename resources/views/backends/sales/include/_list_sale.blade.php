@@ -37,7 +37,7 @@
                                     <td>{{$sale->money_change}}</td>
                                      <td>{{$sale->total_amount - $sale->money_change}}</td>
                                     <td>{{date('Y-m-d', strtotime($sale->sale_date))}}</td>
-                                    <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::name()}}</td>
+                                    <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
                                     <td rowspan="{{$sale->productSales->count() > 0 ? 2 : 1}}">
                                         <a class="btn btn-circle btn-circle btn-sm btn-warning btn-circle" 
                                             data-toggle="tooltip" 
