@@ -9,7 +9,7 @@ use App\Models\Product;
 use App\Models\Customer;
 use App\Models\Sale;
 use App\Models\SaleProduct;
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class SalesController extends Controller
 {
