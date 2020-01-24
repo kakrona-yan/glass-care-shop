@@ -134,7 +134,7 @@
                                 <th colspan="2">Staff</th>
                             </tr>
                             <tr>
-                                <td colspan="2">{{ $sale->staff ? $sale->staff->getFullnameAttribute(): \Auth::user()->name} }}</td>
+                                <td colspan="2">{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
                             </tr>
                         </tbody>
                     </table>
