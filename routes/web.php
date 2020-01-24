@@ -136,6 +136,7 @@ Route::group(
                 Route::post('/update/{id}', 'SalesController@update')->name('update');
                 Route::post('/destroy', 'SalesController@destroy')->name('destroy');
                 Route::get('/product', 'SalesController@getProductByCategory')->name('product');
+                Route::get('/invoiceSalePDF/{id}', 'SalesController@downloadInvoiceSalePDF')->name('downloadPDF');
             });
         });
     }

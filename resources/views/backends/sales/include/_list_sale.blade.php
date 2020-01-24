@@ -38,7 +38,15 @@
                                      <td>{{$sale->total_amount - $sale->money_change}}</td>
                                     <td>{{date('Y-m-d', strtotime($sale->sale_date))}}</td>
                                     <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::name()}}</td>
-                                    <td rowspan="{{$sale->productSales->count() > 0 ? 2 : 1}}">Coming</td>
+                                    <td rowspan="{{$sale->productSales->count() > 0 ? 2 : 1}}">
+                                        <a class="btn btn-circle btn-circle btn-sm btn-warning btn-circle" 
+                                            data-toggle="tooltip" 
+                                            data-placement="top"
+                                            data-original-title="Invoice #{{$sale->quotaion_no}}"
+                                            href="{{route('sale.downloadPDF', $sale->id)}}"
+                                        ><i class="far fa-file-pdf"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                                 @if ($sale->productSales->count() > 0)
                                 <tr>
