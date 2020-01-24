@@ -372,3 +372,26 @@ input{
     cursor: not-allowed;
   }
 }
+.border-sale{
+  &:first-child{
+    border-top: 1px solid #e3e6f0;
+  }
+  & > td {
+    border-right: 1px solid #e3e6f0;
+    &:last-child{
+      border-right: none;
+    }
+  }
+  &--top{
+    border-top: 1px solid #e3e6f0;
+    & > td {
+      border-right: 1px solid #e3e6f0;
+      &:last-child{
+        border-right: none;
+      }
+    }
+  }
+}
+.w-47{
+  width: 46.666%;
+}

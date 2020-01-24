@@ -91,9 +91,10 @@ class SalesController extends Controller
                 return redirect()->back()->withErrors($validator)->withInput();
             } else {
                 // insert to table sales
+                $staff = \Auth::user()->staff;
                 $requestSale = [];
                 if ($request->exists('sale_product') && !empty($request->sale_product)) {
-                    $requestSale['staff_id'] = \Auth::id();
+                    $requestSale['staff_id'] = $staff ? $staff->id : \Auth::id();
                     $requestSale['customer_id'] = $request->customer_id;
                     $requestSale['quotaion_no'] = $request->quotaion_no;
                     $requestSale['money_change'] = $request->money_change;
@@ -117,7 +118,7 @@ class SalesController extends Controller
                             ]);
                         }
                     }
-                    return \Redirect::route('sale.create')
+                    return \Redirect::route('sale.index')
                         ->with('success', __('flash.store'));
                 } else {
                     return \Redirect::route('sale.create')
