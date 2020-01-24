@@ -25,7 +25,7 @@
         ><i class="fas fa-list mr-1"></i> Sale Product</a>
     </div>
     <div class="row mb-2">
-        <div class="col-12 tab-card">
+        <div class="col-12 col-sm-12 tab-card">
             <!-- Circle Buttons -->
             <div class="card mb-4">
                 <div id="supplierList" class="card-body collapse show">
@@ -39,11 +39,11 @@
                                     <a href="{{route('sale.index')}}" class="btn btn-circle btn-secondary w-25">Back to sale list</a>
                                 </div>
                                 <div class="row mb-4">
-                                    <div class="col-12 col-md-5 mb-3">
+                                    <div class="col-12 col-sm-12 col-md-5 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Sale:</legend>
                                             <div class="form-group select-group row mb-4">
-                                                <label class="col-12 col-md-3 col-form-label" for="invoiceCode">Category</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="invoiceCode">Category</label>
                                                 <div class="col-9">
                                                     <select class="form-control" id="category_id" name="category_id">
                                                         <option value="">Please select</option>
@@ -54,14 +54,14 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="invoiceCode">Invoice Code</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="invoiceCode">Invoice Code</label>
                                                 <div class="col-9">
                                                     <input type="text" class="form-control" id="invoiceCode" name="quotaion_no" readonly="" 
                                                     value="{{old('quotaion_no', $invoiceCode)}}">
                                                 </div>
                                             </div>
                                             <div class="form-group select-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="invoiceCode">Customer <span class="text-danger">*</span></label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="invoiceCode">Customer <span class="text-danger">*</span></label>
                                                 <div class="col-9">
                                                     <select class="form-control" id="customer_id" name="customer_id">
                                                         <option value="">Please select</option>
@@ -77,7 +77,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group select-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="invoiceCode">Date Sale <span class="text-danger">*</span></label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="invoiceCode">Date Sale <span class="text-danger">*</span></label>
                                                 <div class="col-9">
                                                     <div class="input-group date" data-provide="datepicker" data-date-format="YYYY-MM-MM">
                                                         <input type="text" class="form-control" name="sale_date"
@@ -95,7 +95,7 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="col-12 col-md-7 mb-3">
+                                    <div class="col-12 col-sm-12 col-md-7 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Product List:</legend>
                                             <div class="form-group select-group list-product">
@@ -105,29 +105,29 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-sm-12 col-sm-12 col-md-4 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Payment:</legend>
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="total_quantity">Total Quantity</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="total_quantity">Total Quantity</label>
                                                 <div class="col-9">
                                                     <input type="text" class="form-control" id="total_quantity" name="total_quantity" readonly="" value="{{ old('total_quantity', $request->total_quantity ? $request->total_quantity : 0) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="total_amount">Total Amount</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="total_amount">Total Amount</label>
                                                 <div class="col-9">
                                                     <input type="text" class="form-control" id="total_amount" name="total_amount" readonly="" value="{{ old('total_amount', $request->total_amount ? $request->total_amount : 0) }}">
                                                 </div>
                                             </div>
                                              <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="total_discount">Dicount</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="total_discount">Dicount</label>
                                                 <div class="col-9">
                                                     <input type="text" class="form-control" id="total_discount" name="total_discount" value="{{ old('dototal_discountb', $request->total_discount ? $request->total_discount : 0) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="total_money_revice">Received Amount<span class="text-danger">*</span></label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="total_money_revice">Received Amount<span class="text-danger">*</span></label>
                                                 <div class="col-9">
                                                     <input type="text" class="form-control {{ $errors->has('money_change') ? ' is-invalid' : '' }}" id="total_money_revice" name="money_change" value="{{ old('money_change', $request->money_change ? $request->money_change : 0) }}"
                                                         oninput="calculatorMoney(this)"
@@ -140,20 +140,20 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="money_owed">Owed</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="money_owed">Owed</label>
                                                 <div class="col-9">
                                                     <input type="text" class="form-control" id="money_owed" readonly="" value="0">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label" for="money_owed">Note</label>
+                                                <label class="col-12 col-sm-12 col-md-3 col-form-label" for="money_owed">Note</label>
                                                 <div class="col-9">
                                                     <textarea class="form-control" name="note">{{ old('dob', $request->note) }}</textarea>
                                                 </div>
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="col-12 col-md-8 mb-3">
+                                    <div class="col-12 col-sm-12 col-md-8 mb-3">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Sale Product:</legend>
                                             <div class="table-responsive cus-table">
