@@ -15,6 +15,8 @@
                                 <th>Customer Name</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
+                                <th>Received Price</th>
+                                <th>Owed</th>
                                 <th>Sale Date</th>
                                 <th>Staff</th>
                                 <th>Action</th>
@@ -32,13 +34,15 @@
                                     <td>{{$sale->customer ? $sale->customer->name : ''}}</td>
                                     <td>{{$sale->total_quantity}}</td>
                                     <td>{{$sale->total_amount}}</td>
+                                    <td>{{$sale->money_change}}</td>
+                                     <td>{{$sale->total_amount - $sale->money_change}}</td>
                                     <td>{{date('Y-m-d', strtotime($sale->sale_date))}}</td>
                                     <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::name()}}</td>
                                     <td rowspan="{{$sale->productSales->count() > 0 ? 2 : 1}}">Coming</td>
                                 </tr>
                                 @if ($sale->productSales->count() > 0)
                                 <tr>
-                                    <td colspan="7" id="slae_{{$sale->id}}" class="collapse p-0">
+                                    <td colspan="9" id="slae_{{$sale->id}}" class="collapse p-0">
                                         <table class="table table-borderless mb-0">
                                             <thead>
                                                 <tr>
