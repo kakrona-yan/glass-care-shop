@@ -44,14 +44,6 @@
                                         <td class="border-top-0">{{ $staff->lastname }} {{ $staff->firstname }}</td>
                                     </tr>
                                     <tr>
-                                        <th>{{__('staff.list.gender')}}:</th>
-                                        <td>{{ $staff->getGender() }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>{{__('staff.list.dob')}}:</th>
-                                        <td>{{ date('Y-m-d', strtotime($staff->dob)) }}</td>
-                                    </tr>
-                                    <tr>
                                         <th>{{__('staff.list.email')}}:</th>
                                         <td>{{ $staff->email }}</td>
                                     </tr>

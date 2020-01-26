@@ -115,7 +115,6 @@ class StaffsController extends Controller
                     if ($request->exists('thumbnail') && !empty($staffRequest['thumbnail'])) {
                         $staffRequest['thumbnail'] = uploadFile($staffRequest['thumbnail'], config('upload.staff'));
                     }
-                    $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
                     $staffRequest['user_id'] = $user->id;
                     $this->staff->create($staffRequest);
                 }
@@ -227,7 +226,6 @@ class StaffsController extends Controller
                 if (!empty($request->thumbnail)) {
                     $staffRequest['thumbnail'] = uploadFile($request->thumbnail, config('upload.staff'));
                 }
-                $staffRequest['dob'] = date('Y-m-d', strtotime($staffRequest['dob']));
                 $staff->update($staffRequest);
                 // update user
                 if($staff) {

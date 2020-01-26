@@ -15,10 +15,8 @@ class CreateStaffsTable extends Migration
     {
         Schema::create('staffs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('firstname', 100);
-            $table->string('lastname', 100);
-            $table->enum('gender', ['male', 'female'])->comment('male, female');
-            $table->date('dob');
+            $table->string('firstname', 100)->nullable();
+            $table->string('lastname', 100)->nullable();
             $table->string('email', 255)->nullable();
             $table->string('phone1', 255);
             $table->string('phone2', 255)->nullable();

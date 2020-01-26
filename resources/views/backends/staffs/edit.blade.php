@@ -65,22 +65,6 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-check form-check-inline align-top" for="gender">{{__('staff.list.gender')}}:</label>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender" id="man" value="male" {{old('gender', $staff->gender) == 'male' ? 'checked' : ''}}>
-                                                <label class="form-check-label" for="man">{{__('staff.form.man')}}</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender" id="woman" value="female" {{old('gender', $staff->gender) == 'female' ? 'checked' : ''}}>
-                                                <label class="form-check-label" for="woman">{{__('staff.form.woman')}}</label>
-                                            </div>
-                                            @if ($errors->has('gender'))
-                                                <div class="text-danger">
-                                                    <strong>{{ $errors->first('gender') }}</strong>
-                                                </div>
-                                            @endif
-                                        </div>
-                                        <div class="form-group">
                                             <label for="password">{{__('user.list.password')}}:</label>
                                             <input type="text" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" 
                                                 placeholder="password"
@@ -89,21 +73,6 @@
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('password') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dob">{{__('staff.list.dob')}}:</label>
-                                            <div class="input-group date" data-provide="datepicker">
-                                                <input type="text" class="form-control" name="dob" placeholder="month/days/year" 
-                                                    value="{{ old('dob', date('d/m/Y', strtotime($staff->dob))) }}">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="far fa-calendar-alt"></span></div>
-                                                </div>
-                                            </div>
-                                            @if ($errors->has('dob'))
-                                                <span class="text-danger">
-                                                    <strong>{{ $errors->first('dob') }}</strong>
                                                 </span>
                                             @endif
                                         </div>

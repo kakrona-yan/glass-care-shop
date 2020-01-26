@@ -14,8 +14,6 @@ class Staff extends BaseModel
         'user_id',
         'firstname',
         'lastname',
-        'gender',
-        'dob',
         'email',
         'phone1',
         'phone2',

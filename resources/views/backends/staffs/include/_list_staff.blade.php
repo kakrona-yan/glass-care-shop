@@ -23,17 +23,6 @@
                                     </div>
                                     <div class="col-6 col-md-3 mb-1">
                                         <div class="form-group">
-                                            <label class="font-weight-bold">@lang('staff.list.gender')</label>
-                                            <select class="form-control" id="gender" name="gender">
-                                                <option value="" selected>{{__('staff.form.please_select') }}</option>
-                                                @foreach ($genders as $key => $gender)
-                                                <option value="{{$key}}" {{ old('agender', $request->gender) == $key ? 'selected' : '' }}>{{$gender}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-3 mb-1">
-                                        <div class="form-group">
                                             <label class="font-weight-bold">@lang('staff.list.phone')</label>
                                             <input type="text" class="form-control" name="phone_number"  value="{{ old('phone_number', $request->phone_number) }}">
                                         </div>
@@ -59,8 +48,6 @@
                                 <tr>
                                     <th class="text-center w-10">{{__('staff.form.thumbnail')}}</th>
                                     <th>{{ __('staff.list.name') }}</th>
-                                    <th>{{ __('staff.list.gender') }}</th>
-                                    <th>{{ __('staff.list.dob') }}</th>
                                     <th>{{ __('staff.list.email') }}</th>
                                     <th>{{ __('staff.list.password') }}</th>
                                     <th>{{ __('staff.list.phone') }}</th>
@@ -79,8 +66,6 @@
                                         </div>
                                     </td>
                                     <td>{{ $staff->firstname }} {{ $staff->lastname }}</td>
-                                    <td>{{ $staff->getGender()}}</td>
-                                    <td>{{ date('Y-m-d', strtotime($staff->dob))}}</td>
                                     <td>{{ $staff->email }}</td>
                                     <td>{{ $staff->password }}</td>
                                     <td>

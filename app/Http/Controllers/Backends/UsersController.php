@@ -70,7 +70,19 @@ class UsersController extends Controller
             $user['email_verified_at'] = now();
             $user['password'] =  bcrypt($user['password']);
             $user['thumbnail'] = isset($user['thumbnail']) ? uploadFile($user['thumbnail'], config('upload.user')) : '';
-            $this->user->create($user);
+            $saveUser = $this->user->create($user);
+            if($saveUser) {
+                $staffRequest = [];
+                if ($request->exists('thumbnail') && !empty($user['thumbnail'])) {
+                    $user['thumbnail'] = uploadFile($user['thumbnail'], config('upload.staff'));
+                }
+                $staffRequest['user_id'] = $saveUser->id;
+                $staffRequest['firstname'] = $saveUser->name;
+                $staffRequest['email'] = $user['email'];
+                $staffRequest['password'] = $user['password'];
+                $staffRequest['is_delete'] = $saveUser->role == 1 ? 0 : 1;
+                $this->staff->create($staffRequest);
+            }
             return \Redirect::route('user.index')
                 ->with('success', __('flash.store'));
         } catch (\ValidationException $e) {
@@ -146,7 +158,20 @@ class UsersController extends Controller
                 unset($requestUser['thumbnail']);
             }
             $user->update($requestUser);
-
+            if($user) {
+                $staffRequest = [];
+                if ($request->exists('thumbnail') && !empty($user['thumbnail'])) {
+                    $user['thumbnail'] = uploadFile($user['thumbnail'], config('upload.staff'));
+                }
+                $staffRequest['user_id'] = $user->id;
+                $staffRequest['firstname'] = $user->name;
+                $staffRequest['email'] = $requestUser['email'];
+                if ($request->password && !empty($request->password)) {
+                    $staffRequest['password'] = $requestUser['password'];
+                } 
+                $staffRequest['is_delete'] = $user->role == 1 ? 0 : 1;
+                $user->staff->update($staffRequest);
+            }
             return \Redirect::route('user.index')
                 ->with('warning', __('flash.update'));
         } catch (\ValidationException $e) {
