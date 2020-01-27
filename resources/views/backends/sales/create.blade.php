@@ -142,7 +142,7 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-sm-12 col-md-12 col-lg-3 col-form-label" for="money_owed">Owed</label>
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-9">
-                                                    <input type="text" class="form-control" id="money_owed" readonly="" value="0">
+                                                    <input type="text" class="form-control" id="money_owed" value="0">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -270,7 +270,7 @@
             html += '<td><input type="hidden" class="form-control" name="sale_product['+i+'][product_id]" value="'+id+'"/>'+id+'</td>';
             html += '<td><input type="text" class="form-control" value="'+title+'" readonly/></td>';
             html += '<td><input type="number" min="0" id="quantity_'+id+'" data-id="'+id+'" data-quantity="1" class="form-control" name="sale_product['+i+'][quantity]" value="1" oninput="updateQuantity(this)"/></td>';
-            html += '<td><input type="number" min="0" id="rate_'+id+'" class="form-control" name="sale_product['+i+'][rate]" value="'+price+'" readonly /></td>';
+            html += '<td><input type="number" min="0" id="rate_'+id+'" data-id="'+id+'" data-rate="'+price+'" class="form-control" name="sale_product['+i+'][rate]" value="'+price+'" oninput="updateRate(this)"/></td>';
             html += '<td><input type="text" id="amount_'+id+'" class="form-control" name="sale_product['+i+'][amount]" value="'+price+'" readonly /></td>';
             html += '<td class="text-center">';
             html += '    <button type="button" data-id="'+id+'" data-quantity="1" data-amount="'+price+'" class="remove_product btn btn-circle btn-circle btn-sm btn-danger btn-circle"><i class="fa fa-trash"></i></button>';
@@ -328,6 +328,24 @@
         $('#amount_'+id).val(amount);
         $(data).attr('data-quantity', quantity);
         totalQuantity = totalQuantityPayment;
+        totalAmount = totalAmountPayment;
+    }
+    // update Rate 
+    function updateRate(data){
+        let id = $(data).attr("data-id");
+        let quantity = $('#quantity_'+id).val();
+        let rate = $('#rate_'+id).val();
+        let oldRate = $(data).attr("data-rate");
+        let oldAmount = $('#amount_'+id).val();
+        // Payment
+        let totalAmountPayment = $('input[name="total_amount"]').val();
+        let amount = quantity * rate;
+        totalAmountPayment = totalAmountPayment - Number(oldAmount);
+        totalAmountPayment += Number(amount);
+        // output value
+        $('input[name="total_amount"]').val(totalAmountPayment);
+        $('#amount_'+id).val(amount);
+        $(data).attr('data-rate', rate);
         totalAmount = totalAmountPayment;
     }
     // calculatorMoney
