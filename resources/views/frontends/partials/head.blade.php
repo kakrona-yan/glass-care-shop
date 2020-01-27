@@ -3,6 +3,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>@yield('title')</title>
+<meta name="google-site-verification" content="nrO4-t83HKvA1vy5J8S4oyNvIZ-MUzu013Jp2SNUHT0" />
 <meta property="og:title" content="Swipe shop - Blog and News About Shop look contact us our place"/>
 <meta property="og:description" content="The Swipe shop blog is your source for iPhone, iPad, AirPods, Mac, Samsung, Pixel and Apple Watch accessories buying guides. Don&#039;t miss out on product news, deals, reviews, tips or how-tos. Learn about the protective cases, screen protectors, Glass screen protector premium,  Screen protector, News & Events, Tips & Guides, charging and the other gear you love!" />
 <meta property="og:type" content="website" />

@@ -8,17 +8,21 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Http\Constants\DeleteStatus;
 use App\Models\Contact;
+use Carbon\Carbon;
+use App\Models\News;
 
 class PagesController extends Controller
 {
     public function __construct(
         Category $category,
         Product $product,
-        Contact $contact
+        Contact $contact,
+        News $news
     ) {
         $this->category = $category;
         $this->product = $product;
         $this->contact = $contact;
+        $this->news = $news;
     }
     /**
      * Show the application about.
@@ -91,4 +95,44 @@ class PagesController extends Controller
     {
         return view('frontends.pages.shop');
     }
+
+    public function siteMap()
+    {
+        $date = date('2018-10-04 10:30:30');
+        $datePublic = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date);
+        $sitemapRoutes = [
+            [
+                'name' => '/',
+                'date' => $datePublic
+            ],
+            [
+                'name' => '/shop',
+                'date' => $datePublic
+            ],
+            [
+                'name' => '/look',
+                'date' => $datePublic
+            ],
+            [
+                'name' => '/about',
+                'date' => $datePublic
+            ],
+            [
+                'name' => '/blog',
+                'date' => $datePublic
+            ]
+        ];
+        $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->where('is_active', 1)
+            ->get();
+        $blogs = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->where('is_active', 1)
+            ->get();
+        return response()->view('frontends.sitemap', [
+            'sitemapRoutes' =>  $sitemapRoutes,
+            'products' => $products,
+            'blogs' => $blogs
+        ])->header('Content-Type', 'text/xml');
+    }
+    
 }

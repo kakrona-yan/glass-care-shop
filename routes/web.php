@@ -168,6 +168,7 @@ Route::group([
         Route::get('/{slug}', 'BlogsController@getNewsBySlug')
             ->where('slug', '[A-Za-z0-9_\-]+')->name('detail');
     });
+    Route::get('/sitemap.xml', 'PagesController@siteMap')->name('swipe.sitemap');
 });
 // route laravel filemanager
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
