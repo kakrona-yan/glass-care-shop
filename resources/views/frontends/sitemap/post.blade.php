@@ -3,13 +3,15 @@
     <url>
         <loc>{{route('home')}}</loc>
         <lastmod>2019-12-17T12:21:59+07:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
     </url>
     @foreach ($blogs as $blog)
     <url>
       <loc>{{config('app.url')}}/blog/{{$blog->permalink}}</loc>
       <lastmod>{{ $blog->created_at->tz('Asia/Phnom_Penh')->toAtomString() }}</lastmod>
       <changefreq>daily</changefreq>
+      <priority>0.8</priority>
       <image:image>
         <image:loc>{{$blog->thumbnail? asset(getUploadUrl($blog->thumbnail, config('upload.news'))) : asset('images/no-thumbnail.jpg') }}</image:loc>
         <image:title><![CDATA[{{$blog->title}}]]></image:title>
