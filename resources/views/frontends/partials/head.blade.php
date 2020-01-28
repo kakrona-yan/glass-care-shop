@@ -10,7 +10,7 @@
 <meta property="og:title" content="@yield('ogTitle')"/>
 <meta property="og:url" content="@yield('ogUrl')" />
 @endif
-<meta property="og:description" content="swipe shope | swipe-shop.com is your source for iPhone, iPad, AirPods, Mac, Samsung, Pixel and Apple Watch accessories buying guides. Don&#039;t miss out on product news, deals, reviews, tips or how-tos. Learn about the protective cases, screen protectors, Glass screen protector premium,  Screen protector, News & Events, Tips & Guides, charging and the other gear you love!" />
+<meta property="og:description" content="swipe shop | swipe-shop.com is your source for iPhone, iPad, AirPods, Mac, Samsung, Pixel and Apple Watch accessories buying guides. Don&#039;t miss out on product news, deals, reviews, tips or how-tos. Learn about the protective cases, screen protectors, Glass screen protector premium,  Screen protector, News & Events, Tips & Guides, charging and the other gear you love!" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://swipe-shop.com/" />
 <meta property="og:image" content="https://swipe-shop.com/theme/img/logo.png"/>
