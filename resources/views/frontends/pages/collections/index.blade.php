@@ -1,5 +1,7 @@
 @extends('frontends.layouts.master')
-@section('title', 'Swipe | collection')
+@section('title', 'Swipe collection shop | swipe-shop.com')
+@section('ogTitle', 'Swipe collection shop | swipe-shop.com')
+@section('ogUrl', route('collections.index'))
 @section('content')
 <section class="banner-top">
     <div class="container">

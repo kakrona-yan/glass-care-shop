@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     @foreach ($sitemapRoutes as $sitemapRoute)
     <url>
         <loc>{{ config('app.url').$sitemapRoute['name'] }}</loc>
-        <lastmod>{{ $sitemapRoute['date']->tz('Asia/Phnom_Penh')->toAtomString() }}</lastmod>
+        <lastmod>{{ $sitemapRoute['date']->tz('Asia/Phnom_Penh)->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     @endforeach
@@ -36,5 +35,4 @@
             <changefreq>daily</changefreq>
         </url>
     @endforeach
-</sitemap>
-</sitemapindex>
+</urlset>

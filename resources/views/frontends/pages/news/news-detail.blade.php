@@ -1,5 +1,7 @@
 @extends('frontends.layouts.master')
 @section('title', 'Swipe | '.$news->title)
+@section('ogTitle', $news->title)
+@section('ogUrl', route('blog.detail', $news->permalink ))
 @section('content')
 <section class="banner-top">
     <div class="container">

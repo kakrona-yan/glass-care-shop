@@ -1,5 +1,7 @@
 @extends('frontends.layouts.master')
-@section('title', 'Swipe | Look')
+@section('title', 'Swipe Look | swipe-shop.com')
+@section('ogTitle', 'Swipe Look | swipe-shop.com')
+@section('ogUrl', route('look'))
 @push('head-styles')
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/css/style-portfolio.css') }}"> 
 @endpush

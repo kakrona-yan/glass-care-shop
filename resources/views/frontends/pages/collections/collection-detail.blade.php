@@ -1,5 +1,7 @@
 @extends('frontends.layouts.master')
-@section('title', 'Swipe | '.$product->title)
+@section('title', 'Swipe collection shop | '.$product->title)
+@section('ogTitle', 'Swipe collection shop | '.$product->title)
+@section('ogUrl', route('collections.detail', $product->slug))
 @push('head-styles')
     <link rel="stylesheet" type="text/css" href="{{ URL('theme/css/product-zoom.css') }}">
 @endpush

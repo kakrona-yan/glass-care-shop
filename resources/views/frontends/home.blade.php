@@ -1,5 +1,7 @@
 @extends('frontends.layouts.master')
-@section('title', 'Swipe | Home')
+@section('title', 'Swipe home | swipe-shop.com')
+@section('ogTitle', 'Swipe home | swipe-shop.com')
+@section('ogUrl', route('home'))
 @push('head-styles')
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/slick/slick.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL('theme/slick/slick-theme.css') }}">   

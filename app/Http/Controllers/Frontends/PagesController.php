@@ -106,7 +106,7 @@ class PagesController extends Controller
                 'date' => $datePublic
             ],
             [
-                'name' => '/shop',
+                'name' => '/collections/shop',
                 'date' => $datePublic
             ],
             [
