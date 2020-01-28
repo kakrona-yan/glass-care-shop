@@ -128,11 +128,32 @@ class PagesController extends Controller
         $blogs = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
             ->where('is_active', 1)
             ->get();
-        return response()->view('frontends.sitemap', [
+        return response()->view('frontends.sitemap.index', [
             'sitemapRoutes' =>  $sitemapRoutes,
             'products' => $products,
             'blogs' => $blogs
         ])->header('Content-Type', 'text/xml');
     }
-    
+
+    public function postSiteMap()
+    {
+        
+        $blogs = $this->news->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->where('is_active', 1)
+            ->get();
+        return response()->view('frontends.sitemap.post', [
+            'blogs' => $blogs
+        ])->header('Content-Type', 'text/xml');
+    }
+
+    public function shopSiteMap()
+    {
+
+        $products = $this->product->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->where('is_active', 1)
+            ->get();
+        return response()->view('frontends.sitemap.shop', [
+            'products' => $products
+        ])->header('Content-Type', 'text/xml');
+    }
 }
