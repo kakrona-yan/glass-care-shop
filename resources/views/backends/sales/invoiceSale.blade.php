@@ -50,8 +50,8 @@
             color: #333;
         }
         .container{
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
             max-width: 794px;
             width: 100%;
             margin: 0px auto;
@@ -106,7 +106,7 @@
             </div>
             <div class="company-info--address">
                 <p>Address : NO. 01, ST. 182, SANGKAT VIEL VONG, Khan 7  Makara, Phnom Penh</p>
-                <p>Tel     : 093 399 330 /p>
+                <p>Tel     : 093 399 330 </p>
             </div>
         </div>
         <table class="table">
@@ -149,7 +149,7 @@
                                 <th style="text-align: center;">Staff</th>
                                 <th>Stock</th>
                             </tr>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
                                 <td>Stock</td>
                             </tr>
@@ -162,7 +162,7 @@
             <table class="table table-bordered">
             <thead style="background:#eee">
                 <tr>
-                    <th>>Product Name</th>
+                    <th>Product</th>
                     <th>Quantity</th>
                     <th>Rate</th>
                     <th>Amount</th>
