@@ -7,9 +7,7 @@
     <!-- Styles -->
     <style type="text/css">
         @font-face {
-			font-family: "KhmerOSBattambang";
-			font-style: normal;
-			font-weight: normal;
+			font-family: KhmerOSBattambang;
 			src: url("{{ asset('fonts/KhmerOSBattambang-Regular.ttf') }}") format('truetype');
 		}
 		@page {
@@ -28,8 +26,12 @@
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: "KhmerOSBattambang", sans-serif !important;
+            font-family: KhmerOSBattambang, sans-serif !important;
             font-size: 14px;
+        }
+        div,
+        p{
+            font-family: KhmerOSBattambang, sans-serif !important;
         }
         a {
             color: #fff;
@@ -41,6 +43,7 @@
         }
         table th, table td{           
             color: #333;
+            font-family: KhmerOSBattambang, sans-serif !important;
         }
         tfoot tr td {
             color: #333;
@@ -158,7 +161,7 @@
             <table class="table table-bordered">
             <thead style="background:#eee">
                 <tr>
-                    <th>ឈ្មោះ​ផលិតផល / Product Name</th>
+                    <th>ឈ្មោះ​ផលិតផល / <span>Product Name</span></th>
                     <th>បរិមាណ / Quantity</th>
                     <th>ប្រាក់ / Rate</th>
                     <th>ចំនួនទឹកប្រាក់ / Amount</th>
