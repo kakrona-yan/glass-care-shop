@@ -137,6 +137,7 @@ Route::group(
                 Route::post('/destroy', 'SalesController@destroy')->name('destroy');
                 Route::get('/product', 'SalesController@getProductByCategory')->name('product');
                 Route::get('/invoiceSalePDF/{id}', 'SalesController@downloadInvoiceSalePDF')->name('downloadPDF');
+                Route::get('/invoice-view-sale-pdf/{id}', 'SalesController@viewInvoiceSalePDF')->name('viewPDF');
             });
         });
     }
