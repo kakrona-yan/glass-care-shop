@@ -20,7 +20,6 @@
 				box-sizing: border-box;
 			margin: 0px;
 			padding: 0px;
-            page-break-after: always;
             word-break: break-all
 		}
         html, body {
@@ -28,12 +27,12 @@
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: KhmerOSBattambang, sans-serif !important;
+            font-family: KhmerOSBattambang, Roboto, serif !important;
             font-size: 14px;
         }
         div,
         p{
-            font-family: KhmerOSBattambang, sans-serif !important;
+            font-family: KhmerOSBattambang, Roboto, serif !important;
         }
         a {
             color: #fff;
@@ -45,7 +44,7 @@
         }
         table th, table td{           
             color: #333;
-            font-family: KhmerOSBattambang, sans-serif !important;
+            font-family: KhmerOSBattambang, Roboto, serif !important;
             word-break: break-all
         }
         tfoot tr td {
