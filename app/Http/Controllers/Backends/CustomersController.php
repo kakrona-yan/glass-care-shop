@@ -69,7 +69,7 @@ class CustomersController extends Controller
             $email = $request->email;
             $ruleEmail = '';
             if ($email && !empty($email)) {
-                $ruleEmail = 'email|unique:staffs,email';
+                $ruleEmail = 'email|unique:customers,email';
             }
             $rules = [
                 'name' => 'required',
