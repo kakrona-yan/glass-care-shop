@@ -107,6 +107,7 @@
             <div class="company-info--address">
                 <p>Address : NO. 01, ST. 182, SANGKAT VIEL VONG, Khan 7  Makara, Phnom Penh</p>
                 <p>Tel     : 093 399 330 </p>
+                <p style="font-family: DejaVu Serif;">កាលបរិច្ឆេទ</p>
             </div>
         </div>
         <table class="table">
