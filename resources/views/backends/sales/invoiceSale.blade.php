@@ -28,7 +28,7 @@
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: "KhmerOSBattambang" !important;
+            font-family: "KhmerOSBattambang", sans-serif !important;
             font-size: 14px;
         }
         a {
@@ -104,8 +104,8 @@
                 <h1>RRPS PHARMA CO., LTD</h1>
             </div>
             <div class="company-info--address">
-                <p>អាស័យដ្ឋាន: ផ្ទះលេខ ១១២ ផ្លូវ ២២៥ សង្កាត់ វាលវង់ ខណ្ឌ ៧ មករា រាជធានីភ្នំពេញ</p>
-                <p>ទូរស័ព្ទលេខ: ០៩៣ ៣៩៩ ៣៣០</p>
+                <p style="font-family: KhmerOSBattambang, sans-serif !important; padding:0;margin:0;">អាស័យដ្ឋាន: ផ្ទះលេខ ១១២ ផ្លូវ ២២៥ សង្កាត់ វាលវង់ ខណ្ឌ ៧ មករា រាជធានីភ្នំពេញ</p>
+                <p style="font-family: KhmerOSBattambang, sans-serif !important; padding:0;margin:0;">ទូរស័ព្ទលេខ: ០៩៣ ៣៩៩ ៣៣០</p>
             </div>
         </div>
         <table class="table">
@@ -114,7 +114,7 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr>
-                                <th>អតិថិជន / Customer</th>
+                                <th><p style="font-family: KhmerOSBattambang, sans-serif !important; padding:0;margin:0;">អតិថិជន / Customer</p></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,7 +142,7 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr style="text-align: center;">
-                                <th><div>កាលបរិច្ឆេទ</div><br/>Date</th>
+                                <th>កាលបរិច្ឆេទ<br/>Date</th>
                                 <th>លេខកូតវិក័យបត្រ័<br/>Invoice #</th>
                             </tr>
                         </thead>
