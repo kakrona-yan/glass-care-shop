@@ -10,7 +10,6 @@
 			font-family: KhmerOSBattambang;
 			src: url("{{ asset('fonts/KhmerOSBattambang-Regular.ttf') }}") format('truetype');
 		} */
-        @import url(https://fonts.googleapis.com/css?family=Khmer);
 		@page {
 			margin: 0cm 0cm;
 		}
@@ -28,12 +27,12 @@
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: 'Khmer', cursive;
+            font-family: DejaVu Sans, Roboto, serif !important;
             font-size: 14px;
         }
         div,
         p{
-            font-family: 'Khmer', cursive;
+            font-family: DejaVu Sans, Roboto, serif !important;
         }
         a {
             color: #fff;
@@ -137,7 +136,7 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr style="text-align: center;">
-                                <th>កាលបរិច្ឆេទ / Date</th>
+                                <th>Date</th>
                                 <th>Invoice code #</th>
                             </tr>
                         </thead>
