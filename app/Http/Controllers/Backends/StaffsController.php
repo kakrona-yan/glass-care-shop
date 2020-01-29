@@ -72,8 +72,6 @@ class StaffsController extends Controller
             $rules = [
                 'firstname' => 'required',
                 'lastname' => 'required',
-                'gender' => 'required|min:4|max:6',
-                'dob' => 'required',
                 'email' => $ruleEmail,
                 'phone1' => 'required',
                 'address' => 'required',
@@ -89,8 +87,6 @@ class StaffsController extends Controller
             $validator = \Validator::make([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
-                'gender' => $request->gender,
-                'dob' => $request->dob,
                 'email' => $request->email,
                 'phone1' => $request->phone1,
                 'phone2' => $request->phone2,
@@ -189,8 +185,6 @@ class StaffsController extends Controller
             $rules = [
                 'firstname' => 'required',
                 'lastname' => 'required',
-                'gender' => 'required|min:4|max:6',
-                'dob' => 'required',
                 'email' => $ruleEmail,
                 'phone1' => 'required',
                 'address' => 'required',
@@ -206,8 +200,6 @@ class StaffsController extends Controller
             $validator = \Validator::make([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
-                'gender' => $request->gender,
-                'dob' => $request->dob,
                 'email' => $request->email,
                 'phone1' => $request->phone1,
                 'phone2' => $request->phone2,
