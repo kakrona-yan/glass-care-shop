@@ -44,10 +44,6 @@
         }
         tfoot tr td {
             color: #333;
-            font-weight: bold;
-        }
-        .company-info h1{
-            font-family: Anton, sans-serif;
         }
         .container{
             padding-left: 10px;
@@ -62,6 +58,7 @@
         }
         p {
             margin-top: 0;
+            margin-bottom: 5px;
         }
         .table {
             width: 100%;
@@ -97,15 +94,15 @@
     </style>
 
 </head>
-<body>
+<body style="font-family: KhmerOSBattambang, sans-serif !important;">
     <div class="container mt-5">
         <div class="company-info mb-3">
             <div class="company-info--name">
                 <h1>RRPS PHARMA CO., LTD</h1>
             </div>
             <div class="company-info--address">
-                <p style="font-family: KhmerOSBattambang, sans-serif !important; padding:0;margin:0;">អាស័យដ្ឋាន: ផ្ទះលេខ ១១២ ផ្លូវ ២២៥ សង្កាត់ វាលវង់ ខណ្ឌ ៧ មករា រាជធានីភ្នំពេញ</p>
-                <p style="font-family: KhmerOSBattambang, sans-serif !important; padding:0;margin:0;">ទូរស័ព្ទលេខ: ០៩៣ ៣៩៩ ៣៣០</p>
+                <p>អាស័យដ្ឋាន: ផ្ទះលេខ ១១២ ផ្លូវ ២២៥ សង្កាត់ វាលវង់ ខណ្ឌ ៧ មករា រាជធានីភ្នំពេញ</p>
+                <p>ទូរស័ព្ទលេខ: ០៩៣ ៣៩៩ ៣៣០</p>
             </div>
         </div>
         <table class="table">
@@ -114,25 +111,18 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr>
-                                <th><p style="font-family: KhmerOSBattambang, sans-serif !important; padding:0;margin:0;">អតិថិជន / Customer</p></th>
+                                <th>អតិថិជន / Customer</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td style="height:145px;">
-                                <div>
-                                    <span style="display: inline-block; width: 140px;vertical-align: middle;">ឈ្មោះ​អតិថិជន</span>
-                                    <span>:</span>
-                                    <div style="display: inline-block; vertical-align: middle;">
-                                        <div> {{ $sale->customer ? $sale->customer->name : '' }}</div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span style="display: inline-block; width: 140px;vertical-align: middle;">ទូរស័ព្ទលេខ </span>
-                                    <span >:</span>
-                                    <span style="display: inline-block; vertical-align: middle;">{{ $sale->customer ? $sale->customer->phone1 : '' }}
-                                    </span>
-                                </div>
+                                <p>
+                                    {{ $sale->customer ? $sale->customer->name : '' }}
+                                </p>
+                                <p>
+                                    {{ $sale->customer ? $sale->customer->phone1 : '' }}
+                                </p>
                             </td>
                         </tr>
                         </tbody>
