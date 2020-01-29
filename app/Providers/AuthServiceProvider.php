@@ -54,7 +54,8 @@ class AuthServiceProvider extends ServiceProvider
             return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
         });
         Gate::define('customer.index', function ($userRole) {
-            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+            return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_NORMAL; // Staff or Normal = 2
         });
         Gate::define('staff.index', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
