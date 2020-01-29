@@ -20,6 +20,8 @@
 				box-sizing: border-box;
 			margin: 0px;
 			padding: 0px;
+            page-break-after: always;
+            word-break: break-all
 		}
         html, body {
             margin: 0px;
@@ -44,6 +46,7 @@
         table th, table td{           
             color: #333;
             font-family: KhmerOSBattambang, sans-serif !important;
+            word-break: break-all
         }
         tfoot tr td {
             color: #333;
