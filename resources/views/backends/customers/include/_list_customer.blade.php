@@ -15,25 +15,8 @@
                                 </div>
                                 <div class="col-6 col-md-3 mb-1">
                                     <div class="form-group">
-                                        <label class="font-weight-bold">@lang('customer.list.gender')</label>
-                                        <select class="form-control" id="gender" name="gender">
-                                            <option value="" selected>{{__('customer.form.please_select') }}</option>
-                                            @foreach ($genders as $key => $gender)
-                                            <option value="{{$key}}" {{ old('agender', $request->gender) == $key ? 'selected' : '' }}>{{$gender}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3 mb-1">
-                                    <div class="form-group">
                                         <label class="font-weight-bold">@lang('customer.list.phone')</label>
                                         <input type="text" class="form-control" name="phone_number"  value="{{ old('phone_number', $request->phone_number) }}">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3 mb-1">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold">@lang('customer.list.email')</label>
-                                        <input type="text" class="form-control" name="email"  value="{{ old('email', $request->email) }}">
                                     </div>
                                 </div>
                             </div>
@@ -51,12 +34,9 @@
                             <tr>
                                 <th class="text-center">{{__('customer.form.thumbnail')}}</th>
                                 <th>{{ __('customer.list.name') }}</th>
-                                <th>{{ __('customer.list.gender') }}</th>
-                                <th>{{ __('customer.list.dob') }}</th>
-                                <th>{{ __('customer.list.email') }}</th>
                                 <th>{{ __('customer.list.phone') }}</th>
                                 <th>{{ __('customer.list.address') }}</th>
-                                <th>{{ __('customer.list.action') }}</th>
+                                <th class="text-center">{{ __('customer.list.action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,9 +50,6 @@
                                     </div>
                                 </td>
                                 <td>{{ $customer->name }}</td>
-                                <td>{{ $customer->getGender() }}</td>
-                                <td>{{ $customer->dob }}</td>
-                                <td>{{ $customer->email }}</td>
                                 <td>
                                     <div class="d-flex flex-row">
                                         <i class="fas fa-phone-square-alt text-success my-1 mr-1"></i>
@@ -83,7 +60,7 @@
                                     </div>
                                 </td>
                                 <td>{{ str_limit($customer->address, 30) }}</td>
-                                <td>
+                                <td class="text-center">
                                     <a class="btn btn-circle btn-circle btn-sm btn-info btn-circle" 
                                         data-toggle="tooltip" 
                                         data-placement="top"

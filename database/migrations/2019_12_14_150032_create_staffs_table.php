@@ -20,7 +20,7 @@ class CreateStaffsTable extends Migration
             $table->string('email', 255)->nullable();
             $table->string('phone1', 255);
             $table->string('phone2', 255)->nullable();
-            $table->text('address');
+            $table->text('address')->nullable();
             $table->string('thumbnail')->nullable();
             $table->boolean('is_active')->default(1)->comment('0：in-active、1：active');
             $table->boolean('is_delete')->default(1)->comment('0：delete、1：no delete');

@@ -55,45 +55,6 @@
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-check form-check-inline align-top" for="gender">{{__('customer.list.gender')}}:</label>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender" id="man" value="male" {{old('gender', $customer->gender) == 'male' ? 'checked' : ''}}>
-                                                <label class="form-check-label" for="man">{{__('customer.form.man')}}</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender" id="woman" value="female" {{old('gender', $customer->gender) == 'female' ? 'checked' : ''}}>
-                                                <label class="form-check-label" for="woman">{{__('customer.form.woman')}}</label>
-                                            </div>
-                                            @if ($errors->has('gender'))
-                                                <div class="text-danger">
-                                                    <strong>{{ $errors->first('gender') }}</strong>
-                                                </div>
-                                            @endif
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dob">{{__('customer.list.dob')}}:</label>
-                                            <div class="input-group date" data-provide="datepicker">
-                                                <input type="text" class="form-control" name="dob" placeholder="month/days/year" 
-                                                    value="{{ old('dob', date('d/m/Y', strtotime($customer->dob))) }}">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="far fa-calendar-alt"></span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">{{__('customer.list.email')}}:</label>
-                                            <input type="emal" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" 
-                                                placeholder="{{__('customer.list.email')}}"
-                                                name="email"
-                                                value="{{ old('email', $customer->email) }}"
-                                            >
-                                            @if ($errors->has('email'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-                                        <div class="form-group">
                                             <label for="address">{{__('customer.list.address')}}:</label>
                                             <textarea name="address" class="form-control {{ $errors->has('address') ? ' is-invalid' : '' }}" id="address" rows="5">{{old('address', $customer->address)}}</textarea>
                                             @if ($errors->has('address'))

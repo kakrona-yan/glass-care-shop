@@ -44,18 +44,6 @@
                                         <td class="border-top-0">{{ $customer->name }}</td>
                                     </tr>
                                     <tr>
-                                        <th>{{__('customer.list.gender')}}:</th>
-                                        <td>{{ $customer->getGender() }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>{{__('customer.list.dob')}}:</th>
-                                        <td>{{ date('Y-m-d', strtotime($customer->dob)) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>{{__('customer.list.email')}}:</th>
-                                        <td>{{ $customer->email }}</td>
-                                    </tr>
-                                    <tr>
                                         <th>{{__('customer.list.phone')}}:</th>
                                         <td>
                                             <div class="d-flex flex-row">

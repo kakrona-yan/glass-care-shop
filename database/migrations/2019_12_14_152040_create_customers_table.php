@@ -15,13 +15,10 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->enum('gender', ['male', 'female'])->comment('male, female');
-            $table->date('dob');
-            $table->string('email', 255)->nullable();
+            $table->string('name')->nullable();
             $table->string('phone1', 255);
             $table->string('phone2', 255)->nullable();
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('thumbnail')->nullable();
             $table->boolean('is_active')->default(1)->comment('0：in-active、1：active');
             $table->boolean('is_delete')->default(1)->comment('0：delete、1：no delete');

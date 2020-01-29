@@ -66,15 +66,8 @@ class CustomersController extends Controller
     {
         try {
             // Rules of field
-            $email = $request->email;
-            $ruleEmail = '';
-            if ($email && !empty($email)) {
-                $ruleEmail = 'email|unique:customers,email';
-            }
             $rules = [
                 'name' => 'required',
-                'gender' => 'required|min:4|max:6',
-                'email' => $ruleEmail,
                 'phone1' => 'required',
                 'address' => 'required',
                 'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
@@ -82,10 +75,7 @@ class CustomersController extends Controller
             // Set field of Validattion
             $validator = \Validator::make([
                 'name' => $request->name,
-                'gender' => $request->gender,
-                'email' => $request->email,
                 'phone1' => $request->phone1,
-                'phone2' => $request->phone2,
                 'address' => $request->address,
                 'thumbnail' => $request->thumbnail,
             ], $rules);
@@ -158,16 +148,8 @@ class CustomersController extends Controller
     {
         try {
             // Rules of field
-            $email = $request->email;
-            $ruleEmail = '';
-            if ($email && !empty($email)) {
-                $ruleEmail = 'email|unique:customers,email,' . $id;
-            }
             $rules = [
                 'name' => 'required',
-                'gender' => 'required|min:4|max:6',
-                'dob' => 'required',
-                'email' => $ruleEmail,
                 'phone1' => 'required',
                 'address' => 'required',
                 'thumbnail'         => 'nullable|mimes:jpeg,jpg,png|max:10240',
@@ -175,11 +157,7 @@ class CustomersController extends Controller
             // Set field of Validattion
             $validator = \Validator::make([
                 'name' => $request->name,
-                'gender' => $request->gender,
-                'dob' => $request->dob,
-                'email' => $request->email,
                 'phone1' => $request->phone1,
-                'phone2' => $request->phone2,
                 'address' => $request->address,
                 'thumbnail' => $request->thumbnail,
             ], $rules);
