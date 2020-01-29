@@ -6,10 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <style type="text/css">
-        @font-face {
+        /* @font-face {
 			font-family: KhmerOSBattambang;
 			src: url("{{ asset('fonts/KhmerOSBattambang-Regular.ttf') }}") format('truetype');
-		}
+		} */
 		@page {
 			margin: 0cm 0cm;
 		}
@@ -27,12 +27,12 @@
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: KhmerOSBattambang, Roboto, serif !important;
+            font-family: Roboto, serif !important;
             font-size: 14px;
         }
         div,
         p{
-            font-family: KhmerOSBattambang, Roboto, serif !important;
+            font-family: Roboto, serif !important;
         }
         a {
             color: #fff;
@@ -44,7 +44,6 @@
         }
         table th, table td{           
             color: #333;
-            font-family: KhmerOSBattambang, Roboto, serif !important;
             word-break: break-all
         }
         tfoot tr td {
@@ -106,8 +105,8 @@
                 <h1>RRPS PHARMA CO., LTD</h1>
             </div>
             <div class="company-info--address">
-                <p>អាស័យដ្ឋាន: ផ្ទះលេខ ១១២ ផ្លូវ ២២៥ សង្កាត់ វាលវង់ ខណ្ឌ ៧ មករា រាជធានីភ្នំពេញ</p>
-                <p>ទូរស័ព្ទលេខ: ០៩៣ ៣៩៩ ៣៣០</p>
+                <p>Address : NO. 01, ST. 182, SANGKAT VIEL VONG, Khan 7  Makara, Phnom Penh</p>
+                <p>Tel     : 093 399 330 /p>
             </div>
         </div>
         <table class="table">
@@ -116,7 +115,7 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr>
-                                <th>អតិថិជន / Customer</th>
+                                <th>Customer</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -137,8 +136,8 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr style="text-align: center;">
-                                <th>កាលបរិច្ឆេទ<br/>Date</th>
-                                <th>លេខកូតវិក័យបត្រ័<br/>Invoice #</th>
+                                <th>Date</th>
+                                <th>Invoice code #</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -147,8 +146,8 @@
                                 <td>{{ $sale->quotaion_no }}</td>
                             </tr>
                             <tr style="background:#eee; text-align: center;">
-                                <th style="text-align: center;">បុគ្គលិក<br/>Staff</th>
-                                <th>ស្តុក<br/>Stock</th>
+                                <th style="text-align: center;">Staff</th>
+                                <th>Stock</th>
                             </tr>
                             <tr>
                                 <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
@@ -163,10 +162,10 @@
             <table class="table table-bordered">
             <thead style="background:#eee">
                 <tr>
-                    <th>ឈ្មោះ​ផលិតផល / <span>Product Name</span></th>
-                    <th>បរិមាណ / Quantity</th>
-                    <th>ប្រាក់ / Rate</th>
-                    <th>ចំនួនទឹកប្រាក់ / Amount</th>
+                    <th>>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -189,22 +188,22 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="3" class="text-right">សរុប/Total</td>
+                    <td colspan="3" class="text-right">Total</td>
                     <td class="text-right">USA {{money_format('%.2n', $total)}}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="text-right">ចំនួនទំនិញដែលបានប្រគល់អោយ</td>
+                    <td colspan="3" class="text-right">Receive Product Amount</td>
                     <td class="text-right" style="background:#b9b9b9">{{$totalQuantity}}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="text-right">ចំនួនលុយដែលបានទទួល</td>
+                    <td colspan="3" class="text-right">Pay Amount</td>
                     <td class="text-right" style="background:#b9b9b9">USA {{$sale->money_change}}</td>
                 </tr>
                 
             </tfoot>
         </table>
         <div style="text-align: right; margin-top: 50px;">
-            <p>ចុះហត្ថលេខា / Sign ..............................................</p>
+            <p>Sign ..............................................</p>
         </div>
         </div>
     </div>
