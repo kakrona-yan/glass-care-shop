@@ -50,8 +50,8 @@
             color: #333;
         }
         .container{
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 25px;
+            padding-right: 25px;
             max-width: 794px;
             width: 100%;
             margin: 0px auto;
@@ -93,7 +93,7 @@
             margin-top: 50px;
         }
         .company-info--name{
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -120,7 +120,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="height:145px;">
+                            <td style="height:98px;">
                                 <p>
                                     {{ $sale->customer ? $sale->customer->name : '' }}
                                 </p>
@@ -179,7 +179,7 @@
                     $totalQuantity +=$productSale->quantity;
                 @endphp
                 <tr>
-                    <td>{{$productSale->product ? $productSale->product->title : '' }}</td>
+                    <td style="width:340px;">{{$productSale->product ? $productSale->product->title : '' }}</td>
                     <td class="text-right">{{$productSale->quantity}}</td>
                     <td class="text-right">{{$productSale->rate}}</td>
                     <td class="text-right">{{$productSale->amount}}</td>
