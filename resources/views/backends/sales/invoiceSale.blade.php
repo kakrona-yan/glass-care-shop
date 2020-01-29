@@ -189,15 +189,15 @@
             <tfoot>
                 <tr>
                     <td colspan="3" class="text-right">Total</td>
-                    <td class="text-right">USA {{money_format('%.2n', $total)}}</td>
+                    <td class="text-right">USA {{money_format('%.2n', $sale->total_amount)}}</td>
                 </tr>
                 <tr>
                     <td colspan="3" class="text-right">Receive Product Amount</td>
-                    <td class="text-right" style="background:#b9b9b9">{{$totalQuantity}}</td>
+                    <td class="text-right" style="background:#b9b9b9">{{$sale->total_quantity}}</td>
                 </tr>
                 <tr>
                     <td colspan="3" class="text-right">Pay Amount</td>
-                    <td class="text-right" style="background:#b9b9b9">USA {{$sale->money_change}}</td>
+                    <td class="text-right" style="background:#b9b9b9">USA {{money_format('%.2n', $sale->money_change)}}</td>
                 </tr>
                 
             </tfoot>
