@@ -32,7 +32,7 @@
         }
         div,
         p{
-            font-family: Roboto, serif !important;
+            font-family: DejaVu Sans, Roboto, serif !important;
         }
         a {
             color: #fff;
