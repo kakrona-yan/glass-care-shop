@@ -35,18 +35,17 @@
         div,
         p, 
         th, 
-        td,span{
-            font-family: "KhmerOSBattambang" !important;
+        td,
+        span{
+            font-family: KhmerOSBattambang, sans-serif;
         }
         a {
             color: #fff;
             text-decoration: none;
-            font-family: "KhmerOSBattambang" !important;
         }
         table {
             color: #333;
             border-collapse: collapse;
-            font-family: "KhmerOSBattambang" !important;
         }
         table th, table td{           
             color: #333;
@@ -124,14 +123,14 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr>
-                                <th>អតិថិជន / Customer</th>
+                                <th style="font-family: KhmerOSBattambang, sans-serif;">អតិថិជន / Customer</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td style="height:145px;">
-                                <p><span style="display: inline-block; width: 140px;">ឈ្មោះ​អតិថិជន</span><span>:</span> {{ $sale->customer ? $sale->customer->name : '' }}</p>
-                                <p><span style="display: inline-block; width: 140px;">ទូរស័ព្ទលេខ </span><span >:</span> {{ $sale->customer ? $sale->customer->phone1 : '' }}</p>
+                                <p><span style="display: inline-block; width: 140px; font-family: KhmerOSBattambang, sans-serif;">ឈ្មោះ​អតិថិជន</span><span>:</span> {{ $sale->customer ? $sale->customer->name : '' }}</p>
+                                <p><span style="display: inline-block; width: 140px; font-family: KhmerOSBattambang, sans-serif;">ទូរស័ព្ទលេខ </span><span >:</span> {{ $sale->customer ? $sale->customer->phone1 : '' }}</p>
                             </td>
                         </tr>
                         </tbody>
@@ -141,8 +140,8 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr style="text-align: center;">
-                                <th>កាលបរិច្ឆេទ<br/>Date</th>
-                                <th>លេខកូតវិក័យបត្រ័<br/>Invoice #</th>
+                                <th style="font-family: KhmerOSBattambang, sans-serif;">កាលបរិច្ឆេទ<br/>Date</th>
+                                <th style="font-family: KhmerOSBattambang, sans-serif;">លេខកូតវិក័យបត្រ័<br/>Invoice #</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -151,11 +150,11 @@
                                 <td>{{ $sale->quotaion_no }}</td>
                             </tr>
                             <tr style="background:#eee; text-align: center;">
-                                <th style="text-align: center;">បុគ្គលិក<br/>Staff</th>
-                                <th>ស្តុក<br/>Stock</th>
+                                <th style="text-align: center; font-family: KhmerOSBattambang, sans-serif;">បុគ្គលិក<br/>Staff</th>
+                                <th style="font-family: KhmerOSBattambang, sans-serif;">ស្តុក<br/>Stock</th>
                             </tr>
                             <tr>
-                                <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
+                                <td style="font-family: KhmerOSBattambang, sans-serif;">{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
                                 <td>Stock</td>
                             </tr>
                         </tbody>
@@ -167,10 +166,10 @@
             <table class="table table-bordered">
             <thead style="background:#eee">
                 <tr>
-                    <th>ឈ្មោះ​ផលិតផល / Product Name</th>
-                    <th>បរិមាណ / Quantity</th>
-                    <th>ប្រាក់ / Rate</th>
-                    <th>ចំនួនទឹកប្រាក់ / Amount</th>
+                    <th style="font-family: KhmerOSBattambang, sans-serif;">ឈ្មោះ​ផលិតផល / Product Name</th>
+                    <th style="font-family: KhmerOSBattambang, sans-serif;">បរិមាណ / Quantity</th>
+                    <th style="font-family: KhmerOSBattambang, sans-serif;">ប្រាក់ / Rate</th>
+                    <th style="font-family: KhmerOSBattambang, sans-serif;">ចំនួនទឹកប្រាក់ / Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -197,18 +196,18 @@
                     <td class="text-right">USA {{money_format('%.2n', $total)}}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="text-right">ចំនួនទំនិញដែលបានប្រគល់អោយ</td>
+                    <td colspan="3" class="text-right" style="font-family: KhmerOSBattambang, sans-serif;">ចំនួនទំនិញដែលបានប្រគល់អោយ</td>
                     <td class="text-right" style="background:#b9b9b9">{{$totalQuantity}}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="text-right">ចំនួនលុយដែលបានទទួល</td>
+                    <td colspan="3" class="text-right" style="font-family: KhmerOSBattambang, sans-serif;">ចំនួនលុយដែលបានទទួល</td>
                     <td class="text-right" style="background:#b9b9b9">USA {{$sale->money_change}}</td>
                 </tr>
                 
             </tfoot>
         </table>
         <div style="text-align: right; margin-top: 50px;">
-            <p>ចុះហត្ថលេខា / Sign .............................................</p>
+            <p style="font-family: KhmerOSBattambang, sans-serif;">ចុះហត្ថលេខា / Sign .............................................</p>
         </div>
         </div>
     </div>
