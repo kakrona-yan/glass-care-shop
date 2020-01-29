@@ -27,7 +27,7 @@
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: Roboto, serif !important;
+            font-family: DejaVu Sans, Roboto, serif !important;
             font-size: 14px;
         }
         div,
@@ -107,7 +107,7 @@
             <div class="company-info--address">
                 <p>Address : NO. 01, ST. 182, SANGKAT VIEL VONG, Khan 7  Makara, Phnom Penh</p>
                 <p>Tel     : 093 399 330 </p>
-                <p style="font-family: dejavu sans;">កាលបរិច្ឆេទ</p>
+                <p style="font-family: DejaVu Sans;">កាលបរិច្ឆេទ</p>
             </div>
         </div>
         <table class="table">
