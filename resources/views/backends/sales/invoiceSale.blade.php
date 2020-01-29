@@ -136,7 +136,7 @@
                     <table class="table table-bordered">
                         <thead style="background:#eee">
                             <tr style="text-align: center;">
-                                <th>កាលបរិច្ឆេទ / Date</th>
+                                <th>Date</th>
                                 <th>Invoice code #</th>
                             </tr>
                         </thead>
