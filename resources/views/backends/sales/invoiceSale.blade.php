@@ -31,13 +31,22 @@
             font-family: "KhmerOSBattambang" !important;
             font-size: 14px;
         }
+        a,
+        div,
+        p, 
+        th, 
+        td,span{
+            font-family: "KhmerOSBattambang" !important;
+        }
         a {
             color: #fff;
             text-decoration: none;
+            font-family: "KhmerOSBattambang" !important;
         }
         table {
             color: #333;
             border-collapse: collapse;
+            font-family: "KhmerOSBattambang" !important;
         }
         table th, table td{           
             color: #333;
