@@ -1246,11 +1246,10 @@ iframe {
         }
 
         .slick-prev::before{
-            left: 20px;
+            left: 0px;
         }
         .slick-next::before{
-            right: -17px;
-            left: -16px;
+            left: 0px;
         }
     }//blog-slider
     .product-content{

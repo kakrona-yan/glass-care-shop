@@ -3,6 +3,14 @@
 @section('ogTitle', 'Blog | swipe-shop.com')
 @section('ogUrl', route('blog.index'))
 @section('content')
+<div class="swipe-load">
+    <div class="loading-swipe">
+    <div class="item item-1"></div>
+    <div class="item item-2"></div>
+    <div class="item item-3"></div>
+    <div class="item item-4"></div>
+    </div>
+</div>
 <section class="banner-top">
     <div class="container">
         <div class="title-banner text-center">
@@ -35,3 +43,13 @@
 </section>
             
 @endsection
+@push('footer-script')
+<script>
+    $( window ).on( "load", function(){
+        setTimeout(function() {
+
+            $('.swipe-load').fadeOut(300);
+        }, 700);
+    });
+</script>
+@endpush
