@@ -2083,7 +2083,10 @@ right: 0;
 letter-spacing: 1px; }
 
 .count {position: relative;background: #dbe7e9;margin-top: 0px;padding-bottom: 20px;}
-.count .title-center h1 {font-family: Abril Fatface;font-weight: 400;font-size: 55px;color: #333333;text-align: center;padding-top: 30px;}
+.count .title-center{
+  margin-bottom: 20px;
+}
+.count .title-center h1 {font-family: Abril Fatface;font-weight: 400;font-size: 32px;color: #333333;text-align: center;padding-top: 30px; text-transform: uppercase;}
 .count .title-center p {
 font-family: Poppins;
 font-weight: 400;
@@ -2129,7 +2132,7 @@ top: 78px; }
 top: 0px; }
 .product-slick .slick-prev {
 top: 37% !important;
-left: -44px; }
+left: -25px; }
 .product-slick .slick-prev::before {
 content: url(img/Next.png) !important;
 transform: rotateY(180deg);
