@@ -39,7 +39,7 @@
     <div class="shop-map container">
         <div class="row mlr-0">
             <div class="col-md-6 plr-0">
-                <figure class="img-cavas">
+                <figure class="img-cavas max-427">
                     <a data-fslightbox href="{{ URL('theme/img/map-cambodia.jpg') }}">
                         <img src="{{ URL('theme/img/map-cambodia.jpg') }}" alt="Swipe">
                     </a>
