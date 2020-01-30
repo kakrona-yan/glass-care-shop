@@ -1,6 +1,6 @@
 <section id="blog-list">
     <div class="blog related-products mb-5">
-        <h1 class="slider-title">Latest Blogs</h1>
+        <h1 class="slider-title" style="border-top:none;">Latest Blogs</h1>
         <div class="container">
             <div class="row">
                 @php

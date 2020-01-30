@@ -2502,6 +2502,7 @@ background-image: url(img/BG-footer.png);
 background-position: -288px -335px;
 height: 100%;
 background-repeat: no-repeat;
+margin-top: 80px;
 }
 footer {
 background: #f4f4f4;
