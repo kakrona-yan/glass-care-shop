@@ -1244,7 +1244,12 @@ iframe {
             margin-right:0px !important;
             margin-left:0px !important;
         }
-
+        .slick-prev{
+            left: 0px;
+        }
+        .slick-next{
+            right: 0px;
+        }
         .slick-prev::before{
             left: 0px;
         }
