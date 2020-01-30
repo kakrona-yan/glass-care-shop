@@ -26,11 +26,11 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-well">
                 <div class="media">
                     <div class="media-left position-relative">
-                        <figure class="img-cavas circle">
-                            <a href="{{route('collections.index')}}" class="img-cicle-100">
+                        <a href="{{route('collections.index')}}" class="img-cicle-100">
+                            <figure class="img-cavas circle">
                                 <img src="{{ URL('images/logo.png') }}" alt="swipe">
-                            </a>
-                        </figure>
+                            </figure>
+                        </a>
                     </div>
                     <div class="media-body">
                         <h1>WELLCOME TO SWIPE</h1>
