@@ -6,9 +6,9 @@ $(document).ready(function(){
 $('.product-slick').slick({
     dots: true,
     infinite: true,
-    autoplay: true,
-    speed: 1200,
-    slidesToShow: 3,
+    autoplay: false,
+    speed: 900,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
     alwaysSlide: true,
@@ -16,12 +16,19 @@ $('.product-slick').slick({
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
         }
       },
       {
         breakpoint: 980,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 767,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
