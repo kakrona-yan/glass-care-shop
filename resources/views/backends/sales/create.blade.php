@@ -79,7 +79,7 @@
                                             <div class="form-group select-group row">
                                                 <label class="col-12 col-sm-12 col-md-12 col-lg-3 col-form-label" for="invoiceCode">Date Sale <span class="text-danger">*</span></label>
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-9">
-                                                    <div class="input-group date" data-provide="datepicker" data-date-format="YYYY-MM-MM">
+                                                    <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
                                                         <input type="text" class="form-control" name="sale_date"
                                                             value="{{ old('sale_date', date('Y-m-d')) }}">
                                                         <div class="input-group-append">
