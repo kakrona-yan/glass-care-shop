@@ -1228,6 +1228,11 @@ iframe {
         padding: 0px 15px;
     }
 }
+@media (max-width: 991px){
+     header .menu-main {
+       display: block;
+    }
+}
 @media (max-width: 768px) {
     #blog-slider {
         .slick-slider {
