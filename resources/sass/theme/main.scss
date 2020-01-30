@@ -1212,6 +1212,21 @@ iframe {
     border-top: 2px solid #e69c8f;
 }
 
+@media (max-width: 1366px) {
+    .navbar-collapse.collapse{
+        width: 100%;
+    }
+    header .menu-main {
+        float: none;
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .menu-main li{
+        width: auto;
+    }
+}
 @media (max-width: 768px) {
     #blog-slider {
         .slick-slider {
