@@ -2146,6 +2146,7 @@ text-align: center;
 padding: 10px 0px;
 border-radius: 50px;
 box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.2);
+z-index: 99;
 }
 .product-slick .slick-next {
 top: 37% !important;
@@ -2160,6 +2161,7 @@ text-align: center;
 padding: 10px 0px;
 border-radius: 50px;
 box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.2);
+z-index: 99;
 }
 .product-slick .product-slic .product-title-slic {
 text-align: center;
