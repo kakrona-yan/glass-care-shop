@@ -2132,7 +2132,9 @@ top: 78px; }
 top: 0px; }
 .product-slick .slick-prev {
 top: 37% !important;
-left: -25px; }
+left: -25px;
+z-index: 99;
+}
 .product-slick .slick-prev::before {
 content: url(img/Next.png) !important;
 transform: rotateY(180deg);

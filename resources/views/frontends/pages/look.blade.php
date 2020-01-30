@@ -26,12 +26,17 @@
 <section class="container">
     <div class="glass-main glass-content">
         <!-- Photo grid -->
-        <div class="glass-row glass-grayscale-min">
+        <div class="gallery">
         @foreach ($products as $product)
-            <div class="glass-quarter">
-                <a data-fslightbox="gallery" href="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}">
-                    <img src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" alt="{{$product->title}}">
+            <div class="gallery-item">
+                <a data-fslightbox="gallery" 
+                    href="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}">
+                    <img class="gallery-image" src="{{$product->thumbnail? asset(getUploadUrl($product->thumbnail, config('upload.product'))) : asset('images/no-thumbnail.jpg') }}" alt="{{$product->title}}">
                 </a>
+                <div class="gallery-link">
+                    <a href="{{ route('collections.detail', $product->slug) }}"><i class="fas fa-eye"></i></a>
+                    <a href="https://www.facebook.com/Swipe-111849350266066/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
             </div>
         @endforeach
         
