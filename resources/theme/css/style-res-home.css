@@ -650,9 +650,17 @@ figure.bg-input::after {
 
   .product-slick .slick-prev {
     left: 0px;
-    z-index: 1; }
+    z-index: 999;
+    width: 45px;
+    height: 45px;
+  }
   .product-slick .slick-next {
-    right: 25px; } }
+    width: 45px;
+    height: 45px;
+    right: 0px;
+    z-index: 999;
+} 
+}
 @media (max-width: 736px) {
   .navbar-nav{
     margin: 7.5px 0px;
