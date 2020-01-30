@@ -20,19 +20,18 @@
 				box-sizing: border-box;
 			margin: 0px;
 			padding: 0px;
-            word-break: break-all
 		}
         html, body {
             margin: 0px;
             color: #333;
             text-align: left;
             line-height: 24px;
-            font-family: DejaVu Sans, Roboto, serif !important;
+            font-family: Roboto, serif !important;
             font-size: 14px;
         }
         div,
         p{
-            font-family: DejaVu Sans, Roboto, serif !important;
+            font-family: Roboto, serif !important;
         }
         a {
             color: #fff;
@@ -44,7 +43,6 @@
         }
         table th, table td{           
             color: #333;
-            word-break: break-all
         }
         tfoot tr td {
             color: #333;
