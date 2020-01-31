@@ -1211,7 +1211,11 @@ iframe {
 .product-slick .product-slic .product-image-slic.border-pink{
     border-top: 2px solid #e69c8f;
 }
-
+.spectar {
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(73, 197, 135, 1) 0%, rgba(73, 197, 135, 1) 1%, rgba(75, 201, 226, 1) 6%, rgba(255, 117, 117, 1) 13%, rgba(240, 200, 81, 1) 20%, rgba(141, 116, 185, 1) 27%, rgba(248, 118, 79, 1) 34%, rgba(73, 197, 135, 1) 42%, rgba(75, 201, 226, 1) 49%, rgba(255, 117, 117, 1) 56%, rgba(73, 197, 135, 1) 63%, rgba(255, 117, 117, 1) 70%, rgba(240, 200, 81, 1) 77%, rgba(141, 116, 185, 1) 84%, rgba(248, 118, 79, 1) 91%, rgba(73, 197, 135, 1) 98%, rgba(73, 197, 135, 1) 100%) repeat scroll 0 0;
+    height: 4px;
+    width: 100%;
+}
 @media (max-width: 1366px) {
     .navbar-collapse.collapse{
         width: 100%;
