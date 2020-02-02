@@ -28,7 +28,7 @@ class UserUpdateRequest extends FormRequest
         $password = $password ?  ['max:30', 'min:6','regex:/^[!-~]+$/'] : '';
         return [
             'name' => 'required|max:40',
-            'email' => 'required|email|max:255|unique:users,email,unique:staffs' .$this->id,
+            'email' => 'required|email|max:255|unique:users|unique:staffs,email,' .$this->id,
             'password' => $password,
             'role' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240'
