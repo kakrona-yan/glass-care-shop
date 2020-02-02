@@ -80,7 +80,7 @@ class UsersController extends Controller
                 $staffRequest['firstname'] = $saveUser->name;
                 $staffRequest['email'] = $user['email'];
                 $staffRequest['password'] = $request->password;
-                $staffRequest['is_delete'] = $saveUser->role == 1 ? 0 : 1;
+                $staffRequest['is_delete'] = $saveUser->role == 1 || $saveUser->role == 3 || $saveUser->role == 4 ? 0 : 1;
                 $this->staff->create($staffRequest);
             }
             return \Redirect::route('user.index')
@@ -169,7 +169,8 @@ class UsersController extends Controller
                 if ($request->password && !empty($request->password)) {
                     $staffRequest['password'] = $request->password;
                 } 
-                $staffRequest['is_delete'] = $user->role == 1 ? 0 : 1;
+                $staffRequest['is_delete'] = $user->role == 1 || $user->role == 3 || $user->role == 4 ? 0 : 1;
+
                 $user->staff->update($staffRequest);
             }
             return \Redirect::route('user.index')

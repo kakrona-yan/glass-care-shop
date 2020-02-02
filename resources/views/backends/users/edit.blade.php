@@ -81,8 +81,16 @@
                                                 <label class="form-check-label" for="admin">{{__('user.admin')}}</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input style="margin-top:-3px" class="form-check-input" type="radio" name="role" id="normal" value="2" {{old('role', $user->role) == '2' ? 'checked' : ''}}>
-                                                <label class="form-check-label" for="normal">{{__('user.normal')}}</label>
+                                                <input style="margin-top:-3px" class="form-check-input" type="radio" name="role" id="satff" value="2" {{old('role', $user->role) == '2' ? 'checked' : ''}}>
+                                                <label class="form-check-label" for="satff">Staff</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input style="margin-top:-3px" class="form-check-input" type="radio" name="role" id="view" value="3" {{old('role', $user->role) == '3' ? 'checked' : ''}}>
+                                                <label class="form-check-label" for="view">View</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input style="margin-top:-3px" class="form-check-input" type="radio" name="role" id="editor" value="4" {{old('role', $user->role) == '4' ? 'checked' : ''}}>
+                                                <label class="form-check-label" for="editor">Editor</label>
                                             </div>
                                             @if ($errors->has('role'))
                                                 <span class="invalid-feedback" role="alert">

@@ -70,6 +70,7 @@
                                     </label>
                                 </td>                           
                                 <td>
+                                    @if(Auth::user()->isRoleAdmin() || Auth::user()->isRoleEditor())
                                     <div class="w-action">
                                     <a class="btn btn-sm btn-info btn-circle" 
                                         data-toggle="tooltip" 
@@ -96,6 +97,7 @@
                                         ><i class="fa fa-trash"></i>
                                     </button>
                                     </div>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach 

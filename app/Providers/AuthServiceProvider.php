@@ -31,7 +31,10 @@ class AuthServiceProvider extends ServiceProvider
          */
         Gate::define('dashboard', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
-                $userRole->role === UserRole::ROLE_NORMAL; // Staff or Normal = 2
+                $userRole->role === UserRole::ROLE_STAFF || 
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
+                
         });
         
         Gate::define('user.index', function ($userRole) {
@@ -39,30 +42,42 @@ class AuthServiceProvider extends ServiceProvider
         });
         
         Gate::define('product.index', function ($userRole) {
-            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+            return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
         });
 
         Gate::define('category.index', function ($userRole) {
-            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+            return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
         });
 
         Gate::define('setting.index', function ($userRole) {
-            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+            return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
         });
 
         Gate::define('news.index', function ($userRole) {
-            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+            return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
         });
         Gate::define('customer.index', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
-                $userRole->role === UserRole::ROLE_NORMAL; // Staff or Normal = 2
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
         });
         Gate::define('staff.index', function ($userRole) {
-            return $userRole->role === UserRole::ROLE_ADMIN;   // admin = 1
+            return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_VIEW || 
+                $userRole->role === UserRole::ROLE_EDITOR;
         });
         Gate::define('sale.index', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
-                $userRole->role === UserRole::ROLE_NORMAL; // Staff or Normal = 2
+            $userRole->role === UserRole::ROLE_VIEW || 
+            $userRole->role === UserRole::ROLE_EDITOR;
         });
     }
 }

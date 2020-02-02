@@ -62,7 +62,13 @@ class User extends Authenticatable
             case 2:
                 $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
                 break;
-        }
+            case 3:
+                $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
+                break;
+            case 3:
+                $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
+                break;
+    }
         return $roleText;
     }
 
@@ -71,14 +77,19 @@ class User extends Authenticatable
         return $this->role == UserRole::ROLE_ADMIN ? true : false;
     }
 
-    public function isRoleNormal()
-    {
-        return $this->role == UserRole::ROLE_NORMAL ? true : false;
-    }
-
     public function isRoleStaff()
     {
-        return $this->role == UserRole::ROLE_NORMAL ? true : false;
+        return $this->role == UserRole::ROLE_STAFF ? true : false;
+    }
+
+    public function isRoleView()
+    {
+        return $this->role == UserRole::ROLE_VIEW ? true : false;
+    }
+
+    public function isRoleEditor()
+    {
+        return $this->role == UserRole::ROLE_EDITOR ? true : false;
     }
 
     public function filter($request)
