@@ -171,7 +171,7 @@ class UsersController extends Controller
                 } 
                 $staffRequest['is_delete'] = $user->role == 1 || $user->role == 3 || $user->role == 4 ? 0 : 1;
 
-                $user->staff->update($staffRequest);
+                $user->staff()->update($staffRequest);
             }
             return \Redirect::route('user.index')
                 ->with('warning', __('flash.update'));
@@ -194,7 +194,7 @@ class UsersController extends Controller
             if (!$user) {
                 return response()->view('errors.404', [], 404);
             }
-            $user->staff->remove();
+            $user->staff()->remove();
             $user->remove();
             return redirect()->route('user.index')
                 ->with('danger', __('flash.destroy'));

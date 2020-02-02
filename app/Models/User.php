@@ -65,7 +65,7 @@ class User extends Authenticatable
             case 3:
                 $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
                 break;
-            case 3:
+            case 4:
                 $roleText = UserRole::USER_ROLE_TEXT_EN[$role];
                 break;
     }

@@ -231,7 +231,7 @@ class StaffsController extends Controller
                     $user['name'] = ucfirst($request->firstname) . ' ' . ucfirst($request->lastname);
                     $user['role'] = 2;
                     $user['email'] = $staffRequest['email'];
-                    $staff->user->update($user);
+                    $staff->user()->update($user);
                 }
                 return \Redirect::route('staff.index')
                     ->with('warning',__('flash.update'));
@@ -256,7 +256,7 @@ class StaffsController extends Controller
             if (!$staff) {
                 return response()->view('errors.404', [], 404);
             }
-            $staff->user->remove();
+            $staff->user()->remove();
             $staff->remove();
             return redirect()->route('staff.index')
                 ->with('danger',__('flash.destroy'));
