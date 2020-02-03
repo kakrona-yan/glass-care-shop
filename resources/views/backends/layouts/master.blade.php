@@ -5,6 +5,10 @@
     @include('backends.partials.head')
 </head>
 <body id="page-top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ4DF6D"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="master">
         <div id="wrapper">
             <!--slide-bar-->
