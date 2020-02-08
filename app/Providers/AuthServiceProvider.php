@@ -66,6 +66,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('customer.index', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+                $userRole->role === UserRole::ROLE_STAFF || 
                 $userRole->role === UserRole::ROLE_VIEW || 
                 $userRole->role === UserRole::ROLE_EDITOR;
         });
@@ -76,6 +77,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('sale.index', function ($userRole) {
             return $userRole->role === UserRole::ROLE_ADMIN ||   // admin = 1
+            $userRole->role === UserRole::ROLE_STAFF || 
             $userRole->role === UserRole::ROLE_VIEW || 
             $userRole->role === UserRole::ROLE_EDITOR;
         });

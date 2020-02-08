@@ -93,6 +93,17 @@
         .company-info--name{
             margin-bottom: 10px;
         }
+        .form-control{
+            display: block;
+            width: 100%;
+            height: calc(2.15rem + 2px);
+            padding: 12px 10px;
+            line-height: 1.6;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+        }
     </style>
 
 </head>
@@ -149,7 +160,7 @@
                             </tr>
                             <tr style="text-align: center;">
                                 <td>{{$sale->staff ? $sale->staff->getFullnameAttribute() : \Auth::user()->name}}</td>
-                                <td>Stock</td>
+                                <td>RRPS PHARMA</td>
                             </tr>
                         </tbody>
                     </table>
@@ -190,12 +201,16 @@
                     <td class="text-right">USA {{money_format('%.2n', $sale->total_amount)}}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="text-right">Receive Product Amount</td>
-                    <td class="text-right" style="background:#b9b9b9">{{$sale->total_quantity}}</td>
+                    <td colspan="3" class="text-right"><strong>Receive Product Amount :</strong></td>
+                    <td class="text-right" style="background:#b9b9b9">
+                        <input type="text" class="form-control" name="receive_money" accept="application/pdf">
+                    </td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="text-right">Pay Amount</td>
-                    <td class="text-right" style="background:#b9b9b9">USA {{money_format('%.2n', $sale->money_change)}}</td>
+                    <td colspan="3" class="text-right"><strong>Pay Amount </strong></td>
+                    <td class="text-right" style="background:#b9b9b9">
+                        <input type="text" class="form-control" name="pay_amount" accept="application/pdf">
+                    </td>
                 </tr>
                 
             </tfoot>
