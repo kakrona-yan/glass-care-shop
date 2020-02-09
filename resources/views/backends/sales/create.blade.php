@@ -105,6 +105,27 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 mb-3 mt-md-2">
+                                        <fieldset class="edit-master-registration-fieldset">
+                                            <legend class="edit-application-information-legend text-left">Sale Product:</legend>
+                                            <div class="table-responsive cus-table">
+                                            <table class="table table-striped table-bordered">
+                                                <thead class="bg-primary text-light">
+                                                    <tr>
+                                                        <th style="width: 50px;">#</th>
+                                                        <th>Product Name</th>
+                                                        <th>Quantity</th>
+                                                        <th>Unit Price</th>
+                                                        <th>Total</th>
+                                                        <th style="width: 20px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="dynamic_sale_product">
+
+                                                </tbody>
+                                            </table>
+                                        </fieldset>
+                                    </div>
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-4">
                                         <fieldset class="edit-master-registration-fieldset">
                                             <legend class="edit-application-information-legend text-left">Payment:</legend>
@@ -151,27 +172,6 @@
                                                     <textarea class="form-control" name="note">{{ old('note', $request->note) }}</textarea>
                                                 </div>
                                             </div>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 mb-3 mt-md-2">
-                                        <fieldset class="edit-master-registration-fieldset">
-                                            <legend class="edit-application-information-legend text-left">Sale Product:</legend>
-                                            <div class="table-responsive cus-table">
-                                            <table class="table table-striped table-bordered">
-                                                <thead class="bg-primary text-light">
-                                                    <tr>
-                                                        <th style="width: 50px;">#</th>
-                                                        <th>Product Name</th>
-                                                        <th>Quantity</th>
-                                                        <th>Unit Price</th>
-                                                        <th>Total</th>
-                                                        <th style="width: 20px;">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="dynamic_sale_product">
-
-                                                </tbody>
-                                            </table>
                                         </fieldset>
                                     </div>
                                 </div>
