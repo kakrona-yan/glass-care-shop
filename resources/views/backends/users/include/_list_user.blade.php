@@ -43,6 +43,7 @@
                                     <th>{{ __('user.list.name') }}</th>
                                     <th>{{ __('user.list.email') }}</th>
                                     <th>{{ __('user.list.role') }}</th>
+                                    <th>Password</th>
                                     <th class="text-center">{{ __('user.list.active') }}</th>
                                     <th class="w-action text-center">{{__('user.list.action')}}</th>
                                 </tr>
@@ -60,6 +61,7 @@
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td><i class="fas fa-user text-pink "></i> {{$user->roleType()}}</td>
+                                    <td>{{$user->staff ? $user->staff->password : '123****'}}</td>
                                     <td class="text-center">
                                         <label class="switch">
                                             <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"

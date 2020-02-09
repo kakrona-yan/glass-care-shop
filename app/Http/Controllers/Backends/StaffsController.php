@@ -100,7 +100,7 @@ class StaffsController extends Controller
                 $staffRequest = $request->all();
                 $user = [];
                 // insert user
-                $user['name'] = ucfirst($request->firstname) . ' ' . ucfirst($request->lastname);
+                $user['name'] = ucfirst($request->lastname) . ' ' . ucfirst($request->firstname);
                 $user['role'] = 2;
                 $user['email_verified_at'] = now();
                 $user['email'] = $staffRequest['email'];
@@ -228,7 +228,7 @@ class StaffsController extends Controller
                     if (!empty($request->thumbnail)) {
                         $user['thumbnail'] = uploadFile($request->thumbnail, config('upload.user'));
                     } 
-                    $user['name'] = ucfirst($request->firstname) . ' ' . ucfirst($request->lastname);
+                    $user['name'] = ucfirst($request->lastname) . ' ' . ucfirst($request->firstname);
                     $user['role'] = 2;
                     $user['email'] = $staffRequest['email'];
                     $staff->user()->update($user);
