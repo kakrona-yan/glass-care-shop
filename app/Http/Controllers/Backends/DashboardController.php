@@ -34,8 +34,28 @@ class DashboardController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(6);
         $sales  = $this->sale->where('is_delete', '<>', DeleteStatus::DELETED)
-        ->orderBy('id', 'desc')
-        ->paginate(6);
+            ->whereYear('sale_date', date('Y'))
+            ->whereMonth('sale_date', date('m'))
+            ->orderBy('id', 'desc');
+        // login of staff
+        if(\Auth::user()->isRoleStaff()) {
+            $staffId = \Auth::user()->staff ? \Auth::user()->staff->id : \Auth::id();
+            $sales->where('staff_id', $staffId);
+        }
+        // count total sales
+        $salesCount = $sales->count();
+        // list sales
+        $sales = $sales->paginate(6);
+        // login of staff
+        $salesCountMonthlyByUser = $this->sale->where('is_delete', '<>', DeleteStatus::DELETED)
+            ->whereYear('sale_date', date('Y'))
+            ->whereMonth('sale_date', date('m'));
+        if(\Auth::user()->isRoleStaff()) {
+            $staffId = \Auth::user()->staff ? \Auth::user()->staff->id : \Auth::id();
+            $salesCountMonthlyByUser->where('staff_id', $staffId);
+        }
+        $salesCountMonthlyByUser = $salesCountMonthlyByUser->count();
+
         return view('backends.dashboard', [
             'productCount' => $productCount,
             'products' => $products,
@@ -44,7 +64,9 @@ class DashboardController extends Controller
             'customerCount' => $customerCount,
             'categoryCount' => $categoryCount,
             'newsCount' => $newsCount,
-            'sales' => $sales
+            'sales' => $sales,
+            'salesCount' => $salesCount,
+            'salesCountMonthlyByUser' => $salesCountMonthlyByUser
         ]);
 
     }

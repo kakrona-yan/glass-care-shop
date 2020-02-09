@@ -121,6 +121,7 @@
         </div>
         @endif
         <!-- Sale -->
+        @if(Auth::user()->isRoleAdmin() || Auth::user()->isRoleView() || Auth::user()->isRoleEditor())
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card">
                 <div class="card-header text-white bg-success">
@@ -134,7 +135,7 @@
                             <div class="font-weight-bold">Total</div>
                         </div>
                         <div class="col-8 py-3 text-right">
-                            <div class="font-weight-bold">0$</div>
+                            <div class="font-weight-bold">{{$salesCount}}</div>
                         </div>
                     </div>
                 </div>
@@ -143,12 +144,13 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card">
                 <div class="card-header text-white bg-info">
                     <div class="font-weight-bold">
                         <span>Sales</span>
-                        <span class="label pull-right">This Month</span>
+                        <span class="label pull-right">Monthly</span>
                     </div>
                 </div>
                 <div class="card-block py-0 px-4 b-t-1">
@@ -157,7 +159,7 @@
                             <div class="font-weight-bold">Total</div>
                         </div>
                         <div class="col-8 py-3 text-right">
-                            <div class="font-weight-bold">0$</div>
+                            <div class="font-weight-bold">{{ $salesCountMonthlyByUser}}</div>
                         </div>
                     </div>
                 </div>
@@ -181,12 +183,13 @@
                             <tr>
                                 <th>{{ __('product.list.thumbnail') }}</th>
                                 <th>{{ __('product.list.product_title') }}</th>
+                                @if(Auth::user()->isRoleAdmin() || Auth::user()->isRoleView() || Auth::user()->isRoleEditor())
                                 <th>{{ __('product.list.category') }}</th>
                                 <th>{{ __('product.list.product_code') }}</th>
                                 <th>{{ __('product.list.product_import') }}</th>
+                                @endif
                                 <th>{{ __('product.list.price') }}</th>
                                 <th>{{ __('product.list.price_discount') }}</th>
-                                <th class="text-center">{{ __('product.list.active') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -200,20 +203,13 @@
                                     </div>
                                 </td>
                                 <td>{{$product->title}}</td>
+                                @if(Auth::user()->isRoleAdmin() || Auth::user()->isRoleView() || Auth::user()->isRoleEditor())
                                 <td>{{$product->category ? $product->category->name : ""}}</td>
                                 <td>{{$product->product_code}}</td>
                                 <td>{{$product->product_import}}</td>
+                                @endif
                                 <td class="text-right">{{$product->price}}</td>
                                 <td class="text-right">{{$product->price_discount}}</td>
-                                <td class="text-center">
-                                    <label class="switch">
-                                        <input type="checkbox" data-toggle="toggle" data-onstyle="success" name="active"
-                                            {{ $product->is_active == 1 ? 'checked' : '' }}
-                                        > 
-                                        <span class="slider"><span class="on">ON</span><span class="off">OFF</span>
-                                        </span>
-                                    </label>
-                                </td>
                             </tr>
                         @endforeach 
                         </tbody>
